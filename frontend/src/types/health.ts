@@ -13,8 +13,10 @@ export interface HealthScore {
 }
 
 export interface ProcessingLevel {
+  id?: string;
   label: string;
   description: string;
+  color?: string;
 }
 
 export interface PositiveIngredient {

@@ -29,6 +29,11 @@ class Settings(BaseSettings):
     # --- HTTP ---------------------------------------------------------------
     cors_allow_origins: str = "http://localhost:5173"
 
+    # --- Gemini / LLM -------------------------------------------------------
+    # API key for Google Generative AI (Gemini). LLM features fall back to
+    # rule-based responses when this is unset.
+    gemini_api_key: str | None = None
+
     @property
     def language_hints(self) -> list[str]:
         return [h.strip() for h in self.ocr_language_hints.split(",") if h.strip()]

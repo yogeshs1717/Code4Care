@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { OcrRequestError, requestOcr } from './api/ocrClient';
+import { analyzeIngredients, explainReport } from './api/analyzeClient';
 import { HeroSection } from './components/HeroSection';
 import { CaptureView } from './components/CaptureView';
 import { ImageCropper } from './components/ImageCropper';
@@ -9,6 +10,7 @@ import { OcrEditView } from './components/OcrEditView';
 import { HealthReportView } from './components/HealthReportView';
 import { GemmaChatView } from './components/GemmaChatView';
 import type { OcrResult } from './types/ocr';
+import type { DeterministicReport } from './types/health';
 
 type Stage =
   | 'hero'       // Cinematic 3D hero scroll
@@ -28,6 +30,14 @@ const scanStatuses = [
   'Processing complete!',
 ];
 
+const analyzeStatuses = [
+  'Resolving ingredients...',
+  'Matching additives...',
+  'Applying health rules...',
+  'Generating report...',
+  'Analysis complete!',
+];
+
 export default function App() {
   const [stage, setStage] = useState<Stage>('hero');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -37,6 +47,8 @@ export default function App() {
   const [busy, setBusy] = useState(false);
   const [scanProgress, setScanProgress] = useState(0);
   const [scanStatus, setScanStatus] = useState(scanStatuses[0]);
+  const [report, setReport] = useState<DeterministicReport | null>(null);
+  const [aiSummary, setAiSummary] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   const revokePreview = useCallback(() => {
@@ -57,6 +69,8 @@ export default function App() {
     setBusy(false);
     setScanProgress(0);
     setScanStatus(scanStatuses[0]);
+    setReport(null);
+    setAiSummary(null);
     setStage('capture');
   }, [revokePreview]);
 
@@ -69,6 +83,8 @@ export default function App() {
     setBusy(false);
     setScanProgress(0);
     setScanStatus(scanStatuses[0]);
+    setReport(null);
+    setAiSummary(null);
     setStage('hero');
   }, [revokePreview]);
 
@@ -130,24 +146,46 @@ export default function App() {
     []
   );
 
-  // ── Analyze (placeholder — calls /api/v1/analyze when available) ──
-  const handleAnalyze = useCallback(() => {
+  // ── Analyze — calls POST /api/v1/analyze ──
+  const handleAnalyze = useCallback(async () => {
     setStage('analyzing');
     setScanProgress(0);
-    setScanStatus('Analyzing ingredients...');
+    setScanStatus(analyzeStatuses[0]);
+    setError(null);
 
+    // Start progress animation
     const timer = setInterval(() => {
       setScanProgress((prev) => {
-        if (prev >= 1) {
-          clearInterval(timer);
-          setScanStatus('Analysis complete!');
-          setTimeout(() => setStage('report'), 400);
-          return 1;
-        }
-        return prev + 0.12;
+        const next = Math.min(prev + 0.06, 0.9);
+        const idx = Math.min(
+          Math.floor(next / 0.25),
+          analyzeStatuses.length - 2
+        );
+        setScanStatus(analyzeStatuses[idx]);
+        return next;
       });
-    }, 500);
-  }, []);
+    }, 400);
+
+    try {
+      const response = await analyzeIngredients(text);
+      clearInterval(timer);
+      setScanProgress(1);
+      setScanStatus(analyzeStatuses[4]);
+      setReport(response.report);
+
+      // Fetch AI summary in the background (non-blocking)
+      explainReport(text)
+        .then((summary) => setAiSummary(summary))
+        .catch(() => setAiSummary(null));
+
+      setTimeout(() => setStage('report'), 400);
+    } catch (cause) {
+      clearInterval(timer);
+      const msg = cause instanceof Error ? cause.message : 'Analysis failed. Please try again.';
+      setError(msg);
+      setStage('edit');
+    }
+  }, [text]);
 
   return (
     <div className="relative min-h-dvh bg-[#FAFAFA]">
@@ -316,11 +354,11 @@ export default function App() {
               </motion.button>
             </div>
 
-            <HealthReportView report={null} />
+            <HealthReportView report={report} aiSummary={aiSummary} />
 
             <div className="mx-4 my-2 border-t border-[#e8eaed]" />
 
-            <GemmaChatView available={false} />
+            <GemmaChatView available={true} ingredientText={text} />
           </motion.main>
         )}
 
@@ -343,7 +381,7 @@ export default function App() {
                 ← Report
               </motion.button>
             </div>
-            <GemmaChatView available={false} />
+            <GemmaChatView available={true} ingredientText={text} />
           </motion.main>
         )}
       </AnimatePresence>

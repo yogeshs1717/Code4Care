@@ -1,0 +1,256 @@
+{
+  "version": "1.0.0",
+  "description": "Deterministic health scoring rules. Same input always produces the same output.",
+
+  "scoring": {
+    "base_score": 70,
+    "max_score": 100,
+    "min_score": 0,
+
+    "category_bonuses": {
+      "vegetables_and_legumes": 5,
+      "fruits": 5,
+      "whole_grains": 4,
+      "nuts_and_seeds": 4,
+      "herbs_and_spices": 3,
+      "fermented_foods": 3,
+      "dietary_fibers": 3,
+      "proteins": 2,
+      "natural_oils": 1
+    },
+
+    "category_penalties": {
+      "refined_sugars": -6,
+      "artificial_sweeteners": -4,
+      "artificial_colours": -5,
+      "artificial_preservatives": -3,
+      "hydrogenated_fats": -8,
+      "flavour_enhancers": -3,
+      "refined_flours": -3,
+      "excessive_sodium": -4
+    },
+
+    "additive_risk_penalties": {
+      "low": 0,
+      "moderate": -2,
+      "high": -5
+    },
+
+    "unresolved_penalty_per_item": -1,
+    "max_unresolved_penalty": -10
+  },
+
+  "score_labels": [
+    { "min": 80, "max": 100, "label": "Excellent", "color": "#34A853" },
+    { "min": 60, "max": 79,  "label": "Good",      "color": "#4285F4" },
+    { "min": 40, "max": 59,  "label": "Fair",       "color": "#FBBC04" },
+    { "min": 20, "max": 39,  "label": "Poor",       "color": "#FA7B17" },
+    { "min": 0,  "max": 19,  "label": "Avoid",      "color": "#EA4335" }
+  ],
+
+  "processing_levels": {
+    "thresholds": {
+      "ultra_processed_additive_count": 4,
+      "highly_processed_additive_count": 2,
+      "indicators": [
+        "hydrogenated_fats",
+        "artificial_colours",
+        "artificial_sweeteners",
+        "flavour_enhancers",
+        "artificial_preservatives"
+      ]
+    },
+    "levels": [
+      {
+        "id": "minimally_processed",
+        "label": "Minimally Processed",
+        "description": "Contains mostly whole, natural ingredients with minimal additives.",
+        "color": "#34A853"
+      },
+      {
+        "id": "processed",
+        "label": "Processed",
+        "description": "Contains some processed ingredients or a few additives.",
+        "color": "#FBBC04"
+      },
+      {
+        "id": "highly_processed",
+        "label": "Highly Processed",
+        "description": "Contains multiple additives and processed ingredients.",
+        "color": "#FA7B17"
+      },
+      {
+        "id": "ultra_processed",
+        "label": "Ultra-Processed",
+        "description": "Contains numerous additives, artificial ingredients, and heavily processed components.",
+        "color": "#EA4335"
+      }
+    ]
+  },
+
+  "positive_categories": {
+    "vegetables_and_legumes": "Rich in vitamins, minerals, and dietary fiber",
+    "fruits": "Natural source of vitamins, antioxidants, and fiber",
+    "whole_grains": "Good source of fiber, B vitamins, and minerals",
+    "nuts_and_seeds": "Healthy fats, protein, and essential minerals",
+    "herbs_and_spices": "Natural flavoring with antioxidant properties",
+    "fermented_foods": "Contains beneficial probiotics for gut health",
+    "dietary_fibers": "Supports digestive health and satiety",
+    "proteins": "Essential for muscle building and repair",
+    "natural_oils": "Source of essential fatty acids",
+    "dairy": "Source of calcium and protein",
+    "vitamins_and_minerals": "Essential micronutrients for body function"
+  },
+
+  "concern_categories": {
+    "refined_sugars": {
+      "concern": "Contributes to obesity, diabetes, and dental issues",
+      "severity": "high"
+    },
+    "artificial_sweeteners": {
+      "concern": "May affect gut microbiome and metabolic health",
+      "severity": "moderate"
+    },
+    "artificial_colours": {
+      "concern": "Linked to hyperactivity in children and allergic reactions",
+      "severity": "high"
+    },
+    "artificial_preservatives": {
+      "concern": "Some may form harmful compounds or trigger reactions",
+      "severity": "moderate"
+    },
+    "hydrogenated_fats": {
+      "concern": "Major source of trans fats linked to heart disease",
+      "severity": "high"
+    },
+    "flavour_enhancers": {
+      "concern": "May cause headaches and promote overeating",
+      "severity": "moderate"
+    },
+    "refined_flours": {
+      "concern": "Stripped of nutrients, spikes blood sugar quickly",
+      "severity": "moderate"
+    },
+    "excessive_sodium": {
+      "concern": "Linked to high blood pressure and cardiovascular disease",
+      "severity": "high"
+    }
+  },
+
+  "allergen_rules": [
+    {
+      "name": "Gluten",
+      "triggers": ["wheat", "barley", "rye", "oats", "spelt", "kamut", "triticale", "semolina", "durum", "maida", "flour", "wheat flour", "refined wheat flour", "whole wheat flour", "all-purpose flour", "bread flour", "gluten"],
+      "additive_triggers": ["gluten"]
+    },
+    {
+      "name": "Dairy / Milk",
+      "triggers": ["milk", "cream", "butter", "cheese", "yogurt", "whey", "casein", "caseinate", "lactose", "ghee", "paneer", "curd", "buttermilk", "milk solids", "skimmed milk", "whole milk", "milk powder", "condensed milk"],
+      "additive_triggers": ["dairy"]
+    },
+    {
+      "name": "Soy",
+      "triggers": ["soy", "soybean", "soya", "soy sauce", "tofu", "edamame", "soy protein", "soy lecithin", "soybean oil", "soya bean"],
+      "additive_triggers": ["soy"]
+    },
+    {
+      "name": "Tree Nuts",
+      "triggers": ["almond", "cashew", "walnut", "pistachio", "hazelnut", "pecan", "macadamia", "brazil nut", "pine nut", "chestnut"],
+      "additive_triggers": ["tree_nuts"]
+    },
+    {
+      "name": "Peanuts",
+      "triggers": ["peanut", "groundnut", "peanut oil", "peanut butter", "groundnut oil"],
+      "additive_triggers": ["peanuts"]
+    },
+    {
+      "name": "Eggs",
+      "triggers": ["egg", "eggs", "egg white", "egg yolk", "albumin", "lysozyme", "mayonnaise", "meringue"],
+      "additive_triggers": ["eggs"]
+    },
+    {
+      "name": "Fish",
+      "triggers": ["fish", "cod", "salmon", "tuna", "anchovy", "sardine", "mackerel", "fish sauce", "fish oil"],
+      "additive_triggers": ["fish"]
+    },
+    {
+      "name": "Shellfish",
+      "triggers": ["shrimp", "prawn", "crab", "lobster", "crayfish", "oyster", "mussel", "clam", "scallop"],
+      "additive_triggers": ["shellfish"]
+    },
+    {
+      "name": "Sulphites",
+      "triggers": ["sulphite", "sulfite", "sulphur dioxide", "sulfur dioxide", "metabisulphite", "metabisulfite"],
+      "additive_triggers": ["sulphites"]
+    },
+    {
+      "name": "Sesame",
+      "triggers": ["sesame", "sesame seeds", "sesame oil", "tahini", "til"],
+      "additive_triggers": ["sesame"]
+    },
+    {
+      "name": "Mustard",
+      "triggers": ["mustard", "mustard seed", "mustard oil", "mustard powder"],
+      "additive_triggers": ["mustard"]
+    },
+    {
+      "name": "Phenylalanine (PKU)",
+      "triggers": ["phenylalanine"],
+      "additive_triggers": ["phenylalanine"]
+    }
+  ],
+
+  "health_considerations": [
+    {
+      "id": "high_sugar",
+      "title": "High Sugar Content",
+      "description": "This product contains multiple sugar-based ingredients which may contribute to excessive sugar intake.",
+      "type": "warning",
+      "trigger_categories": ["refined_sugars"],
+      "min_trigger_count": 2
+    },
+    {
+      "id": "artificial_additives",
+      "title": "Contains Artificial Additives",
+      "description": "This product contains artificial colours, preservatives, or sweeteners that some consumers may wish to avoid.",
+      "type": "info",
+      "trigger_categories": ["artificial_colours", "artificial_preservatives", "artificial_sweeteners"],
+      "min_trigger_count": 1
+    },
+    {
+      "id": "trans_fat_risk",
+      "title": "Trans Fat Risk",
+      "description": "Contains partially hydrogenated oils which are a major source of artificial trans fats linked to heart disease.",
+      "type": "warning",
+      "trigger_categories": ["hydrogenated_fats"],
+      "min_trigger_count": 1
+    },
+    {
+      "id": "high_sodium",
+      "title": "May Be High in Sodium",
+      "description": "Contains sodium-heavy ingredients that may contribute to high sodium intake.",
+      "type": "info",
+      "trigger_categories": ["excessive_sodium"],
+      "min_trigger_count": 1
+    },
+    {
+      "id": "gut_health",
+      "title": "May Affect Gut Health",
+      "description": "Contains emulsifiers or artificial sweeteners that studies suggest may affect the gut microbiome.",
+      "type": "info",
+      "trigger_categories": ["artificial_sweeteners"],
+      "min_trigger_count": 1
+    }
+  ],
+
+  "ingredient_category_mapping": {
+    "refined_sugars": ["sugar", "cane sugar", "brown sugar", "icing sugar", "invert sugar", "dextrose", "fructose", "glucose", "glucose syrup", "corn syrup", "maltodextrin", "sucrose", "treacle", "molasses", "jaggery", "honey", "agave", "maple syrup", "high fructose corn syrup", "caramel"],
+    "artificial_sweeteners": ["aspartame", "sucralose", "saccharin", "acesulfame potassium", "acesulfame k", "neotame", "advantame", "cyclamate"],
+    "artificial_colours": ["tartrazine", "sunset yellow", "allura red", "erythrosine", "brilliant blue", "indigotine", "azorubine", "carmoisine", "titanium dioxide", "FD&C"],
+    "artificial_preservatives": ["sodium benzoate", "potassium sorbate", "sodium nitrite", "sodium nitrate", "BHA", "BHT", "TBHQ", "sulphur dioxide", "sodium metabisulphite"],
+    "hydrogenated_fats": ["partially hydrogenated", "hydrogenated vegetable oil", "hydrogenated oil", "trans fat", "vanaspati", "dalda", "margarine", "shortening"],
+    "flavour_enhancers": ["monosodium glutamate", "MSG", "disodium guanylate", "disodium inosinate", "disodium ribonucleotides", "yeast extract", "hydrolysed vegetable protein", "HVP", "autolysed yeast"],
+    "refined_flours": ["refined wheat flour", "maida", "all-purpose flour", "white flour", "bleached flour", "enriched flour", "refined flour"],
+    "excessive_sodium": ["sodium chloride", "table salt", "rock salt", "sea salt", "MSG", "sodium bicarbonate", "baking soda", "sodium citrate"]
+  }
+}

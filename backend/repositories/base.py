@@ -7,7 +7,9 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from collections.abc import Sequence
+from typing import Any
 
+from backend.models.additives import FoodAdditive
 from backend.models.ingredients import CanonicalIngredient
 
 
@@ -29,3 +31,28 @@ class IngredientRepository(ABC):
         Raises:
             DatasetUnavailableError: the dataset could not be loaded.
         """
+
+
+class AdditiveRepository(ABC):
+    """Read access to the food-additives dataset."""
+
+    @abstractmethod
+    def list_all(self) -> Sequence[FoodAdditive]:
+        """Return every food additive.
+
+        Raises:
+            DatasetUnavailableError: the dataset could not be loaded.
+        """
+
+
+class RulesRepository(ABC):
+    """Read access to the health-rules dataset."""
+
+    @abstractmethod
+    def get_rules(self) -> dict[str, Any]:
+        """Return the full rules configuration.
+
+        Raises:
+            DatasetUnavailableError: the dataset could not be loaded.
+        """
+

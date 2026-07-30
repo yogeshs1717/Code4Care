@@ -1,9 +1,9 @@
 /**
- * Analyze API client — for future use when the backend adds
- * POST /api/v1/analyze and POST /api/v1/gemma/* endpoints.
+ * Analyze & Gemma API client — calls the real backend endpoints.
  *
- * Currently the backend only exposes POST /ocr.
- * Ready to wire up when endpoints are available.
+ * POST /api/v1/analyze     → deterministic health report
+ * POST /api/v1/gemma/explain → AI summary of the report
+ * POST /api/v1/gemma/chat    → multi-turn Q&A about the product
  */
 import type {
   DeterministicReport,
@@ -14,7 +14,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000
 
 export async function analyzeIngredients(
   ingredientText: string
-): Promise<{ report: DeterministicReport; ai_summary?: string }> {
+): Promise<{ report: DeterministicReport }> {
   const response = await fetch(`${API_BASE_URL}/api/v1/analyze`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -24,18 +24,18 @@ export async function analyzeIngredients(
   if (!response.ok) {
     const payload = await response.json().catch(() => null);
     throw new Error(
-      payload?.error?.message ?? `Analysis failed (${response.status})`
+      payload?.detail?.message ?? payload?.detail ?? `Analysis failed (${response.status})`
     );
   }
 
   return response.json();
 }
 
-export async function explainReport(reportJson: string): Promise<string> {
+export async function explainReport(ingredientText: string): Promise<string> {
   const response = await fetch(`${API_BASE_URL}/api/v1/gemma/explain`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ report_json: reportJson }),
+    body: JSON.stringify({ ingredient_text: ingredientText }),
   });
 
   if (!response.ok) {
@@ -47,7 +47,7 @@ export async function explainReport(reportJson: string): Promise<string> {
 }
 
 export async function chatWithGemma(
-  reportJson: string,
+  ingredientText: string,
   messages: GemmaMessage[],
   newMessage: string
 ): Promise<string> {
@@ -55,7 +55,7 @@ export async function chatWithGemma(
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      report_json: reportJson,
+      ingredient_text: ingredientText,
       messages,
       new_message: newMessage,
     }),

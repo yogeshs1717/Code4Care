@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Bot, User, Sparkles } from 'lucide-react';
+import { Send, Bot, User, Sparkles, Loader2 } from 'lucide-react';
+import { chatWithGemma } from '../api/analyzeClient';
 
 interface GemmaChatViewProps {
-  /** Gemma endpoint available — false when backend endpoint is not built yet */
   available?: boolean;
+  ingredientText?: string;
 }
 
-/**
- * Gemma Chat View — conversational Q&A about the health report.
- *
- * Uses POST /api/v1/gemma/chat when the backend endpoint is built.
- * Shows a ready state until then.
- */
-export function GemmaChatView({ available = false }: GemmaChatViewProps) {
+export function GemmaChatView({ available = false, ingredientText = '' }: GemmaChatViewProps) {
   const [messages, setMessages] = useState<
     { role: 'user' | 'assistant'; content: string }[]
   >(
@@ -22,24 +17,37 @@ export function GemmaChatView({ available = false }: GemmaChatViewProps) {
       : []
   );
   const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = () => {
-    if (!input.trim() || !available) return;
+  const handleSend = async () => {
+    if (!input.trim() || !available || loading) return;
     const userMsg = { role: 'user' as const, content: input.trim() };
-    setMessages((prev) => [...prev, userMsg]);
+    const newMessages = [...messages, userMsg];
+    setMessages(newMessages);
     setInput('');
+    setLoading(true);
 
-    // Mock response until endpoint is live
-    setTimeout(() => {
+    try {
+      const reply = await chatWithGemma(
+        ingredientText,
+        newMessages.map((m) => ({ role: m.role, content: m.content })),
+        userMsg.content
+      );
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant' as const, content: reply },
+      ]);
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant' as const,
-          content:
-            'Great question! Once the analysis endpoint is connected, I\'ll be able to answer based on the specific ingredients found in your product.',
+          content: 'Sorry, I had trouble processing that. Please try again.',
         },
       ]);
-    }, 800);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -104,6 +112,21 @@ export function GemmaChatView({ available = false }: GemmaChatViewProps) {
                   )}
                 </motion.div>
               ))}
+              {loading && (
+                <motion.div
+                  className="flex gap-3 justify-start"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#4285F4]/10">
+                    <Bot className="h-4 w-4 text-[#4285F4]" />
+                  </div>
+                  <div className="flex items-center gap-2 rounded-2xl border border-[#e8eaed] bg-white px-4 py-2.5 text-sm text-[#5f6368]">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Thinking...
+                  </div>
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
 
@@ -115,11 +138,12 @@ export function GemmaChatView({ available = false }: GemmaChatViewProps) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+              disabled={loading}
             />
             <motion.button
               className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#4285F4] text-white disabled:opacity-40"
               onClick={handleSend}
-              disabled={!input.trim()}
+              disabled={!input.trim() || loading}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
