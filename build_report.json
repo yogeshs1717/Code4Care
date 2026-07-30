@@ -1,0 +1,414 @@
+{
+  "concepts_emitted": 846,
+  "coverage_of_food_ingredient_occurrences": 0.9447,
+  "excluded_occurrences_by_reason": {
+    "additive-descendant": 936071,
+    "e-number": 2503353,
+    "abstract-class": 597397,
+    "additive-class": 1778407
+  },
+  "top_excluded": [
+    {
+      "id": "en:e330",
+      "count": 244575
+    },
+    {
+      "id": "en:natural-flavouring",
+      "count": 232187
+    },
+    {
+      "id": "en:emulsifier",
+      "count": 168827
+    },
+    {
+      "id": "en:spice",
+      "count": 162738
+    },
+    {
+      "id": "en:flavouring",
+      "count": 161592
+    },
+    {
+      "id": "en:colour",
+      "count": 158218
+    },
+    {
+      "id": "en:preservative",
+      "count": 152888
+    },
+    {
+      "id": "en:soya-lecithin",
+      "count": 132975
+    },
+    {
+      "id": "en:e375",
+      "count": 104901
+    },
+    {
+      "id": "en:e101",
+      "count": 96951
+    },
+    {
+      "id": "en:acid",
+      "count": 91667
+    },
+    {
+      "id": "en:antioxidant",
+      "count": 89103
+    },
+    {
+      "id": "en:e415",
+      "count": 83157
+    },
+    {
+      "id": "en:acidity-regulator",
+      "count": 80060
+    },
+    {
+      "id": "en:folic-acid",
+      "count": 79569
+    },
+    {
+      "id": "en:stabiliser",
+      "count": 79056
+    },
+    {
+      "id": "en:e500ii",
+      "count": 72104
+    },
+    {
+      "id": "en:vegetable-oil",
+      "count": 71022
+    },
+    {
+      "id": "en:e300",
+      "count": 70658
+    },
+    {
+      "id": "en:e471",
+      "count": 70618
+    },
+    {
+      "id": "en:e202",
+      "count": 70546
+    },
+    {
+      "id": "en:raising-agent",
+      "count": 69925
+    },
+    {
+      "id": "en:enzyme",
+      "count": 68208
+    },
+    {
+      "id": "en:e412",
+      "count": 66134
+    },
+    {
+      "id": "en:thickener",
+      "count": 64916
+    },
+    {
+      "id": "en:thiamin-mononitrate",
+      "count": 62511
+    },
+    {
+      "id": "en:e250",
+      "count": 47821
+    },
+    {
+      "id": "en:e407",
+      "count": 47570
+    },
+    {
+      "id": "en:vitamin-c",
+      "count": 43138
+    },
+    {
+      "id": "en:thiamin",
+      "count": 42861
+    },
+    {
+      "id": "en:e440a",
+      "count": 41417
+    },
+    {
+      "id": "en:reduced-iron",
+      "count": 40849
+    },
+    {
+      "id": "en:e270",
+      "count": 40218
+    },
+    {
+      "id": "en:e150a",
+      "count": 39495
+    },
+    {
+      "id": "en:vitamins",
+      "count": 38252
+    },
+    {
+      "id": "en:flour",
+      "count": 38027
+    },
+    {
+      "id": "en:natural-and-artificial-flavouring",
+      "count": 37906
+    },
+    {
+      "id": "en:iron",
+      "count": 36429
+    },
+    {
+      "id": "en:e322",
+      "count": 35929
+    },
+    {
+      "id": "en:sweetener",
+      "count": 34072
+    },
+    {
+      "id": "en:e102",
+      "count": 34044
+    },
+    {
+      "id": "en:e129",
+      "count": 33959
+    },
+    {
+      "id": "en:artificial-flavouring",
+      "count": 32711
+    },
+    {
+      "id": "en:e160c",
+      "count": 31403
+    },
+    {
+      "id": "en:e955",
+      "count": 30768
+    },
+    {
+      "id": "en:e211",
+      "count": 30766
+    },
+    {
+      "id": "en:e422",
+      "count": 30766
+    },
+    {
+      "id": "en:e133",
+      "count": 29466
+    },
+    {
+      "id": "en:starch",
+      "count": 29465
+    },
+    {
+      "id": "en:e500",
+      "count": 28609
+    }
+  ],
+  "top_unresolved_tags": [
+    {
+      "tag": "en:undefined",
+      "count": 36252
+    },
+    {
+      "tag": "en:pasteurised-milk",
+      "count": 16117
+    },
+    {
+      "tag": "en:contains-2-and-less-of",
+      "count": 14606
+    },
+    {
+      "tag": "en:ingredients",
+      "count": 7087
+    },
+    {
+      "tag": "en:monoglycerides",
+      "count": 6217
+    },
+    {
+      "tag": "en:contains-less-than-2-of",
+      "count": 6184
+    },
+    {
+      "tag": "en:less-than-2-of",
+      "count": 5845
+    },
+    {
+      "tag": "en:confectioner-s-glaze",
+      "count": 5181
+    },
+    {
+      "tag": "en:contains-one-and-more-of-the-following",
+      "count": 5178
+    },
+    {
+      "tag": "en:contains-2-and-less-of-the-following",
+      "count": 4713
+    },
+    {
+      "tag": "en:sel",
+      "count": 4698
+    },
+    {
+      "tag": "en:sucre",
+      "count": 4331
+    },
+    {
+      "tag": "en:to-preserve-freshness",
+      "count": 4099
+    },
+    {
+      "tag": "fr:ingredients",
+      "count": 3925
+    },
+    {
+      "tag": "en:eau",
+      "count": 3815
+    },
+    {
+      "tag": "en:contains-2-and-less-of-each-of-the-following",
+      "count": 3370
+    },
+    {
+      "tag": "en:roasted-peanuts",
+      "count": 3295
+    },
+    {
+      "tag": "en:vann",
+      "count": 3220
+    },
+    {
+      "tag": "en:sal-tree",
+      "count": 3164
+    },
+    {
+      "tag": "en:sukker",
+      "count": 3067
+    },
+    {
+      "tag": "en:cultured-pasteurized-milk",
+      "count": 3044
+    },
+    {
+      "tag": "en:1",
+      "count": 3034
+    },
+    {
+      "tag": "en:annatto-color",
+      "count": 2779
+    },
+    {
+      "tag": "en:lactic-acid-starter-culture",
+      "count": 2487
+    },
+    {
+      "tag": "en:contains-less-than-2-of-the-following",
+      "count": 2467
+    },
+    {
+      "tag": "en:cellulose-gel",
+      "count": 2440
+    },
+    {
+      "tag": "en:330",
+      "count": 2412
+    },
+    {
+      "tag": "en:vegetable-glycerin",
+      "count": 2354
+    },
+    {
+      "tag": "en:milk-solids",
+      "count": 2289
+    },
+    {
+      "tag": "en:kiwi",
+      "count": 2191
+    },
+    {
+      "tag": "en:pasteurised-cow-s-milk",
+      "count": 2139
+    },
+    {
+      "tag": "en:emulgator",
+      "count": 2111
+    },
+    {
+      "tag": "en:bacterial-culture",
+      "count": 2094
+    },
+    {
+      "tag": "en:dv",
+      "count": 1986
+    },
+    {
+      "tag": "en:stevia-extract",
+      "count": 1900
+    },
+    {
+      "tag": "en:6",
+      "count": 1886
+    },
+    {
+      "tag": "en:protein-blend",
+      "count": 1824
+    },
+    {
+      "tag": "en:contains-2-and-less-of-salt",
+      "count": 1768
+    },
+    {
+      "tag": "fr:1",
+      "count": 1739
+    },
+    {
+      "tag": "en:zucker",
+      "count": 1712
+    },
+    {
+      "tag": "en:stevia",
+      "count": 1682
+    },
+    {
+      "tag": "en:inc",
+      "count": 1651
+    },
+    {
+      "tag": "en:ingredientes",
+      "count": 1627
+    },
+    {
+      "tag": "en:471",
+      "count": 1620
+    },
+    {
+      "tag": "en:artificial",
+      "count": 1606
+    },
+    {
+      "tag": "en:cultured-dextrose",
+      "count": 1588
+    },
+    {
+      "tag": "en:a-milk-derivative",
+      "count": 1557
+    },
+    {
+      "tag": "en:lait",
+      "count": 1549
+    },
+    {
+      "tag": "en:500",
+      "count": 1473
+    },
+    {
+      "tag": "en:s",
+      "count": 1454
+    }
+  ]
+}

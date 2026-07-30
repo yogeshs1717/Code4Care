@@ -1,0 +1,7620 @@
+[
+  {
+    "id": "en:salt",
+    "canonical_name": "salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "",
+    "source_frequency": 819214,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sugar",
+    "canonical_name": "sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 615838,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:water",
+    "canonical_name": "water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "",
+    "source_frequency": 562188,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-flour",
+    "canonical_name": "wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal flour",
+    "source_frequency": 226087,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:onion",
+    "canonical_name": "onion",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion-family vegetable",
+    "source_frequency": 153503,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garlic",
+    "canonical_name": "garlic",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion-family vegetable",
+    "source_frequency": 153033,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sunflower-oil",
+    "canonical_name": "sunflower oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 133158,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dextrose",
+    "canonical_name": "dextrose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose",
+    "source_frequency": 116232,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk",
+    "canonical_name": "milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 100924,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-butter",
+    "canonical_name": "cocoa butter",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 97978,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sea-salt",
+    "canonical_name": "sea salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "salt",
+    "source_frequency": 90065,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-starch",
+    "canonical_name": "corn starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 81759,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yeast",
+    "canonical_name": "yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "",
+    "source_frequency": 80713,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-oil",
+    "canonical_name": "palm oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm oil and fat",
+    "source_frequency": 77099,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cream",
+    "canonical_name": "cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 74174,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-paste",
+    "canonical_name": "cocoa paste",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 74008,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:maltodextrin",
+    "canonical_name": "maltodextrin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 73951,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:glucose-syrup",
+    "canonical_name": "glucose syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose",
+    "source_frequency": 73736,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:skimmed-milk-powder",
+    "canonical_name": "skimmed milk powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk powder",
+    "source_frequency": 70102,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactic-ferments",
+    "canonical_name": "lactic ferments",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "microbial culture",
+    "source_frequency": 68807,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato",
+    "canonical_name": "tomato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 61116,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soya-oil",
+    "canonical_name": "soya oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 59232,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:skimmed-milk",
+    "canonical_name": "skimmed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 59174,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-syrup",
+    "canonical_name": "corn syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose",
+    "source_frequency": 56960,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:butter",
+    "canonical_name": "butter",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 55243,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-starch",
+    "canonical_name": "Modified starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 55004,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cane-sugar",
+    "canonical_name": "cane sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 54722,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carrot",
+    "canonical_name": "carrot",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 54433,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-corn-starch",
+    "canonical_name": "modified corn starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn starch",
+    "source_frequency": 53087,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rapeseed-oil",
+    "canonical_name": "rapeseed oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil and fat",
+    "source_frequency": 51381,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vinegar",
+    "canonical_name": "vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 50622,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:egg",
+    "canonical_name": "egg",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "",
+    "source_frequency": 50327,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yeast-extract",
+    "canonical_name": "yeast extract",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 46329,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:canola-oil",
+    "canonical_name": "canola oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "rapeseed oil",
+    "source_frequency": 43957,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:colza-oil",
+    "canonical_name": "colza oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "rapeseed oil",
+    "source_frequency": 43308,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat",
+    "canonical_name": "wheat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 43195,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey",
+    "canonical_name": "whey",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 42560,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soya-bean",
+    "canonical_name": "soya bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 42498,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-flour",
+    "canonical_name": "rice flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "flour",
+    "source_frequency": 41615,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato",
+    "canonical_name": "potato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 41173,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato-starch",
+    "canonical_name": "potato starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 40928,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:parsley",
+    "canonical_name": "parsley",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 40280,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-milk-powder",
+    "canonical_name": "whole milk powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk powder",
+    "source_frequency": 40074,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:almond",
+    "canonical_name": "almond",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 39233,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn",
+    "canonical_name": "corn",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 37482,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:honey",
+    "canonical_name": "honey",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "added sugar",
+    "source_frequency": 36938,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:paprika",
+    "canonical_name": "paprika",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 36505,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turmeric",
+    "canonical_name": "turmeric",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 36108,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pepper",
+    "canonical_name": "pepper",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 35717,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-pepper",
+    "canonical_name": "black pepper",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "pepper",
+    "source_frequency": 35214,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactose",
+    "canonical_name": "lactose",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 34463,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-oil",
+    "canonical_name": "coconut oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 34069,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-gluten",
+    "canonical_name": "wheat gluten",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "gluten",
+    "source_frequency": 33623,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-lemon-juice",
+    "canonical_name": "concentrated lemon juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lemon juice",
+    "source_frequency": 33406,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peanut",
+    "canonical_name": "peanut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "nut",
+    "source_frequency": 32145,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa",
+    "canonical_name": "cocoa",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "plant",
+    "source_frequency": 32094,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chili-pepper",
+    "canonical_name": "chili pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 32027,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey-powder",
+    "canonical_name": "whey powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whey",
+    "source_frequency": 31907,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato-concentrate",
+    "canonical_name": "tomato concentrate",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "concentrate",
+    "source_frequency": 30442,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple",
+    "canonical_name": "apple",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "malaceous fruit",
+    "source_frequency": 29936,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-bell-pepper",
+    "canonical_name": "red bell pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "bell pepper",
+    "source_frequency": 29421,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-starch",
+    "canonical_name": "wheat starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 28978,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:high-fructose-corn-syrup",
+    "canonical_name": "high fructose corn syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose-fructose syrup",
+    "source_frequency": 27719,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ginger",
+    "canonical_name": "ginger",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 27711,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soya",
+    "canonical_name": "soya",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 27379,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-powder",
+    "canonical_name": "cocoa powder",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 27281,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut",
+    "canonical_name": "coconut",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 26697,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cinnamon",
+    "canonical_name": "cinnamon",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 26567,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:glucose-fructose-syrup",
+    "canonical_name": "glucose-fructose syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "fructose",
+    "source_frequency": 26049,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:extra-virgin-olive-oil",
+    "canonical_name": "extra virgin olive oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "virgin olive oil",
+    "source_frequency": 25808,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chocolate",
+    "canonical_name": "chocolate",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "",
+    "source_frequency": 25077,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mustard",
+    "canonical_name": "mustard",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 24481,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork-meat",
+    "canonical_name": "pork meat",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "meat",
+    "source_frequency": 24425,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fat-reduced-cocoa-powder",
+    "canonical_name": "fat reduced cocoa powder",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa powder",
+    "source_frequency": 24238,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-juice",
+    "canonical_name": "lemon juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 24015,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fortified-wheat-flour",
+    "canonical_name": "fortified wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 23938,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:butterfat",
+    "canonical_name": "butterfat",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milkfat",
+    "source_frequency": 23748,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tapioca",
+    "canonical_name": "tapioca",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 23689,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:celery",
+    "canonical_name": "celery",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "stalk vegetable",
+    "source_frequency": 23563,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley-malt-flour",
+    "canonical_name": "barley malt flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "barley flour",
+    "source_frequency": 22976,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-flour",
+    "canonical_name": "corn flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn",
+    "source_frequency": 22902,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice",
+    "canonical_name": "rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 22893,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hazelnut",
+    "canonical_name": "hazelnut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 22728,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:basil",
+    "canonical_name": "basil",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 22179,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:egg-yolk",
+    "canonical_name": "egg yolk",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 21922,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato-puree",
+    "canonical_name": "tomato purée",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato",
+    "source_frequency": 21607,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:olive-oil",
+    "canonical_name": "olive oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 21501,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mustard-seed",
+    "canonical_name": "mustard seed",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "mustard",
+    "source_frequency": 21321,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-kernel-oil",
+    "canonical_name": "palm kernel oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm kernel oil and fat",
+    "source_frequency": 20488,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-sugar",
+    "canonical_name": "brown sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 20419,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:strawberry",
+    "canonical_name": "strawberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 19917,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vanilla-extract",
+    "canonical_name": "vanilla extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vanilla",
+    "source_frequency": 19726,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:molasses",
+    "canonical_name": "molasses",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 19530,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:iodised-salt",
+    "canonical_name": "iodised salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "salt",
+    "source_frequency": 19410,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:egg-white",
+    "canonical_name": "egg white",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 19024,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dehydrated-onion",
+    "canonical_name": "dehydrated onion",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion",
+    "source_frequency": 18755,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:durum-wheat-semolina",
+    "canonical_name": "durum wheat semolina",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "durum wheat",
+    "source_frequency": 18601,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oregano",
+    "canonical_name": "oregano",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 18191,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork",
+    "canonical_name": "pork",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "animal",
+    "source_frequency": 17888,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:filtered-water",
+    "canonical_name": "filtered water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "water",
+    "source_frequency": 17837,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-milk",
+    "canonical_name": "whole milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 17526,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coriander",
+    "canonical_name": "coriander",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 17520,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cow-s-milk",
+    "canonical_name": "cow's milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 17342,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carbonated-water",
+    "canonical_name": "carbonated water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "water",
+    "source_frequency": 17302,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-fat",
+    "canonical_name": "palm fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm oil and fat",
+    "source_frequency": 17273,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spice-extract",
+    "canonical_name": "spice extract",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 17232,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley-malt-extract",
+    "canonical_name": "barley malt extract",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "malted barley",
+    "source_frequency": 17080,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soy-sauce",
+    "canonical_name": "soy sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 16792,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milkfat",
+    "canonical_name": "milkfat",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 16635,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:distilled-vinegar",
+    "canonical_name": "distilled vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 16590,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rennet",
+    "canonical_name": "rennet",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "coagulating enzyme",
+    "source_frequency": 16586,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-wheat-flour",
+    "canonical_name": "whole wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 16489,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:alcohol-vinegar",
+    "canonical_name": "alcohol vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 16193,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cumin",
+    "canonical_name": "cumin",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 15741,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk-chocolate",
+    "canonical_name": "milk chocolate",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 15740,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cashew-nuts",
+    "canonical_name": "cashew nuts",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 15578,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spirit-vinegar",
+    "canonical_name": "spirit vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 15450,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cranberry",
+    "canonical_name": "cranberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 15441,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soya-flour",
+    "canonical_name": "soya flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "flour",
+    "source_frequency": 15435,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cheddar",
+    "canonical_name": "cheddar",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 15335,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vanilla",
+    "canonical_name": "vanilla",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 15292,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sunflower",
+    "canonical_name": "sunflower",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 15275,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sunflower-seed",
+    "canonical_name": "sunflower seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 15131,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oat",
+    "canonical_name": "oat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 14957,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:canola",
+    "canonical_name": "Canola",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "Rapeseed",
+    "source_frequency": 14899,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beef",
+    "canonical_name": "beef",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "animal",
+    "source_frequency": 14585,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oat-flakes",
+    "canonical_name": "oat flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat",
+    "source_frequency": 14468,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:malted-barley",
+    "canonical_name": "malted barley",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "malt",
+    "source_frequency": 14216,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon",
+    "canonical_name": "lemon",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit",
+    "source_frequency": 14140,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:buttermilk",
+    "canonical_name": "buttermilk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 13967,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-pepper",
+    "canonical_name": "white pepper",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "pepper",
+    "source_frequency": 13934,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cheese",
+    "canonical_name": "cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 13878,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sesame-seeds",
+    "canonical_name": "sesame seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "sesame",
+    "source_frequency": 13849,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken",
+    "canonical_name": "chicken",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "poultry",
+    "source_frequency": 13755,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:raspberry",
+    "canonical_name": "raspberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 13654,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:blueberry",
+    "canonical_name": "blueberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 13635,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:thyme",
+    "canonical_name": "thyme",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 13596,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-egg",
+    "canonical_name": "whole egg",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 13545,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:glucose",
+    "canonical_name": "glucose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "monosaccharide",
+    "source_frequency": 13413,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:invert-sugar-syrup",
+    "canonical_name": "invert sugar syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "invert sugar",
+    "source_frequency": 13383,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:raisin",
+    "canonical_name": "raisin",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "dried fruit",
+    "source_frequency": 13219,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coating",
+    "canonical_name": "coating",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 13216,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soy-protein",
+    "canonical_name": "soy protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 13115,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:banana",
+    "canonical_name": "banana",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 12947,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fructose",
+    "canonical_name": "fructose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "monosaccharide",
+    "source_frequency": 12841,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:breadcrumbs",
+    "canonical_name": "breadcrumbs",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "coating",
+    "source_frequency": 12639,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carob-seed-flour",
+    "canonical_name": "carob seed flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "carob bean",
+    "source_frequency": 12504,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spinach",
+    "canonical_name": "spinach",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "leaf vegetable",
+    "source_frequency": 12382,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey-protein",
+    "canonical_name": "whey protein",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk proteins",
+    "source_frequency": 12382,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:jalapeno-pepper",
+    "canonical_name": "jalapeno pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 12261,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:leek",
+    "canonical_name": "leek",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion-family vegetable",
+    "source_frequency": 12186,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple-juice",
+    "canonical_name": "apple juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 11960,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dark-chocolate",
+    "canonical_name": "dark chocolate",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 11958,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vanillin",
+    "canonical_name": "vanillin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 11488,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk-powder",
+    "canonical_name": "milk powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 11455,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-syrup-solids",
+    "canonical_name": "corn syrup solids",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "corn syrup",
+    "source_frequency": 11336,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pineapple",
+    "canonical_name": "pineapple",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 11275,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:parmigiano-reggiano",
+    "canonical_name": "parmigiano reggiano",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 11050,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:nutmeg",
+    "canonical_name": "nutmeg",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 10778,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:flax-seed",
+    "canonical_name": "flax seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "flax",
+    "source_frequency": 10688,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-starch",
+    "canonical_name": "rice starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 10166,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pea-protein",
+    "canonical_name": "pea protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 10028,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange",
+    "canonical_name": "orange",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit",
+    "source_frequency": 10023,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sesame",
+    "canonical_name": "sesame",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 9910,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:clove",
+    "canonical_name": "clove",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 9825,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mango",
+    "canonical_name": "mango",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 9615,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chickpea",
+    "canonical_name": "chickpea",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 9584,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bell-pepper",
+    "canonical_name": "bell pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "capsicum annuum",
+    "source_frequency": 9581,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rosemary",
+    "canonical_name": "rosemary",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 9260,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dried-garlic",
+    "canonical_name": "dried garlic",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "garlic",
+    "source_frequency": 9249,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley",
+    "canonical_name": "barley",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 9227,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:paprika-or-bell-pepper",
+    "canonical_name": "paprika or bell pepper",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "bell pepper",
+    "source_frequency": 9209,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:invert-sugar",
+    "canonical_name": "invert sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "monosaccharide",
+    "source_frequency": 9204,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cottonseed-oil",
+    "canonical_name": "cottonseed oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 9125,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cayenne-pepper",
+    "canonical_name": "cayenne pepper",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 9079,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mozzarella",
+    "canonical_name": "mozzarella",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 9076,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beef-meat",
+    "canonical_name": "beef meat",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "beef",
+    "source_frequency": 9039,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:walnut",
+    "canonical_name": "walnut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 8960,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:baking-powder",
+    "canonical_name": "baking powder",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 8904,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peach",
+    "canonical_name": "peach",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "prunus species fruit",
+    "source_frequency": 8902,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:alcohol",
+    "canonical_name": "alcohol",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 8879,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fresh-cream",
+    "canonical_name": "fresh cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 8878,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:margarine",
+    "canonical_name": "Margarine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 8730,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-potato-starch",
+    "canonical_name": "modified potato starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "Modified starch",
+    "source_frequency": 8706,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:unrefined-cane-sugar",
+    "canonical_name": "unrefined cane sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "cane sugar",
+    "source_frequency": 8610,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:inulin",
+    "canonical_name": "inulin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 8584,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:blackcurrant",
+    "canonical_name": "blackcurrant",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 8515,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soy-protein-isolate",
+    "canonical_name": "soy protein isolate",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "soy protein",
+    "source_frequency": 8346,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cherry",
+    "canonical_name": "cherry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "prunus species fruit",
+    "source_frequency": 8332,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cider-vinegar",
+    "canonical_name": "cider vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 8277,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garlic-puree",
+    "canonical_name": "garlic puree",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "garlic",
+    "source_frequency": 8246,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chives",
+    "canonical_name": "chives",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion-family vegetable",
+    "source_frequency": 8229,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:semi-skimmed-milk",
+    "canonical_name": "semi-skimmed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 8157,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:shea-butter",
+    "canonical_name": "shea butter",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable fat",
+    "source_frequency": 8096,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:filling",
+    "canonical_name": "filling",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 7952,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:caffeine",
+    "canonical_name": "caffeine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 7941,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cornmeal",
+    "canonical_name": "cornmeal",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn",
+    "source_frequency": 7838,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-oil",
+    "canonical_name": "corn oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 7820,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chocolate-chunk",
+    "canonical_name": "chocolate chunk",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 7768,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato-juice",
+    "canonical_name": "tomato juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato",
+    "source_frequency": 7763,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:date",
+    "canonical_name": "date",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 7755,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-processed-with-alkali",
+    "canonical_name": "cocoa processed with alkali",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 7730,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-meat",
+    "canonical_name": "chicken meat",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "chicken",
+    "source_frequency": 7660,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rye-flour",
+    "canonical_name": "rye flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal flour",
+    "source_frequency": 7660,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bay-leaf",
+    "canonical_name": "bay leaf",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 7594,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sodium-caseinate",
+    "canonical_name": "sodium caseinate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "caseinate",
+    "source_frequency": 7513,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-wine",
+    "canonical_name": "white wine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "wine",
+    "source_frequency": 7492,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-broth",
+    "canonical_name": "chicken broth",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "chicken",
+    "source_frequency": 7405,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pecan-nut",
+    "canonical_name": "pecan nut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 7364,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:herbs-and-spices",
+    "canonical_name": "herbs and spices",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 7348,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:shallot",
+    "canonical_name": "shallot",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion-family vegetable",
+    "source_frequency": 7339,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pea",
+    "canonical_name": "pea",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 7307,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coffee",
+    "canonical_name": "coffee",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "",
+    "source_frequency": 7263,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:malted-wheat-flour",
+    "canonical_name": "malted wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 7242,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-bran",
+    "canonical_name": "wheat bran",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 7184,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pumpkin-seed",
+    "canonical_name": "pumpkin seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 7101,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rapeseed",
+    "canonical_name": "Rapeseed",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 6935,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wine-vinegar",
+    "canonical_name": "wine vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 6935,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sour-cream",
+    "canonical_name": "sour cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 6932,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sucrose",
+    "canonical_name": "sucrose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 6900,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ham",
+    "canonical_name": "ham",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "pork meat",
+    "source_frequency": 6898,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:courgette",
+    "canonical_name": "Courgette",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 6892,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grape",
+    "canonical_name": "grape",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 6870,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coriander-leaf",
+    "canonical_name": "coriander leaf",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "coriander",
+    "source_frequency": 6859,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apricot",
+    "canonical_name": "apricot",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "prunus species fruit",
+    "source_frequency": 6794,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange-juice",
+    "canonical_name": "orange juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 6788,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-milk",
+    "canonical_name": "coconut milk",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 6684,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cucumber",
+    "canonical_name": "cucumber",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 6673,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cottonseed",
+    "canonical_name": "cottonseed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 6670,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mushroom",
+    "canonical_name": "mushroom",
+    "aliases": [],
+    "category": "Fungi",
+    "subcategory": "",
+    "source_frequency": 6668,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-fat",
+    "canonical_name": "chicken fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "poultry fat",
+    "source_frequency": 6600,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:high-oleic-sunflower-oil",
+    "canonical_name": "high oleic sunflower oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "sunflower oil",
+    "source_frequency": 6595,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple-puree",
+    "canonical_name": "apple puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "apple",
+    "source_frequency": 6558,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:broccoli",
+    "canonical_name": "broccoli",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "brassica",
+    "source_frequency": 6356,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-grain-oat-flakes",
+    "canonical_name": "whole grain oat flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat flakes",
+    "source_frequency": 6286,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bacon",
+    "canonical_name": "bacon",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "pork meat",
+    "source_frequency": 6226,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hops",
+    "canonical_name": "hops",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 6223,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-juice-from-concentrate",
+    "canonical_name": "lemon juice from concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lemon juice",
+    "source_frequency": 6200,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soured-milk",
+    "canonical_name": "soured milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 6185,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:shrimp",
+    "canonical_name": "shrimp",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "crustacean",
+    "source_frequency": 6183,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beetroot",
+    "canonical_name": "beetroot",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 6177,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pistachio-nuts",
+    "canonical_name": "pistachio nuts",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 6082,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-chili-pepper",
+    "canonical_name": "red chili pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 6025,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sesame-oil",
+    "canonical_name": "sesame oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 6020,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange-zest",
+    "canonical_name": "orange zest",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "orange",
+    "source_frequency": 6018,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yogurt",
+    "canonical_name": "yogurt",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "dairy",
+    "source_frequency": 6012,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lime-juice",
+    "canonical_name": "lime juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 6002,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork-fat",
+    "canonical_name": "pork fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "animal fat",
+    "source_frequency": 5986,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:microbial-coagulating-enzyme",
+    "canonical_name": "microbial coagulating enzyme",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "coagulating enzyme",
+    "source_frequency": 5928,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-tapioca-starch",
+    "canonical_name": "modified tapioca starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "Modified starch",
+    "source_frequency": 5921,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peanut-oil",
+    "canonical_name": "peanut oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 5855,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pear",
+    "canonical_name": "pear",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 5785,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurized-semi-skimmed-milk",
+    "canonical_name": "pasteurized semi-skimmed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "semi-skimmed milk",
+    "source_frequency": 5771,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-protein",
+    "canonical_name": "wheat protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 5753,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oat-flour",
+    "canonical_name": "oat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal flour",
+    "source_frequency": 5731,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:safflower",
+    "canonical_name": "safflower",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 5728,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweet-potato",
+    "canonical_name": "sweet potato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 5706,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-rice",
+    "canonical_name": "brown rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "whole grain rice",
+    "source_frequency": 5660,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-bean",
+    "canonical_name": "green bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 5549,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spring-onion",
+    "canonical_name": "spring onion",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion",
+    "source_frequency": 5514,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-juice",
+    "canonical_name": "vegetable juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable",
+    "source_frequency": 5502,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-fat",
+    "canonical_name": "coconut fat",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 5452,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:quinoa",
+    "canonical_name": "quinoa",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 5433,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cardamom",
+    "canonical_name": "cardamom",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 5431,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fat-reduced-cocoa",
+    "canonical_name": "fat reduced cocoa",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 5373,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato-flakes",
+    "canonical_name": "potato flakes",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "potato",
+    "source_frequency": 5308,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-wine-vinegar",
+    "canonical_name": "white wine vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "wine vinegar",
+    "source_frequency": 5305,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:microbial-rennet",
+    "canonical_name": "microbial rennet",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetarian rennet",
+    "source_frequency": 5297,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sauce",
+    "canonical_name": "sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 5295,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-bell-pepper",
+    "canonical_name": "green bell pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "bell pepper",
+    "source_frequency": 5232,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chia-seed",
+    "canonical_name": "chia seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "chia",
+    "source_frequency": 5133,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fresh-egg",
+    "canonical_name": "fresh egg",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 5122,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:emmental",
+    "canonical_name": "emmental",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 5104,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-rice-flour",
+    "canonical_name": "brown rice flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "rice flour",
+    "source_frequency": 5096,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sulfite",
+    "canonical_name": "sulfite",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 5092,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:icing-sugar",
+    "canonical_name": "icing sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 5075,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:olive",
+    "canonical_name": "olive",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 5075,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cultivated-mushroom",
+    "canonical_name": "cultivated mushroom",
+    "aliases": [],
+    "category": "Fungi",
+    "subcategory": "mushroom",
+    "source_frequency": 5035,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tapioca-syrup",
+    "canonical_name": "tapioca syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 5013,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fennel",
+    "canonical_name": "fennel",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "stalk vegetable",
+    "source_frequency": 4921,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:smoke",
+    "canonical_name": "smoke",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 4885,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:powdered-egg-white",
+    "canonical_name": "powdered egg white",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg white",
+    "source_frequency": 4862,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-fiber",
+    "canonical_name": "wheat fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 4854,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pumpkin",
+    "canonical_name": "pumpkin",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 4830,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-chocolate",
+    "canonical_name": "white chocolate",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 4796,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dijon-mustard",
+    "canonical_name": "dijon mustard",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "mustard",
+    "source_frequency": 4791,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:passionfruit",
+    "canonical_name": "passionfruit",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 4785,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peanut-paste",
+    "canonical_name": "peanut paste",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "peanut",
+    "source_frequency": 4781,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dill",
+    "canonical_name": "dill",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 4758,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:streptococcus-thermophilus",
+    "canonical_name": "Streptococcus thermophilus",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "lactic ferments",
+    "source_frequency": 4756,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:blackberry",
+    "canonical_name": "blackberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 4671,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweet-whey-powder",
+    "canonical_name": "sweet whey powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "sweet whey",
+    "source_frequency": 4663,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:atlantic-salmon",
+    "canonical_name": "atlantic salmon",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "salmon",
+    "source_frequency": 4654,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hazelnut-paste",
+    "canonical_name": "hazelnut paste",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "hazelnut",
+    "source_frequency": 4602,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:autolyzed-yeast-extract",
+    "canonical_name": "autolyzed yeast extract",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast extract",
+    "source_frequency": 4520,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-breast",
+    "canonical_name": "chicken breast",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "chicken meat",
+    "source_frequency": 4519,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:caramelised-sugar",
+    "canonical_name": "caramelised sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 4485,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:strawberry-puree",
+    "canonical_name": "strawberry puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "purée",
+    "source_frequency": 4485,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:anchovy",
+    "canonical_name": "anchovy",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 4465,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-fiber",
+    "canonical_name": "vegetable fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "fiber",
+    "source_frequency": 4463,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oat-fibre",
+    "canonical_name": "oat fibre",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat",
+    "source_frequency": 4452,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrolysed-soy-protein",
+    "canonical_name": "hydrolysed soy protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "hydrolysed vegetable protein",
+    "source_frequency": 4442,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:safflower-oil",
+    "canonical_name": "safflower oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 4440,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey-protein-isolate",
+    "canonical_name": "whey protein isolate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whey protein",
+    "source_frequency": 4433,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk-protein-concentrate",
+    "canonical_name": "milk protein concentrate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk proteins",
+    "source_frequency": 4426,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lime",
+    "canonical_name": "lime",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit",
+    "source_frequency": 4405,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rye",
+    "canonical_name": "rye",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 4363,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactobacillus-bulgaricus",
+    "canonical_name": "Lactobacillus bulgaricus",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "Lactobacillus",
+    "source_frequency": 4343,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:curry",
+    "canonical_name": "curry",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 4321,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasta",
+    "canonical_name": "pasta",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "dough",
+    "source_frequency": 4234,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:romano-cheese",
+    "canonical_name": "romano cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 4232,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tamarind",
+    "canonical_name": "tamarind",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 4220,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-maltodextrin",
+    "canonical_name": "corn maltodextrin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "maltodextrin",
+    "source_frequency": 4215,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:taurine",
+    "canonical_name": "taurine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 4214,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mango-puree",
+    "canonical_name": "mango puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "mango",
+    "source_frequency": 4211,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:broth",
+    "canonical_name": "broth",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 4198,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-peel",
+    "canonical_name": "lemon peel",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lemon",
+    "source_frequency": 4185,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dough",
+    "canonical_name": "dough",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 4178,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-rice-syrup",
+    "canonical_name": "brown rice syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "rice syrup",
+    "source_frequency": 4172,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactase",
+    "canonical_name": "Lactase",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "enzyme",
+    "source_frequency": 4169,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-beetroot",
+    "canonical_name": "red beetroot",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "beetroot",
+    "source_frequency": 4168,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:malt-extract",
+    "canonical_name": "malt extract",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "malt",
+    "source_frequency": 4148,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-tea",
+    "canonical_name": "green tea",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "tea",
+    "source_frequency": 4120,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-syrup",
+    "canonical_name": "rice syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 4111,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicory-fibre",
+    "canonical_name": "chicory fibre",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chicory",
+    "source_frequency": 4100,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yellow-corn-flour",
+    "canonical_name": "yellow corn flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn flour",
+    "source_frequency": 4089,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-pigment",
+    "canonical_name": "vegetable pigment",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 4081,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spirulina",
+    "canonical_name": "spirulina",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "algae",
+    "source_frequency": 4067,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:radish",
+    "canonical_name": "radish",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 4040,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ricotta",
+    "canonical_name": "ricotta",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 4039,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:salt-from-guerande",
+    "canonical_name": "Salt from Guérande",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "sea salt",
+    "source_frequency": 4008,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cabbage",
+    "canonical_name": "cabbage",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "brassica",
+    "source_frequency": 3967,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurized-skimmed-milk",
+    "canonical_name": "pasteurized skimmed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "skimmed milk",
+    "source_frequency": 3962,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemongrass",
+    "canonical_name": "lemongrass",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 3953,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-wheat",
+    "canonical_name": "whole wheat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 3910,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:baker-s-yeast",
+    "canonical_name": "baker's yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 3889,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:caramelised-sugar-syrup",
+    "canonical_name": "caramelised sugar syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "caramel syrup",
+    "source_frequency": 3876,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cauliflower",
+    "canonical_name": "cauliflower",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "brassica",
+    "source_frequency": 3874,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:emulsifying-salts",
+    "canonical_name": "Emulsifying salts",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 3797,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cream-cheese",
+    "canonical_name": "cream cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 3784,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fiber",
+    "canonical_name": "fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 3782,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:malt",
+    "canonical_name": "malt",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 3744,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:roselle-flower",
+    "canonical_name": "roselle flower",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 3734,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tuna",
+    "canonical_name": "tuna",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 3730,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:semolina",
+    "canonical_name": "semolina",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 3701,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-oil",
+    "canonical_name": "lemon oil",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus oil",
+    "source_frequency": 3671,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweetened-condensed-milk",
+    "canonical_name": "sweetened condensed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 3654,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cane-sugar-syrup",
+    "canonical_name": "cane sugar syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 3650,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactobacillus-acidophilus",
+    "canonical_name": "Lactobacillus acidophilus",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "Lactobacillus",
+    "source_frequency": 3634,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato-flour",
+    "canonical_name": "potato flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "flour",
+    "source_frequency": 3628,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mint",
+    "canonical_name": "mint",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 3616,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactose-and-milk-proteins",
+    "canonical_name": "lactose and milk proteins",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "lactose",
+    "source_frequency": 3608,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carrot-concentrate",
+    "canonical_name": "carrot concentrate",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "carrot",
+    "source_frequency": 3597,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mayonnaise",
+    "canonical_name": "mayonnaise",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 3596,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-vinegar",
+    "canonical_name": "rice vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 3595,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:durum-wheat-flour",
+    "canonical_name": "durum wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 3591,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-broth",
+    "canonical_name": "vegetable broth",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "broth",
+    "source_frequency": 3577,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chipotle",
+    "canonical_name": "chipotle",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "jalapeno pepper",
+    "source_frequency": 3565,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-bean",
+    "canonical_name": "black bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 3564,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-distilled-vinegar",
+    "canonical_name": "white distilled vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "distilled vinegar",
+    "source_frequency": 3551,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple-juice-from-concentrate",
+    "canonical_name": "apple juice from concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "concentrated apple juice",
+    "source_frequency": 3540,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sheeps-milk",
+    "canonical_name": "sheeps milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 3524,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sage",
+    "canonical_name": "sage",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 3521,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soft-wheat-flour",
+    "canonical_name": "soft wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 3494,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:citrus-fibre",
+    "canonical_name": "citrus fibre",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 3492,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-tea",
+    "canonical_name": "black tea",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "tea",
+    "source_frequency": 3491,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cereals-containing-gluten",
+    "canonical_name": "cereals containing gluten",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 3460,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vanilla-pod",
+    "canonical_name": "vanilla pod",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vanilla",
+    "source_frequency": 3441,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-apple-juice",
+    "canonical_name": "concentrated apple juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "apple juice",
+    "source_frequency": 3428,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:agave-syrup",
+    "canonical_name": "agave syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 3371,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fenugreek",
+    "canonical_name": "fenugreek",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 3349,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:salmon",
+    "canonical_name": "salmon",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 3344,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chickpea-flour",
+    "canonical_name": "chickpea flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "chickpea",
+    "source_frequency": 3343,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:double-concentrated-tomato",
+    "canonical_name": "double concentrated tomato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato concentrate",
+    "source_frequency": 3342,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:maple-syrup",
+    "canonical_name": "maple syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 3328,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:partially-hydrogenated-soybean-oil",
+    "canonical_name": "partially hydrogenated soybean oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "hydrogenated soy oil",
+    "source_frequency": 3314,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-wine-vinegar",
+    "canonical_name": "red wine vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 3312,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:marjoram",
+    "canonical_name": "marjoram",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 3309,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:extract",
+    "canonical_name": "extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 3285,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-onion",
+    "canonical_name": "red onion",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion",
+    "source_frequency": 3250,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garden-peas",
+    "canonical_name": "garden peas",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "green peas",
+    "source_frequency": 3249,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-chili-pepper",
+    "canonical_name": "green chili pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 3223,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:millet",
+    "canonical_name": "millet",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 3220,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:psyllium",
+    "canonical_name": "Psyllium",
+    "aliases": [
+      "isabgol"
+    ],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 3216,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vital-wheat-gluten",
+    "canonical_name": "vital wheat gluten",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "wheat gluten",
+    "source_frequency": 3210,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-sugar",
+    "canonical_name": "coconut sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "palm sugar",
+    "source_frequency": 3201,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:poppyseed",
+    "canonical_name": "poppyseed",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "poppy",
+    "source_frequency": 3192,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-grape-juice",
+    "canonical_name": "concentrated grape juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "concentrated juice",
+    "source_frequency": 3172,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:aubergine",
+    "canonical_name": "aubergine",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 3169,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fruit-juice-from-concentrate",
+    "canonical_name": "fruit juice from concentrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "fruit juice concentrate",
+    "source_frequency": 3160,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pineapple-juice",
+    "canonical_name": "pineapple juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 3155,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:kale",
+    "canonical_name": "kale",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "cabbage",
+    "source_frequency": 3140,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:juice",
+    "canonical_name": "juice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 3124,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:egg-powder",
+    "canonical_name": "egg powder",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 3108,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beef-broth",
+    "canonical_name": "beef broth",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "beef",
+    "source_frequency": 3101,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sourdough",
+    "canonical_name": "sourdough",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "dough",
+    "source_frequency": 3076,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-olive",
+    "canonical_name": "black olive",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "olive",
+    "source_frequency": 3055,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-palm-kernel-oil",
+    "canonical_name": "hydrogenated palm kernel oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm kernel oil",
+    "source_frequency": 3050,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wholemeal-oat",
+    "canonical_name": "wholemeal oat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat",
+    "source_frequency": 3043,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:raspberry-puree",
+    "canonical_name": "raspberry puree",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 3029,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turkey",
+    "canonical_name": "turkey",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "poultry",
+    "source_frequency": 3019,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wholemeal-oat-flour",
+    "canonical_name": "wholemeal oat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat flour",
+    "source_frequency": 3013,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato-sauce",
+    "canonical_name": "tomato sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 3005,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:nutmeg-nut",
+    "canonical_name": "nutmeg nut",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "nutmeg",
+    "source_frequency": 3002,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-beans",
+    "canonical_name": "white beans",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 2986,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:torula-yeast",
+    "canonical_name": "torula yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 2960,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lime-juice-concentrate",
+    "canonical_name": "lime juice concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lime juice",
+    "source_frequency": 2944,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:parsnip",
+    "canonical_name": "parsnip",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 2941,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:celery-seed",
+    "canonical_name": "celery seed",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "celery",
+    "source_frequency": 2938,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey-product",
+    "canonical_name": "whey product",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whey",
+    "source_frequency": 2938,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-malt",
+    "canonical_name": "wheat malt",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "malt",
+    "source_frequency": 2936,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-fillet",
+    "canonical_name": "chicken fillet",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "chicken meat",
+    "source_frequency": 2921,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dehydrated-glucose-syrup",
+    "canonical_name": "dehydrated glucose syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose syrup",
+    "source_frequency": 2919,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-solids",
+    "canonical_name": "cocoa solids",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 2906,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrolysed-corn-protein",
+    "canonical_name": "hydrolysed corn protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "corn protein",
+    "source_frequency": 2893,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-semolina",
+    "canonical_name": "wheat semolina",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "semolina",
+    "source_frequency": 2865,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sardine",
+    "canonical_name": "sardine",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 2861,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beech-wood-smoke",
+    "canonical_name": "beech wood smoke",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "smoke",
+    "source_frequency": 2843,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:crust",
+    "canonical_name": "crust",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2835,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-vegetable-oil",
+    "canonical_name": "hydrogenated vegetable oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "hydrogenated oil",
+    "source_frequency": 2827,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mace",
+    "canonical_name": "mace",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 2818,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wine",
+    "canonical_name": "wine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "alcohol",
+    "source_frequency": 2792,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-pepper",
+    "canonical_name": "green pepper",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "pepper",
+    "source_frequency": 2788,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:popcorn",
+    "canonical_name": "popcorn",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn",
+    "source_frequency": 2781,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turkey-meat",
+    "canonical_name": "turkey meat",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "turkey",
+    "source_frequency": 2760,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:natural-vanilla-extract",
+    "canonical_name": "natural vanilla extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "natural extract",
+    "source_frequency": 2751,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fruit-juice",
+    "canonical_name": "fruit juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 2748,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grape-sugar",
+    "canonical_name": "grape sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose",
+    "source_frequency": 2735,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:allspice",
+    "canonical_name": "allspice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 2734,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:capers",
+    "canonical_name": "capers",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 2716,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-vinegar",
+    "canonical_name": "white vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 2709,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bifidus",
+    "canonical_name": "bifidus",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "lactic ferments",
+    "source_frequency": 2700,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tapioca-flour",
+    "canonical_name": "tapioca flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "flour",
+    "source_frequency": 2676,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beef-fat",
+    "canonical_name": "beef fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "animal fat",
+    "source_frequency": 2658,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carrot-juice",
+    "canonical_name": "carrot juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable juice",
+    "source_frequency": 2657,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:instant-coffee",
+    "canonical_name": "instant coffee",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "coffee",
+    "source_frequency": 2649,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:shiitake",
+    "canonical_name": "shiitake",
+    "aliases": [],
+    "category": "Fungi",
+    "subcategory": "mushroom",
+    "source_frequency": 2647,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange-juice-from-concentrate",
+    "canonical_name": "orange juice from concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "orange juice",
+    "source_frequency": 2642,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:inositol",
+    "canonical_name": "inositol",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2641,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ginger-powder",
+    "canonical_name": "ginger powder",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "ginger",
+    "source_frequency": 2640,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turkey-breast",
+    "canonical_name": "turkey breast",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "turkey meat",
+    "source_frequency": 2633,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:gum-base",
+    "canonical_name": "Gum base",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2629,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-kernel-fat",
+    "canonical_name": "palm kernel fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm kernel oil and fat",
+    "source_frequency": 2602,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:noodle",
+    "canonical_name": "noodle",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "dough",
+    "source_frequency": 2587,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:buckwheat-flour",
+    "canonical_name": "buckwheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "buckwheat",
+    "source_frequency": 2584,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soft-white-cheese",
+    "canonical_name": "soft white cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 2582,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fig",
+    "canonical_name": "fig",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 2581,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sultana",
+    "canonical_name": "sultana",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "white seedless grape",
+    "source_frequency": 2581,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:unsalted-butter",
+    "canonical_name": "unsalted butter",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "butter",
+    "source_frequency": 2563,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:balsamic-vinegar",
+    "canonical_name": "balsamic vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 2554,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lentils",
+    "canonical_name": "lentils",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 2545,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:papaya",
+    "canonical_name": "papaya",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 2544,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peanut-flour",
+    "canonical_name": "peanut flour",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "peanut",
+    "source_frequency": 2534,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrolysed-vegetable-protein",
+    "canonical_name": "hydrolysed vegetable protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 2522,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-cream",
+    "canonical_name": "coconut cream",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 2513,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork-breast",
+    "canonical_name": "pork breast",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "breast",
+    "source_frequency": 2499,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cep",
+    "canonical_name": "cep",
+    "aliases": [],
+    "category": "Fungi",
+    "subcategory": "boletus",
+    "source_frequency": 2487,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tahini",
+    "canonical_name": "tahini",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "sesame paste",
+    "source_frequency": 2485,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:horseradish",
+    "canonical_name": "horseradish",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 2482,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-water",
+    "canonical_name": "coconut water",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 2481,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spirulina-concentrate",
+    "canonical_name": "spirulina concentrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "concentrate",
+    "source_frequency": 2476,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:buckwheat",
+    "canonical_name": "buckwheat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 2474,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pickled-gherkin",
+    "canonical_name": "pickled gherkin",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "baby cucumber",
+    "source_frequency": 2454,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:soluble-corn-fiber",
+    "canonical_name": "soluble corn fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "corn fiber",
+    "source_frequency": 2448,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:egg-yolk-powder",
+    "canonical_name": "egg yolk powder",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg yolk",
+    "source_frequency": 2447,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chocolate-powder",
+    "canonical_name": "chocolate powder",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 2406,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pea-fiber",
+    "canonical_name": "pea fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 2401,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-olive",
+    "canonical_name": "green olive",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "olive",
+    "source_frequency": 2399,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:paprika-powder",
+    "canonical_name": "paprika powder",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "paprika",
+    "source_frequency": 2399,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:animal-based-rennet",
+    "canonical_name": "animal-based rennet",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rennet",
+    "source_frequency": 2375,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pine-nuts",
+    "canonical_name": "pine nuts",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 2355,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:aniseed",
+    "canonical_name": "aniseed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 2345,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:caraway",
+    "canonical_name": "caraway",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 2332,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:celery-powder",
+    "canonical_name": "celery powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "celery",
+    "source_frequency": 2332,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-pineapple-juice",
+    "canonical_name": "concentrated pineapple juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "pineapple juice",
+    "source_frequency": 2319,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:natural-mineral-water",
+    "canonical_name": "natural mineral water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "mineral water",
+    "source_frequency": 2316,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork-liver",
+    "canonical_name": "pork liver",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "pork meat",
+    "source_frequency": 2316,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-germ",
+    "canonical_name": "wheat germ",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 2304,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tomato-pulp",
+    "canonical_name": "tomato pulp",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chopped tomato",
+    "source_frequency": 2291,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-bean",
+    "canonical_name": "red bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 2286,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barn-eggs",
+    "canonical_name": "barn eggs",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 2278,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:skipjack-tuna",
+    "canonical_name": "skipjack tuna",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "tuna",
+    "source_frequency": 2277,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oligofructose",
+    "canonical_name": "oligofructose",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2257,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:roasted-almonds",
+    "canonical_name": "roasted almonds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "almond",
+    "source_frequency": 2255,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk-protein-isolate",
+    "canonical_name": "milk protein isolate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk proteins",
+    "source_frequency": 2252,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:worcestershire-sauce",
+    "canonical_name": "worcestershire sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 2247,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spring-water",
+    "canonical_name": "spring water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "water",
+    "source_frequency": 2233,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:crustacean",
+    "canonical_name": "crustacean",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "shellfish",
+    "source_frequency": 2210,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:smoked-paprika",
+    "canonical_name": "smoked paprika",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "paprika",
+    "source_frequency": 2209,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurized-milk-and-cream",
+    "canonical_name": "pasteurized milk and cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 2207,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brewer-s-yeast",
+    "canonical_name": "brewer's yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 2206,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:plum",
+    "canonical_name": "plum",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "prunus species fruit",
+    "source_frequency": 2202,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-flakes",
+    "canonical_name": "corn flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn",
+    "source_frequency": 2199,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lovage",
+    "canonical_name": "lovage",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 2181,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurised-whole-milk",
+    "canonical_name": "pasteurised whole milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whole milk",
+    "source_frequency": 2177,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:superior-quality-durum-wheat-semolina",
+    "canonical_name": "superior quality durum wheat semolina",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "durum wheat semolina",
+    "source_frequency": 2176,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coagulant",
+    "canonical_name": "coagulant",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2173,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rum",
+    "canonical_name": "rum",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "alcohol",
+    "source_frequency": 2167,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-sugar-syrup",
+    "canonical_name": "brown sugar syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar syrup",
+    "source_frequency": 2164,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:low-moisture-part-skim-mozzarella",
+    "canonical_name": "low moisture part skim mozzarella",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "low moisture mozzarella",
+    "source_frequency": 2163,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spelt-flour",
+    "canonical_name": "spelt flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal flour",
+    "source_frequency": 2138,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carob-bean",
+    "canonical_name": "carob bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 2136,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:monterey-jack",
+    "canonical_name": "Monterey Jack",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 2127,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spelt",
+    "canonical_name": "spelt",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 2123,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:salted-butter",
+    "canonical_name": "salted butter",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "butter",
+    "source_frequency": 2120,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yellow-bell-pepper",
+    "canonical_name": "yellow bell pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "bell pepper",
+    "source_frequency": 2118,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tofu",
+    "canonical_name": "tofu",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 2095,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-flakes",
+    "canonical_name": "wheat flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 2087,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-cabbage",
+    "canonical_name": "white cabbage",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "cabbage",
+    "source_frequency": 2047,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:alaska-pollock",
+    "canonical_name": "alaska pollock",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 2041,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:avocado",
+    "canonical_name": "avocado",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 2041,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-orange-juice",
+    "canonical_name": "concentrated orange juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "orange juice",
+    "source_frequency": 2024,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:elderberry",
+    "canonical_name": "elderberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 2023,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:calcium-caseinate",
+    "canonical_name": "calcium caseinate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "caseinate",
+    "source_frequency": 2020,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-wine",
+    "canonical_name": "red wine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "wine",
+    "source_frequency": 2014,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beans",
+    "canonical_name": "beans",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 2008,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lupin-bean",
+    "canonical_name": "lupin bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 2002,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-bean",
+    "canonical_name": "cocoa bean",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa",
+    "source_frequency": 1980,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coriander-seed",
+    "canonical_name": "coriander seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "coriander",
+    "source_frequency": 1980,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:blue-cheese",
+    "canonical_name": "blue cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1977,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bourbon-vanilla-extract",
+    "canonical_name": "bourbon vanilla extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "Bourbon vanilla",
+    "source_frequency": 1974,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-tea-extract",
+    "canonical_name": "green tea extract",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "green tea",
+    "source_frequency": 1969,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lactobacillus-casei",
+    "canonical_name": "lactobacillus casei",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "Lactobacillus",
+    "source_frequency": 1968,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brown-flax-seeds",
+    "canonical_name": "brown flax seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "flax seed",
+    "source_frequency": 1960,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:macadamia-nut",
+    "canonical_name": "macadamia nut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 1954,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:oat-bran",
+    "canonical_name": "oat bran",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "oat",
+    "source_frequency": 1954,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pimiento",
+    "canonical_name": "pimiento",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 1953,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:seaweed",
+    "canonical_name": "seaweed",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "algae",
+    "source_frequency": 1953,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:biscuit",
+    "canonical_name": "biscuit",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1947,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:semi-sweet-chocolate",
+    "canonical_name": "semi-sweet chocolate",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "chocolate",
+    "source_frequency": 1941,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:puffed-rice",
+    "canonical_name": "puffed rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1921,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grape-juice",
+    "canonical_name": "grape juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 1914,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mixed-spices",
+    "canonical_name": "mixed spices",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 1900,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:crushed-tomato",
+    "canonical_name": "crushed tomato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chopped tomato",
+    "source_frequency": 1898,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:deactivated-yeast",
+    "canonical_name": "deactivated yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 1897,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hop-extract",
+    "canonical_name": "hop extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "hops",
+    "source_frequency": 1894,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "fr:boyau-naturel-de-porc",
+    "canonical_name": "Boyau Naturel De Porc",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "pork collagen",
+    "source_frequency": 1890,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cherry-tomato",
+    "canonical_name": "cherry tomato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato",
+    "source_frequency": 1888,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:herbes-de-provence",
+    "canonical_name": "herbes de Provence",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 1887,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:brazil-nut",
+    "canonical_name": "brazil nut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 1881,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dried-apple",
+    "canonical_name": "dried apple",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "apple",
+    "source_frequency": 1879,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:durum-wheat",
+    "canonical_name": "durum wheat",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat",
+    "source_frequency": 1852,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:duck-fat",
+    "canonical_name": "duck fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "poultry fat",
+    "source_frequency": 1846,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:acerola",
+    "canonical_name": "acerola",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 1840,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:romaine-lettuce",
+    "canonical_name": "romaine lettuce",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "lettuce",
+    "source_frequency": 1834,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-cabbage",
+    "canonical_name": "red cabbage",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "cabbage",
+    "source_frequency": 1823,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mixed-condiments",
+    "canonical_name": "mixed condiments",
+    "aliases": [],
+    "category": "Condiments & sauces",
+    "subcategory": "condiment",
+    "source_frequency": 1821,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:evaporated-cane-juice",
+    "canonical_name": "evaporated cane juice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sugarcane juice",
+    "source_frequency": 1820,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:single-cream",
+    "canonical_name": "single cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 1818,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-sourdough",
+    "canonical_name": "wheat sourdough",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "sourdough",
+    "source_frequency": 1814,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fructose-syrup",
+    "canonical_name": "fructose syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "fructose",
+    "source_frequency": 1809,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:desiccated-coconut",
+    "canonical_name": "desiccated coconut",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 1800,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wholemeal-rye-flour",
+    "canonical_name": "wholemeal rye flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "rye flour",
+    "source_frequency": 1776,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-extract",
+    "canonical_name": "lemon extract",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit extract",
+    "source_frequency": 1775,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mollusc",
+    "canonical_name": "mollusc",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "shellfish",
+    "source_frequency": 1771,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:glucose-fructose",
+    "canonical_name": "glucose-fructose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "fructose",
+    "source_frequency": 1767,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pinto-beans",
+    "canonical_name": "pinto beans",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pulse",
+    "source_frequency": 1747,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chia",
+    "canonical_name": "chia",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 1740,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beetroot-juice",
+    "canonical_name": "beetroot juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "beetroot",
+    "source_frequency": 1735,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:star-anise",
+    "canonical_name": "star anise",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 1731,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:free-range-eggs",
+    "canonical_name": "free range eggs",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 1729,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dark-chocolate-chunks",
+    "canonical_name": "dark chocolate chunks",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "dark chocolate",
+    "source_frequency": 1726,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:long-grain-rice",
+    "canonical_name": "long grain rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1723,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-bran-oil",
+    "canonical_name": "Rice bran oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 1723,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cod",
+    "canonical_name": "cod",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "fish",
+    "source_frequency": 1722,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurised-goat-milk",
+    "canonical_name": "pasteurised goat milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "goat milk",
+    "source_frequency": 1719,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lard",
+    "canonical_name": "lard",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "pork fat",
+    "source_frequency": 1718,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sour-cherry",
+    "canonical_name": "sour cherry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "cherry",
+    "source_frequency": 1718,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whey-permeate",
+    "canonical_name": "whey permeate",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whey",
+    "source_frequency": 1718,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tamari",
+    "canonical_name": "tamari",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "soy sauce",
+    "source_frequency": 1717,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:liquid-sugar",
+    "canonical_name": "liquid sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 1715,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vanilla-powder",
+    "canonical_name": "vanilla powder",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vanilla",
+    "source_frequency": 1714,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-peas",
+    "canonical_name": "green peas",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "pea",
+    "source_frequency": 1708,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fennel-seed",
+    "canonical_name": "fennel seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 1706,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:herb-extract",
+    "canonical_name": "herb extract",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 1704,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:celeriac",
+    "canonical_name": "celeriac",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 1703,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cooked-rice",
+    "canonical_name": "cooked rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1703,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-soy-oil",
+    "canonical_name": "hydrogenated soy oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "hydrogenated vegetable oil",
+    "source_frequency": 1694,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cumin-seeds",
+    "canonical_name": "cumin seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "cumin",
+    "source_frequency": 1692,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-zest",
+    "canonical_name": "lemon zest",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lemon",
+    "source_frequency": 1687,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bulgur",
+    "canonical_name": "bulgur",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "durum wheat",
+    "source_frequency": 1684,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garlic-powder",
+    "canonical_name": "garlic powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "garlic",
+    "source_frequency": 1684,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:onion-powder",
+    "canonical_name": "onion powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion",
+    "source_frequency": 1681,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mandarin",
+    "canonical_name": "mandarin",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit",
+    "source_frequency": 1671,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-lentils",
+    "canonical_name": "red lentils",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "lentils",
+    "source_frequency": 1671,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:safflower-concentrate",
+    "canonical_name": "safflower concentrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "concentrate",
+    "source_frequency": 1665,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apricot-puree",
+    "canonical_name": "apricot puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "apricot",
+    "source_frequency": 1664,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-dextrose",
+    "canonical_name": "wheat dextrose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "dextrose",
+    "source_frequency": 1664,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pea-starch",
+    "canonical_name": "pea starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 1659,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:duck-foie-gras",
+    "canonical_name": "duck foie gras",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "duck liver",
+    "source_frequency": 1653,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:syrup",
+    "canonical_name": "syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "added sugar",
+    "source_frequency": 1653,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cherry-juice",
+    "canonical_name": "cherry juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 1642,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peppermint-oil",
+    "canonical_name": "peppermint oil",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "peppermint",
+    "source_frequency": 1640,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:basmati-rice",
+    "canonical_name": "basmati rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "long grain rice",
+    "source_frequency": 1638,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweetcorn",
+    "canonical_name": "sweetcorn",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "corn",
+    "source_frequency": 1632,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:virgin-olive-oil",
+    "canonical_name": "virgin olive oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "olive oil",
+    "source_frequency": 1630,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sesame-paste",
+    "canonical_name": "sesame paste",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "sesame",
+    "source_frequency": 1624,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pear-puree",
+    "canonical_name": "pear puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "pear",
+    "source_frequency": 1622,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-palm-oil",
+    "canonical_name": "modified palm oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm oil",
+    "source_frequency": 1620,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tea",
+    "canonical_name": "tea",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "plant",
+    "source_frequency": 1620,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rose-hip",
+    "canonical_name": "rose hip",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 1615,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peppermint",
+    "canonical_name": "peppermint",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "mint",
+    "source_frequency": 1612,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicory-root",
+    "canonical_name": "chicory root",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chicory",
+    "source_frequency": 1609,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:corn-dextrose",
+    "canonical_name": "corn dextrose",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "dextrose",
+    "source_frequency": 1606,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yogurt-powder",
+    "canonical_name": "yogurt powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "yogurt",
+    "source_frequency": 1606,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:redcurrant",
+    "canonical_name": "redcurrant",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 1592,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turmeric-powder",
+    "canonical_name": "turmeric powder",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "turmeric",
+    "source_frequency": 1592,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:maturing-ferments",
+    "canonical_name": "maturing ferments",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "ferment",
+    "source_frequency": 1585,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:puree",
+    "canonical_name": "purée",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1584,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:modified-wheat-starch",
+    "canonical_name": "modified wheat starch",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "Modified starch",
+    "source_frequency": 1583,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-margarine",
+    "canonical_name": "vegetable margarine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "Margarine",
+    "source_frequency": 1582,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rocket",
+    "canonical_name": "rocket",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "salad",
+    "source_frequency": 1577,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:raspberry-juice",
+    "canonical_name": "raspberry juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berry juice",
+    "source_frequency": 1573,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:habanero-chili",
+    "canonical_name": "habanero chili",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 1570,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:skimmed-yogurt",
+    "canonical_name": "skimmed yogurt",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "yogurt",
+    "source_frequency": 1564,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:himalayan-pink-salt",
+    "canonical_name": "Himalayan pink salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "Himalayan salt",
+    "source_frequency": 1551,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cheese-powder",
+    "canonical_name": "cheese powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1549,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cucumber-or-gherkin",
+    "canonical_name": "cucumber or gherkin",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "cucumber",
+    "source_frequency": 1542,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bread",
+    "canonical_name": "bread",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1540,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lemon-powder",
+    "canonical_name": "lemon powder",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "lemon juice",
+    "source_frequency": 1539,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-grape-must",
+    "canonical_name": "concentrated grape must",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "grape must",
+    "source_frequency": 1533,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:golden-syrup",
+    "canonical_name": "golden syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "invert sugar syrup",
+    "source_frequency": 1530,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:vegetable-blend",
+    "canonical_name": "vegetable blend",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable",
+    "source_frequency": 1530,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley-flakes",
+    "canonical_name": "barley flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "barley",
+    "source_frequency": 1525,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley-flour",
+    "canonical_name": "barley flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "barley",
+    "source_frequency": 1521,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pear-juice-concentrate",
+    "canonical_name": "pear juice concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice concentrate",
+    "source_frequency": 1513,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-flour-type-0",
+    "canonical_name": "wheat flour type 0",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 1512,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-wheat-flour",
+    "canonical_name": "refined wheat flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 1511,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:onion-extract",
+    "canonical_name": "Onion Extract",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "onion",
+    "source_frequency": 1509,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:prune",
+    "canonical_name": "prune",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "plum",
+    "source_frequency": 1505,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:liquorice",
+    "canonical_name": "liquorice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 1503,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mascarpone",
+    "canonical_name": "mascarpone",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1503,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:colour-retention-agent",
+    "canonical_name": "colour retention agent",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1494,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicken-egg",
+    "canonical_name": "chicken egg",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg",
+    "source_frequency": 1491,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:arabica-coffee",
+    "canonical_name": "arabica coffee",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "coffee",
+    "source_frequency": 1489,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bamboo-fibre",
+    "canonical_name": "bamboo fibre",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 1489,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange-essential-oil",
+    "canonical_name": "orange essential oil",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "essential oil",
+    "source_frequency": 1481,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:textured-soy-protein",
+    "canonical_name": "textured soy protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "soy protein",
+    "source_frequency": 1480,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lettuce",
+    "canonical_name": "lettuce",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "leaf vegetable",
+    "source_frequency": 1474,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cooked-chickpeas",
+    "canonical_name": "cooked chickpeas",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "chickpea",
+    "source_frequency": 1473,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:avocado-oil",
+    "canonical_name": "avocado oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 1470,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sugar-coating",
+    "canonical_name": "sugar coating",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "coating",
+    "source_frequency": 1468,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fromage-blanc",
+    "canonical_name": "fromage blanc",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1457,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:goat-milk",
+    "canonical_name": "goat milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "milk",
+    "source_frequency": 1456,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grape-must",
+    "canonical_name": "grape must",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "must",
+    "source_frequency": 1451,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carrot-extract",
+    "canonical_name": "carrot extract",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "carrot",
+    "source_frequency": 1447,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-powder-processed-with-alkali",
+    "canonical_name": "cocoa powder processed with alkali",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa powder",
+    "source_frequency": 1445,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beet-sugar",
+    "canonical_name": "beet sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 1442,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple-vinegar",
+    "canonical_name": "apple vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 1441,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fruit-juice-concentrate",
+    "canonical_name": "fruit juice concentrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1439,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rock-salt",
+    "canonical_name": "rock salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "salt",
+    "source_frequency": 1439,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wafer",
+    "canonical_name": "wafer",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1437,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:butternut-squash",
+    "canonical_name": "butternut squash",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "fruit vegetable",
+    "source_frequency": 1432,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-olein",
+    "canonical_name": "palm olein",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm oil",
+    "source_frequency": 1426,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chicory",
+    "canonical_name": "chicory",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "shoot vegetable",
+    "source_frequency": 1421,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cooked-pasta",
+    "canonical_name": "cooked pasta",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "pasta",
+    "source_frequency": 1407,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:peach-puree",
+    "canonical_name": "peach puree",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "peach",
+    "source_frequency": 1407,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:powdered-almonds",
+    "canonical_name": "powdered almonds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "almond",
+    "source_frequency": 1406,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:concentrated-carrot-juice",
+    "canonical_name": "concentrated carrot juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "carrot juice",
+    "source_frequency": 1405,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:broad-bean",
+    "canonical_name": "broad bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 1403,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:red-quinoa",
+    "canonical_name": "red quinoa",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "quinoa",
+    "source_frequency": 1402,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:armagnac",
+    "canonical_name": "armagnac",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "alcohol",
+    "source_frequency": 1399,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beef-extract",
+    "canonical_name": "beef extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "beef",
+    "source_frequency": 1390,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:turnip",
+    "canonical_name": "turnip",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 1383,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hot-chili-peppers",
+    "canonical_name": "hot chili peppers",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 1382,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:watermelon",
+    "canonical_name": "watermelon",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "melon",
+    "source_frequency": 1381,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-rice",
+    "canonical_name": "white rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1380,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:broad-bean-flour",
+    "canonical_name": "broad bean flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "broad bean",
+    "source_frequency": 1379,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:artichoke",
+    "canonical_name": "artichoke",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "shoot vegetable",
+    "source_frequency": 1374,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chokeberry",
+    "canonical_name": "chokeberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 1374,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grana-padano",
+    "canonical_name": "Grana Padano",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cow cheese",
+    "source_frequency": 1373,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:durum-wheat-semolina-pasta",
+    "canonical_name": "durum wheat semolina pasta",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "pasta",
+    "source_frequency": 1369,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:edam",
+    "canonical_name": "edam",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1369,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:light-cream",
+    "canonical_name": "light cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 1359,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wheat-glucose-syrup",
+    "canonical_name": "wheat glucose syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "glucose syrup",
+    "source_frequency": 1359,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cane-sugar-molasses",
+    "canonical_name": "cane sugar molasses",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "molasses",
+    "source_frequency": 1357,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tarragon",
+    "canonical_name": "tarragon",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 1356,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sundried-tomatoes",
+    "canonical_name": "sundried tomatoes",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "dried tomatoes",
+    "source_frequency": 1355,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-bran",
+    "canonical_name": "rice bran",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1345,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "bg:пшенично-брашно-тип-450",
+    "canonical_name": "Пшенично Брашно Тип 450",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flour",
+    "source_frequency": 1344,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:strawberry-juice-concentrate",
+    "canonical_name": "strawberry juice concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "concentrate",
+    "source_frequency": 1340,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:goat-cheese",
+    "canonical_name": "goat cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1338,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-protein",
+    "canonical_name": "rice protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 1333,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grain-vinegar",
+    "canonical_name": "grain vinegar",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vinegar",
+    "source_frequency": 1322,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:liquid-whole-egg",
+    "canonical_name": "liquid whole egg",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "whole egg",
+    "source_frequency": 1322,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "fr:couenne-de-porc",
+    "canonical_name": "Couenne De Porc",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "pork meat",
+    "source_frequency": 1322,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:elderberry-juice-concentrate",
+    "canonical_name": "elderberry juice concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "concentrate",
+    "source_frequency": 1303,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pea-protein-isolate",
+    "canonical_name": "pea protein isolate",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "pea protein",
+    "source_frequency": 1300,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:provolone",
+    "canonical_name": "provolone",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1294,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pepperoni",
+    "canonical_name": "pepperoni",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "salami",
+    "source_frequency": 1288,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-palm-oil",
+    "canonical_name": "hydrogenated palm oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "hydrogenated vegetable oil",
+    "source_frequency": 1281,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pasteurised-egg-yolk",
+    "canonical_name": "pasteurised egg yolk",
+    "aliases": [],
+    "category": "Eggs",
+    "subcategory": "egg yolk",
+    "source_frequency": 1280,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-rice-flour",
+    "canonical_name": "White rice flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "rice flour",
+    "source_frequency": 1277,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:summer-savory",
+    "canonical_name": "summer savory",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 1275,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:asiago",
+    "canonical_name": "Asiago",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cow cheese",
+    "source_frequency": 1272,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato-fiber",
+    "canonical_name": "potato fiber",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vegetable fiber",
+    "source_frequency": 1268,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-sunflower-oil",
+    "canonical_name": "refined sunflower oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "sunflower oil",
+    "source_frequency": 1262,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fractionated-palm-kernel-oil",
+    "canonical_name": "fractionated palm kernel oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm kernel oil",
+    "source_frequency": 1257,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:natural-vanilla",
+    "canonical_name": "natural vanilla",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vanilla",
+    "source_frequency": 1254,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:carrot-powder",
+    "canonical_name": "carrot powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "carrot",
+    "source_frequency": 1246,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweetened-condensed-skimmed-milk",
+    "canonical_name": "sweetened condensed skimmed milk",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "sweetened condensed milk",
+    "source_frequency": 1244,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pomegranate-juice",
+    "canonical_name": "pomegranate juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 1243,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cinnamon-powder",
+    "canonical_name": "cinnamon powder",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "cinnamon",
+    "source_frequency": 1242,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:guava",
+    "canonical_name": "guava",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 1242,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:feta",
+    "canonical_name": "feta",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1239,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-lentils",
+    "canonical_name": "green lentils",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "lentils",
+    "source_frequency": 1239,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:apple-extract",
+    "canonical_name": "apple extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "fruit extract",
+    "source_frequency": 1228,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pork-rind",
+    "canonical_name": "pork rind",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "pork",
+    "source_frequency": 1228,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:buttermilk-powder",
+    "canonical_name": "buttermilk powder",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "buttermilk",
+    "source_frequency": 1225,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:almond-paste",
+    "canonical_name": "almond paste",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "almond",
+    "source_frequency": 1220,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:melted-cheese",
+    "canonical_name": "melted cheese",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1218,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wholemeal-spelt-flour",
+    "canonical_name": "wholemeal spelt flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "spelt flour",
+    "source_frequency": 1217,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:galangal",
+    "canonical_name": "Galangal",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 1211,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:gouda",
+    "canonical_name": "gouda",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1201,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:caramel-syrup",
+    "canonical_name": "caramel syrup",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1191,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whipped-cream",
+    "canonical_name": "whipped cream",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cream",
+    "source_frequency": 1188,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pomegranate",
+    "canonical_name": "pomegranate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 1187,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yellowfin-tuna",
+    "canonical_name": "yellowfin tuna",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "tuna",
+    "source_frequency": 1185,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mashed-potato",
+    "canonical_name": "mashed potato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "potato",
+    "source_frequency": 1181,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:palm-and-palm-kernel-oil",
+    "canonical_name": "palm and palm kernel oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm kernel oil",
+    "source_frequency": 1177,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-coconut-oil",
+    "canonical_name": "hydrogenated coconut oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "coconut oil",
+    "source_frequency": 1170,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:malt-syrup",
+    "canonical_name": "malt syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 1168,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dried-apricots",
+    "canonical_name": "dried apricots",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "apricot",
+    "source_frequency": 1167,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:candied-orange-peel",
+    "canonical_name": "candied orange peel",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1164,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pepper-extract",
+    "canonical_name": "pepper extract",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "pepper",
+    "source_frequency": 1163,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:acerola-juice",
+    "canonical_name": "acerola juice",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit juice",
+    "source_frequency": 1162,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:flax",
+    "canonical_name": "flax",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1160,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:koji",
+    "canonical_name": "koji",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1149,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:celery-juice",
+    "canonical_name": "celery juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "celery",
+    "source_frequency": 1146,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-carrot-juice",
+    "canonical_name": "black carrot juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable juice",
+    "source_frequency": 1144,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garlic-paste",
+    "canonical_name": "garlic paste",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "garlic",
+    "source_frequency": 1142,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:menthol",
+    "canonical_name": "menthol",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1142,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "de:feine-milchschokolade",
+    "canonical_name": "Feine Milchschokolade",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "milk chocolate",
+    "source_frequency": 1141,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:l-carnitine",
+    "canonical_name": "L-carnitine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "Carnitine",
+    "source_frequency": 1140,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:barley-malt-syrup",
+    "canonical_name": "barley malt syrup",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "disaccharide",
+    "source_frequency": 1138,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:buttermilk-solids",
+    "canonical_name": "buttermilk solids",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "buttermilk",
+    "source_frequency": 1137,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:espelette-chili-pepper",
+    "canonical_name": "Espelette chili pepper",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "chili pepper",
+    "source_frequency": 1135,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beetroot-juice-concentrate",
+    "canonical_name": "beetroot juice concentrate",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "beetroot juice",
+    "source_frequency": 1130,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chocolate-coating",
+    "canonical_name": "chocolate coating",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "coating",
+    "source_frequency": 1129,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tapioca-maltodextrin",
+    "canonical_name": "tapioca maltodextrin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "maltodextrin",
+    "source_frequency": 1125,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:textured-plant-protein",
+    "canonical_name": "textured plant protein",
+    "aliases": [],
+    "category": "Proteins",
+    "subcategory": "plant protein",
+    "source_frequency": 1125,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:quinoa-flour",
+    "canonical_name": "quinoa flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "flour",
+    "source_frequency": 1121,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yeast-extract-powder",
+    "canonical_name": "yeast extract powder",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast extract",
+    "source_frequency": 1121,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:goji",
+    "canonical_name": "goji",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 1118,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fruit-concentrate",
+    "canonical_name": "fruit concentrate",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "concentrate",
+    "source_frequency": 1116,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:whole-wheat-flakes",
+    "canonical_name": "whole wheat flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "wheat flakes",
+    "source_frequency": 1115,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chopped-tomato",
+    "canonical_name": "chopped tomato",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato",
+    "source_frequency": 1114,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:chestnut",
+    "canonical_name": "chestnut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "tree nut",
+    "source_frequency": 1108,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coconut-flakes",
+    "canonical_name": "coconut flakes",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "coconut",
+    "source_frequency": 1104,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hemp-seed",
+    "canonical_name": "hemp seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 1103,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:quark",
+    "canonical_name": "Quark",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "cheese",
+    "source_frequency": 1101,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:blonde-cane-sugar",
+    "canonical_name": "blonde cane sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "blonde sugar",
+    "source_frequency": 1095,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hot-sauce",
+    "canonical_name": "hot sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 1094,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mussel",
+    "canonical_name": "mussel",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "mollusc",
+    "source_frequency": 1093,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:lime-oil",
+    "canonical_name": "lime oil",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "essential oil",
+    "source_frequency": 1092,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cassava",
+    "canonical_name": "cassava",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "root vegetable",
+    "source_frequency": 1091,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yogurt-culture",
+    "canonical_name": "yogurt culture",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "lactic ferments",
+    "source_frequency": 1089,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:milk-mineral-concentrate",
+    "canonical_name": "milk mineral concentrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "milk minerals",
+    "source_frequency": 1087,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:grapefruit",
+    "canonical_name": "grapefruit",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "citrus fruit",
+    "source_frequency": 1083,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coagulating-enzyme",
+    "canonical_name": "coagulating enzyme",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "enzyme",
+    "source_frequency": 1082,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:beetroot-powder",
+    "canonical_name": "beetroot powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "beetroot",
+    "source_frequency": 1079,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:radicchio",
+    "canonical_name": "radicchio",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "leaf vegetable",
+    "source_frequency": 1079,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sweet-whey",
+    "canonical_name": "sweet whey",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "whey",
+    "source_frequency": 1078,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fish-sauce",
+    "canonical_name": "fish sauce",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sauce",
+    "source_frequency": 1076,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:golden-flax-seeds",
+    "canonical_name": "golden flax seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "flax seed",
+    "source_frequency": 1076,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:kelp",
+    "canonical_name": "kelp",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "seaweed",
+    "source_frequency": 1074,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:graham-flour",
+    "canonical_name": "graham flour",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal flour",
+    "source_frequency": 1073,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:spinach-powder",
+    "canonical_name": "spinach powder",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "spinach",
+    "source_frequency": 1072,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:almond-flour",
+    "canonical_name": "almond flour",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "almond",
+    "source_frequency": 1071,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:asparagus",
+    "canonical_name": "asparagus",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "shoot vegetable",
+    "source_frequency": 1071,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:garlic-extract",
+    "canonical_name": "garlic extract",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "garlic",
+    "source_frequency": 1061,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cooking-water",
+    "canonical_name": "cooking water",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "water",
+    "source_frequency": 1060,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:camomile",
+    "canonical_name": "camomile",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 1059,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "fr:chapelure-de-ble",
+    "canonical_name": "Chapelure De Ble",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "breadcrumbs",
+    "source_frequency": 1054,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:muesli",
+    "canonical_name": "müesli",
+    "aliases": [
+      "safad musali"
+    ],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1053,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:nutritional-yeast",
+    "canonical_name": "nutritional yeast",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 1040,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:aloe-vera",
+    "canonical_name": "aloe vera",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable",
+    "source_frequency": 1037,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:liquorice-extract",
+    "canonical_name": "liquorice extract",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "liquorice",
+    "source_frequency": 1037,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-cottonseed-oil",
+    "canonical_name": "hydrogenated cottonseed oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "cottonseed oil",
+    "source_frequency": 1036,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rye-sourdough",
+    "canonical_name": "rye sourdough",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "rye",
+    "source_frequency": 1035,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-semolina",
+    "canonical_name": "rice semolina",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1034,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:casing",
+    "canonical_name": "casing",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1031,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:marshmallow",
+    "canonical_name": "marshmallow",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 1031,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:potato-maltodextrin",
+    "canonical_name": "potato maltodextrin",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "maltodextrin",
+    "source_frequency": 1031,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:savoy-cabbage",
+    "canonical_name": "savoy cabbage",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "cabbage",
+    "source_frequency": 1031,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:creme-fraiche",
+    "canonical_name": "Crème fraîche",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "sour cream",
+    "source_frequency": 1023,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:wasabi",
+    "canonical_name": "wasabi",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 1019,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:glutinous-rice",
+    "canonical_name": "glutinous rice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 1016,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:veal-meat",
+    "canonical_name": "veal meat",
+    "aliases": [],
+    "category": "Meat & seafood",
+    "subcategory": "meat",
+    "source_frequency": 1016,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bourbon-vanilla",
+    "canonical_name": "Bourbon vanilla",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "vanilla",
+    "source_frequency": 1008,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-vegetable-fat",
+    "canonical_name": "hydrogenated vegetable fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "hydrogenated fat",
+    "source_frequency": 1003,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cracked-black-pepper",
+    "canonical_name": "cracked black pepper",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "black pepper",
+    "source_frequency": 999,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:diced-tomatoes-in-tomato-juice",
+    "canonical_name": "diced tomatoes in tomato juice",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "tomato",
+    "source_frequency": 998,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cocoa-nibs",
+    "canonical_name": "cocoa nibs",
+    "aliases": [],
+    "category": "Cocoa & chocolate",
+    "subcategory": "cocoa bean",
+    "source_frequency": 996,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rye-flakes",
+    "canonical_name": "rye flakes",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "rye",
+    "source_frequency": 996,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:yeast-powder",
+    "canonical_name": "yeast powder",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "yeast",
+    "source_frequency": 991,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bifidobacterium-lactis",
+    "canonical_name": "Bifidobacterium lactis",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "bifidus",
+    "source_frequency": 989,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:unrefined-sea-salt",
+    "canonical_name": "unrefined sea salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "sea salt",
+    "source_frequency": 989,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dried-oregano",
+    "canonical_name": "dried oregano",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "oregano",
+    "source_frequency": 986,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:edamame",
+    "canonical_name": "edamame",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "soya bean",
+    "source_frequency": 986,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ice-cream",
+    "canonical_name": "ice cream",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 937,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:unrefined-sugar",
+    "canonical_name": "unrefined sugar",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "sugar",
+    "source_frequency": 933,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:dried-vegetables",
+    "canonical_name": "dried vegetables",
+    "aliases": [],
+    "category": "Vegetables",
+    "subcategory": "vegetable",
+    "source_frequency": 876,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:orange-pulp",
+    "canonical_name": "orange pulp",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "orange",
+    "source_frequency": 861,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:choline-bitartrate",
+    "canonical_name": "choline bitartrate",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "choline",
+    "source_frequency": 844,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fenugreek-seed",
+    "canonical_name": "fenugreek seed",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "fenugreek",
+    "source_frequency": 729,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cake",
+    "canonical_name": "cake",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 728,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sorghum",
+    "canonical_name": "sorghum",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "cereal",
+    "source_frequency": 698,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:anti-foaming-agent",
+    "canonical_name": "Anti-foaming agent",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "",
+    "source_frequency": 667,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:cassia",
+    "canonical_name": "cassia",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "cinnamon",
+    "source_frequency": 638,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-palm-oil",
+    "canonical_name": "refined palm oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm oil",
+    "source_frequency": 622,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coffee-beans",
+    "canonical_name": "coffee beans",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "coffee",
+    "source_frequency": 607,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:roasted-peanut",
+    "canonical_name": "roasted peanut",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "peanut",
+    "source_frequency": 586,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:coffee-powder",
+    "canonical_name": "coffee powder",
+    "aliases": [],
+    "category": "Water & beverage bases",
+    "subcategory": "coffee",
+    "source_frequency": 568,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:clarified-butter",
+    "canonical_name": "clarified butter",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "butterfat",
+    "source_frequency": 567,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mung-bean",
+    "canonical_name": "mung bean",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 525,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rice-flakes",
+    "canonical_name": "rice flakes",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "rice",
+    "source_frequency": 450,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:hydrogenated-oil",
+    "canonical_name": "hydrogenated oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "oil",
+    "source_frequency": 437,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:white-sesame-seeds",
+    "canonical_name": "white sesame seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "sesame seeds",
+    "source_frequency": 425,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:asafoetida",
+    "canonical_name": "asafoetida",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "spice",
+    "source_frequency": 392,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:green-cardamom",
+    "canonical_name": "green cardamom",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "cardamom",
+    "source_frequency": 376,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-salt",
+    "canonical_name": "black salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "salt",
+    "source_frequency": 372,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mustard-oil",
+    "canonical_name": "mustard oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable oil",
+    "source_frequency": 370,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:bread-improver",
+    "canonical_name": "bread improver",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "enhancer",
+    "source_frequency": 364,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ghee",
+    "canonical_name": "ghee",
+    "aliases": [],
+    "category": "Dairy",
+    "subcategory": "butterfat",
+    "source_frequency": 358,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:probiotic-cultures",
+    "canonical_name": "probiotic cultures",
+    "aliases": [],
+    "category": "Ferments & cultures",
+    "subcategory": "microbial culture",
+    "source_frequency": 340,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:ashwagandha",
+    "canonical_name": "ashwagandha",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "plant",
+    "source_frequency": 333,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:fenugreek-leaf",
+    "canonical_name": "fenugreek leaf",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "fenugreek",
+    "source_frequency": 331,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sugarcane-juice",
+    "canonical_name": "sugarcane juice",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "sugarcane",
+    "source_frequency": 328,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mixed-fruit",
+    "canonical_name": "mixed fruit",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "fruit",
+    "source_frequency": 313,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-palmolein-oil",
+    "canonical_name": "refined palmolein oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "palm olein",
+    "source_frequency": 259,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-soya-oil",
+    "canonical_name": "refined soya oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "soya oil",
+    "source_frequency": 256,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:mint-leaf",
+    "canonical_name": "mint leaf",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "mint",
+    "source_frequency": 241,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:refined-vegetable-oil",
+    "canonical_name": "refined vegetable oil",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "oil and fat",
+    "source_frequency": 201,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:rose-wine",
+    "canonical_name": "rosé wine",
+    "aliases": [],
+    "category": "Other",
+    "subcategory": "wine",
+    "source_frequency": 197,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:jaggery",
+    "canonical_name": "jaggery",
+    "aliases": [],
+    "category": "Sugars & syrups",
+    "subcategory": "cane sugar",
+    "source_frequency": 191,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-cardamom",
+    "canonical_name": "black cardamom",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "cardamom",
+    "source_frequency": 166,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:black-gram",
+    "canonical_name": "black gram",
+    "aliases": [],
+    "category": "Legumes & pulses",
+    "subcategory": "legume",
+    "source_frequency": 159,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pink-salt",
+    "canonical_name": "pink salt",
+    "aliases": [],
+    "category": "Salt & seasoning",
+    "subcategory": "salt",
+    "source_frequency": 145,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sal-fat",
+    "canonical_name": "sal fat",
+    "aliases": [],
+    "category": "Oils & fats",
+    "subcategory": "vegetable fat",
+    "source_frequency": 132,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:finger-millet",
+    "canonical_name": "finger millet",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "millet",
+    "source_frequency": 110,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:pomegranate-seeds",
+    "canonical_name": "pomegranate seeds",
+    "aliases": [],
+    "category": "Nuts & seeds",
+    "subcategory": "seed",
+    "source_frequency": 109,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:indian-gooseberry",
+    "canonical_name": "Indian Gooseberry",
+    "aliases": [],
+    "category": "Fruits",
+    "subcategory": "berries",
+    "source_frequency": 108,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:tulsi",
+    "canonical_name": "tulsi",
+    "aliases": [],
+    "category": "Spices & herbs",
+    "subcategory": "herb",
+    "source_frequency": 94,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:sago",
+    "canonical_name": "Sago",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "starch",
+    "source_frequency": 62,
+    "source": "Open Food Facts"
+  },
+  {
+    "id": "en:foxtail-millet",
+    "canonical_name": "foxtail millet",
+    "aliases": [],
+    "category": "Cereals & grains",
+    "subcategory": "millet",
+    "source_frequency": 27,
+    "source": "Open Food Facts"
+  }
+]
