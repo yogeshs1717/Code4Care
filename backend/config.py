@@ -2,12 +2,18 @@
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Anchored to this package, not the process CWD: the server is normally started
+# from the repository root (`uvicorn backend.main:app`), where a bare ".env"
+# would silently resolve to a non-existent file.
+_ENV_FILE = Path(__file__).resolve().parent / ".env"
+
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(env_file=_ENV_FILE, extra="ignore")
 
     # --- Google Cloud Vision credentials -----------------------------------
     # The REST client authenticates with an API key only. Requests fail with
