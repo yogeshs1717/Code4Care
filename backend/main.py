@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.errors import register_exception_handlers
-from backend.api.routes import ocr
+from backend.api.routes import analyze, gemma, ocr
 from backend.config import get_settings
 
 
@@ -19,12 +19,15 @@ def create_app() -> FastAPI:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.allowed_origins,
-        allow_methods=["POST"],
+        allow_credentials=True,
+        allow_methods=["*"],
         allow_headers=["*"],
     )
 
     register_exception_handlers(app)
     app.include_router(ocr.router)
+    app.include_router(analyze.router)
+    app.include_router(gemma.router)
     return app
 
 

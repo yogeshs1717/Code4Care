@@ -1,45 +1,50 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Bot, User, Sparkles } from 'lucide-react';
+import type { GemmaMessage } from '../types/health';
+import { chatWithGemma } from '../api/analyzeClient';
 
 interface GemmaChatViewProps {
-  /** Gemma endpoint available — false when backend endpoint is not built yet */
+  /** Serialised DeterministicReport JSON — passed to every chat call */
+  reportJson: string;
+  /** Gemma endpoint available */
   available?: boolean;
 }
 
-/**
- * Gemma Chat View — conversational Q&A about the health report.
- *
- * Uses POST /api/v1/gemma/chat when the backend endpoint is built.
- * Shows a ready state until then.
- */
-export function GemmaChatView({ available = false }: GemmaChatViewProps) {
-  const [messages, setMessages] = useState<
-    { role: 'user' | 'assistant'; content: string }[]
-  >(
+export function GemmaChatView({ reportJson, available = false }: GemmaChatViewProps) {
+  const [messages, setMessages] = useState<GemmaMessage[]>(
     available
       ? [{ role: 'assistant', content: 'Ask me anything about the ingredients in this product.' }]
       : []
   );
   const [input, setInput] = useState('');
+  const [busy, setBusy] = useState(false);
 
-  const handleSend = () => {
-    if (!input.trim() || !available) return;
-    const userMsg = { role: 'user' as const, content: input.trim() };
+  const handleSend = async () => {
+    if (!input.trim() || !available || busy) return;
+    const userMsg: GemmaMessage = { role: 'user', content: input.trim() };
     setMessages((prev) => [...prev, userMsg]);
     setInput('');
+    setBusy(true);
 
-    // Mock response until endpoint is live
-    setTimeout(() => {
+    try {
+      const reply = await chatWithGemma(
+        reportJson,
+        messages.filter((m) => m.role !== ('system' as string)),
+        userMsg.content
+      );
+      setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
-          role: 'assistant' as const,
-          content:
-            'Great question! Once the analysis endpoint is connected, I\'ll be able to answer based on the specific ingredients found in your product.',
+          role: 'assistant',
+          content: "Sorry, I couldn't reach Gemma right now. Please try again.",
         },
       ]);
-    }, 800);
+    } finally {
+      setBusy(false);
+    }
   };
 
   return (
@@ -73,7 +78,7 @@ export function GemmaChatView({ available = false }: GemmaChatViewProps) {
       ) : (
         <>
           {/* ── Messages ── */}
-          <div className="flex max-h-[320px] flex-col gap-3 overflow-y-auto">
+          <div className="flex max-h-[400px] flex-col gap-3 overflow-y-auto">
             <AnimatePresence initial={false}>
               {messages.map((msg, i) => (
                 <motion.div
@@ -104,22 +109,41 @@ export function GemmaChatView({ available = false }: GemmaChatViewProps) {
                   )}
                 </motion.div>
               ))}
+              {busy && (
+                <motion.div
+                  className="flex gap-3 justify-start"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#4285F4]/10">
+                    <Bot className="h-4 w-4 text-[#4285F4]" />
+                  </div>
+                  <div className="rounded-2xl border border-[#e8eaed] bg-white px-4 py-2.5">
+                    <div className="flex gap-1">
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-[#4285F4]/40" style={{ animationDelay: '0ms' }} />
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-[#4285F4]/40" style={{ animationDelay: '150ms' }} />
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-[#4285F4]/40" style={{ animationDelay: '300ms' }} />
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </AnimatePresence>
           </div>
 
           {/* ── Input ── */}
           <div className="flex gap-2">
             <input
-              className="flex-1 rounded-xl border border-[#e8eaed] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#4285F4] focus:ring-2 focus:ring-[#4285F4]/20"
+              className="flex-1 rounded-xl border border-[#e8eaed] bg-white px-4 py-3 text-sm outline-none transition-all focus:border-[#4285F4] focus:ring-2 focus:ring-[#4285F4]/20 disabled:opacity-50"
               placeholder="Ask about an ingredient..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+              onKeyDown={(e) => e.key === 'Enter' && !busy && handleSend()}
+              disabled={busy}
             />
             <motion.button
               className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#4285F4] text-white disabled:opacity-40"
               onClick={handleSend}
-              disabled={!input.trim()}
+              disabled={!input.trim() || busy}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

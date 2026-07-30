@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { analyzeIngredients } from './api/analyzeClient';
 import { OcrRequestError, requestOcr } from './api/ocrClient';
 import { HeroSection } from './components/HeroSection';
 import { CaptureView } from './components/CaptureView';
-import { ImageCropper } from './components/ImageCropper';
+import { HomographyCropper } from './components/HomographyCropper';
 import { ScanAnimation } from './components/ScanAnimation';
 import { OcrEditView } from './components/OcrEditView';
-import { HealthReportView } from './components/HealthReportView';
-import { GemmaChatView } from './components/GemmaChatView';
+import { ReportDashboard } from './components/ReportDashboard';
 import type { OcrResult } from './types/ocr';
+import type { DeterministicReport } from './types/health';
 
 type Stage =
   | 'hero'       // Cinematic 3D hero scroll
@@ -37,6 +38,8 @@ export default function App() {
   const [busy, setBusy] = useState(false);
   const [scanProgress, setScanProgress] = useState(0);
   const [scanStatus, setScanStatus] = useState(scanStatuses[0]);
+  const [report, setReport] = useState<DeterministicReport | null>(null);
+  const [aiSummary, setAiSummary] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   const revokePreview = useCallback(() => {
@@ -57,6 +60,8 @@ export default function App() {
     setBusy(false);
     setScanProgress(0);
     setScanStatus(scanStatuses[0]);
+    setReport(null);
+    setAiSummary(null);
     setStage('capture');
   }, [revokePreview]);
 
@@ -69,6 +74,8 @@ export default function App() {
     setBusy(false);
     setScanProgress(0);
     setScanStatus(scanStatuses[0]);
+    setReport(null);
+    setAiSummary(null);
     setStage('hero');
   }, [revokePreview]);
 
@@ -130,24 +137,33 @@ export default function App() {
     []
   );
 
-  // ── Analyze (placeholder — calls /api/v1/analyze when available) ──
-  const handleAnalyze = useCallback(() => {
+  // ── Analyze (POST /api/v1/analyze) ──
+  const handleAnalyze = useCallback(async () => {
     setStage('analyzing');
     setScanProgress(0);
     setScanStatus('Analyzing ingredients...');
 
     const timer = setInterval(() => {
       setScanProgress((prev) => {
-        if (prev >= 1) {
-          clearInterval(timer);
-          setScanStatus('Analysis complete!');
-          setTimeout(() => setStage('report'), 400);
-          return 1;
-        }
-        return prev + 0.12;
+        if (prev >= 0.85) return prev;
+        return prev + 0.08;
       });
-    }, 500);
-  }, []);
+    }, 400);
+
+    try {
+      const data = await analyzeIngredients(text);
+      clearInterval(timer);
+      setReport(data.report);
+      setAiSummary(data.ai_summary ?? null);
+      setScanProgress(1);
+      setScanStatus('Analysis complete!');
+      setTimeout(() => setStage('report'), 400);
+    } catch {
+      clearInterval(timer);
+      setError('Analysis failed. Please check your connection and try again.');
+      setStage('edit');
+    }
+  }, [text]);
 
   return (
     <div className="relative min-h-dvh bg-[#FAFAFA]">
@@ -220,7 +236,7 @@ export default function App() {
               </motion.button>
             </div>
             <div className="px-4">
-              <ImageCropper
+              <HomographyCropper
                 src={previewUrl}
                 busy={busy}
                 onConfirm={handleRunOcr}
@@ -292,58 +308,18 @@ export default function App() {
         {stage === 'report' && (
           <motion.main
             key="report"
-            className="mx-auto max-w-md"
+            className=""
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center justify-between px-4 pt-6 pb-2">
-              <motion.button
-                className="text-sm text-[#5f6368] transition-colors hover:text-[#202124]"
-                onClick={goHome}
-                whileHover={{ x: -2 }}
-              >
-                ← Home
-              </motion.button>
-              <motion.button
-                className="rounded-lg border border-[#e8eaed] bg-white px-4 py-1.5 text-xs font-medium text-[#5f6368] transition-colors hover:border-[#d0d2d4]"
-                onClick={reset}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                New Scan
-              </motion.button>
-            </div>
-
-            <HealthReportView report={null} />
-
-            <div className="mx-4 my-2 border-t border-[#e8eaed]" />
-
-            <GemmaChatView available={false} />
-          </motion.main>
-        )}
-
-        {/* CHAT (standalone) */}
-        {stage === 'chat' && (
-          <motion.main
-            key="chat"
-            className="mx-auto max-w-md"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="px-4 pt-6 pb-2">
-              <motion.button
-                className="text-sm text-[#5f6368] transition-colors hover:text-[#202124]"
-                onClick={() => setStage('report')}
-                whileHover={{ x: -2 }}
-              >
-                ← Report
-              </motion.button>
-            </div>
-            <GemmaChatView available={false} />
+            <ReportDashboard
+              report={report}
+              aiSummary={aiSummary}
+              onHome={goHome}
+              onNewScan={reset}
+            />
           </motion.main>
         )}
       </AnimatePresence>

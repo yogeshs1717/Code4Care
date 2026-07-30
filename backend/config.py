@@ -26,6 +26,13 @@ class Settings(BaseSettings):
     ocr_language_hints: str = ""
     max_image_bytes: int = 10 * 1024 * 1024
 
+    # --- LLM (Gemma via Google AI Studio) ------------------------------------
+    # Get a free key at https://aistudio.google.com/app/apikey
+    gemini_api_key: str | None = None
+    # Legacy Groq key — kept for backward compatibility, unused if gemini_api_key is set
+    groq_api_key: str | None = None
+    llm_timeout_seconds: float = 30.0
+
     # --- HTTP ---------------------------------------------------------------
     cors_allow_origins: str = "http://localhost:5173"
 

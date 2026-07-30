@@ -8,6 +8,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 from backend.models.errors import ErrorDetail, ErrorResponse
+from backend.services.llm.exceptions import LLMError
 from backend.services.ocr.exceptions import OCRError
 
 logger = logging.getLogger(__name__)
@@ -31,8 +32,11 @@ def register_exception_handlers(app: FastAPI) -> None:
             "INVALID_REQUEST", "The request payload is invalid.", 422
         )
 
+    @app.exception_handler(LLMError)
+    async def _handle_llm_error(_: Request, exc: LLMError) -> JSONResponse:
+        return error_response(exc.code, exc.message, exc.http_status)
+
     @app.exception_handler(Exception)
     async def _handle_unexpected(_: Request, exc: Exception) -> JSONResponse:
-        # Fail visibly to the client, but never leak internals.
-        logger.exception("Unhandled server error")
+        logger.exception("Unhandled server error [%s]: %s", type(exc).__name__, exc)
         return error_response("INTERNAL_ERROR", "An unexpected error occurred.", 500)

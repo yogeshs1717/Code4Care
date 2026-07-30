@@ -1,9 +1,6 @@
 /**
- * Health Report types — for future use when the backend adds
- * POST /api/v1/analyze and POST /api/v1/gemma endpoints.
- *
- * Currently the backend only exposes POST /ocr.
- * These types are ready for when the pipeline is complete.
+ * Health Report types — mirrors backend/models/health_report.py exactly.
+ * Keep in sync whenever the backend model changes.
  */
 
 export interface HealthScore {
@@ -25,7 +22,7 @@ export interface PositiveIngredient {
 export interface ConcernItem {
   name: string;
   concern: string;
-  severity: string;
+  severity: 'low' | 'moderate' | 'high';
 }
 
 export interface AllergenInfo {
@@ -36,11 +33,24 @@ export interface AllergenInfo {
 export interface HealthConsideration {
   title: string;
   description: string;
-  type: string;
+  type: 'warning' | 'positive' | 'info';
+}
+
+/**
+ * An ingredient resolved by Gemma when the deterministic dataset had no match.
+ * `is_fallback_resolved` is always true — it distinguishes AI results from
+ * rule-engine results in the UI.
+ */
+export interface GemmaResolvedIngredient {
+  name: string;
+  /** "positive" | "concerning" | "neutral" */
+  category: 'positive' | 'concerning' | 'neutral';
+  reason: string;
+  is_fallback_resolved: true;
 }
 
 export interface DeterministicReport {
-  product_name?: string;
+  product_name?: string | null;
   health_score: HealthScore;
   processing_level: ProcessingLevel;
   positive_ingredients: PositiveIngredient[];
@@ -48,6 +58,8 @@ export interface DeterministicReport {
   health_considerations: HealthConsideration[];
   allergens: AllergenInfo[];
   unresolved_ingredients: string[];
+  /** Ingredients classified by Gemma as a fallback (not in the rule-engine dataset). */
+  gemma_resolved_ingredients: GemmaResolvedIngredient[];
 }
 
 export interface GemmaMessage {
