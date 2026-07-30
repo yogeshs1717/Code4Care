@@ -63,7 +63,10 @@ def _health_engine() -> IHealthEngine:
 @lru_cache
 def _llm_service() -> ILLMService:
     settings = get_settings()
-    return GeminiLLMService(api_key=settings.gemini_api_key)
+    return GeminiLLMService(
+        api_key=settings.gemini_api_key,
+        model_name=settings.gemma_model_name,
+    )
 
 
 # ── FastAPI dependency functions ────────────────────────────────────────────

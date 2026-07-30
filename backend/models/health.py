@@ -55,6 +55,15 @@ class HealthConsideration(BaseModel):
     type: str  # "warning" | "info"
 
 
+class UnresolvedFallbackItem(BaseModel):
+    """Pattern-heuristic analysis for an ingredient not found in the primary dataset."""
+
+    name: str
+    inferred_category: str  # e.g. "Natural Plant Derivative", "Unlisted Sweetener", "Additive Code"
+    note: str
+    risk_indicator: str  # "neutral" | "positive" | "concern"
+
+
 class HealthReport(BaseModel):
     """Complete deterministic health report — the only shape this stage exposes."""
 
@@ -65,5 +74,6 @@ class HealthReport(BaseModel):
     health_considerations: list[HealthConsideration] = Field(default_factory=list)
     allergens: list[AllergenInfo] = Field(default_factory=list)
     unresolved_ingredients: list[str] = Field(default_factory=list)
+    unresolved_heuristics: list[UnresolvedFallbackItem] = Field(default_factory=list)
     ingredient_count: int = 0
     resolved_count: int = 0

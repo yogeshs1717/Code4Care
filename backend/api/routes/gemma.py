@@ -14,7 +14,7 @@ from backend.services.health_engine.base import IHealthEngine
 from backend.services.llm.base import ILLMService
 from backend.services.resolver.base import IIngredientResolver
 
-router = APIRouter(prefix="/api/v1/gemma", tags=["gemma"])
+router = APIRouter(tags=["gemma"])
 
 
 # ── Request / Response models ───────────────────────────────────────────────
@@ -55,9 +55,14 @@ class ChatResponse(BaseModel):
 
 
 @router.post(
-    "/explain",
+    "/api/v1/gemma/explain",
     response_model=ExplainResponse,
     summary="Get an AI summary of the health report",
+)
+@router.post(
+    "/gemma/explain",
+    response_model=ExplainResponse,
+    include_in_schema=False,
 )
 async def explain_report(
     request: ExplainRequest,
@@ -73,9 +78,14 @@ async def explain_report(
 
 
 @router.post(
-    "/chat",
+    "/api/v1/gemma/chat",
     response_model=ChatResponse,
     summary="Chat with Gemma about the product",
+)
+@router.post(
+    "/gemma/chat",
+    response_model=ChatResponse,
+    include_in_schema=False,
 )
 async def chat_with_gemma(
     request: ChatRequest,

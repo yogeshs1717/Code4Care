@@ -8,6 +8,7 @@ the LLM, and the LLM never overrides the engine.
 """
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from backend.models.additives import FoodAdditive, RiskLevel
@@ -19,6 +20,7 @@ from backend.models.health import (
     HealthScore,
     PositiveIngredient,
     ProcessingLevel,
+    UnresolvedFallbackItem,
 )
 from backend.models.ingredients import IngredientResolution, ResolvedIngredient
 from backend.repositories.base import AdditiveRepository, RulesRepository
@@ -119,13 +121,14 @@ class HealthRuleEngine(IHealthEngine):
         concerns = self._find_concerns(rules, matched_categories, matched_additives)
 
         # ── Allergens ───────────────────────────────────────────────────────
-        allergens = self._detect_allergens(rules, resolution.resolved, matched_additives)
+        allergens = self._detect_allergens(rules, resolution.resolved, matched_additives, resolution.unresolved)
 
         # ── Health considerations ───────────────────────────────────────────
         considerations = self._evaluate_considerations(rules, matched_categories)
 
-        # ── Unresolved ──────────────────────────────────────────────────────
+        # ── Unresolved & Heuristics Fallback ────────────────────────────────
         unresolved_names = [u.raw_text for u in resolution.unresolved]
+        unresolved_heuristics = self._analyze_unresolved_heuristics(resolution.unresolved)
 
         return HealthReport(
             health_score=health_score,
@@ -135,6 +138,7 @@ class HealthRuleEngine(IHealthEngine):
             health_considerations=considerations,
             allergens=allergens,
             unresolved_ingredients=unresolved_names,
+            unresolved_heuristics=unresolved_heuristics,
             ingredient_count=resolution.stats.total_items,
             resolved_count=resolution.stats.resolved_count,
         )
@@ -274,6 +278,7 @@ class HealthRuleEngine(IHealthEngine):
         rules: dict[str, Any],
         resolved: list[ResolvedIngredient],
         matched_additives: list[FoodAdditive],
+        unresolved: list[Any] | None = None,
     ) -> list[AllergenInfo]:
         allergen_rules = rules.get("allergen_rules", [])
         allergens: list[AllergenInfo] = []
@@ -289,6 +294,15 @@ class HealthRuleEngine(IHealthEngine):
                     if trigger in name_lower or name_lower in trigger:
                         triggered_by.append(item.ingredient.canonical_name)
                         break
+
+            # Check unresolved raw text for allergen triggers
+            if unresolved:
+                for item in unresolved:
+                    raw_lower = item.raw_text.lower()
+                    for trigger in triggers:
+                        if len(trigger) >= 3 and trigger in raw_lower:
+                            triggered_by.append(f"{item.raw_text} (unlisted)")
+                            break
 
             # Check additives
             additive_triggers = rule.get("additive_triggers", [])
@@ -307,6 +321,76 @@ class HealthRuleEngine(IHealthEngine):
                 )
 
         return allergens
+
+    def _analyze_unresolved_heuristics(
+        self, unresolved: list[Any]
+    ) -> list[UnresolvedFallbackItem]:
+        heuristics: list[UnresolvedFallbackItem] = []
+
+        for item in unresolved:
+            text = item.raw_text.strip()
+            text_lower = text.lower()
+
+            # Additive code pattern
+            if re.search(r"\b(ins|e)[- ]?\d{3,4}[a-z]?\b", text_lower):
+                heuristics.append(
+                    UnresolvedFallbackItem(
+                        name=text,
+                        inferred_category="Additive Code",
+                        note="Identified numerical additive code (likely preservative or stabilizer).",
+                        risk_indicator="concern",
+                    )
+                )
+            # Sweetener / sugar pattern
+            elif any(
+                k in text_lower
+                for k in ["syrup", "nectar", "dextrose", "fructose", "glucose", "sweetener", "sucralose", "maltitol"]
+            ):
+                heuristics.append(
+                    UnresolvedFallbackItem(
+                        name=text,
+                        inferred_category="Sugar / Sweetener",
+                        note="Sugar or caloric/non-caloric sweetener derivative.",
+                        risk_indicator="concern",
+                    )
+                )
+            # Natural plant / whole ingredient pattern
+            elif any(
+                k in text_lower
+                for k in ["extract", "powder", "leaf", "seed", "fruit", "organic", "juice", "oil", "butter", "flour", "root", "pure"]
+            ):
+                heuristics.append(
+                    UnresolvedFallbackItem(
+                        name=text,
+                        inferred_category="Natural Derivative",
+                        note="Plant, fruit, or natural food extract evaluated via structural pattern.",
+                        risk_indicator="positive",
+                    )
+                )
+            # Flavor / color pattern
+            elif any(
+                k in text_lower
+                for k in ["flavor", "flavour", "color", "colour", "preservative", "synthetic", "gum"]
+            ):
+                heuristics.append(
+                    UnresolvedFallbackItem(
+                        name=text,
+                        inferred_category="Flavoring / Processing Aid",
+                        note="Flavoring agent or processing aid.",
+                        risk_indicator="concern",
+                    )
+                )
+            else:
+                heuristics.append(
+                    UnresolvedFallbackItem(
+                        name=text,
+                        inferred_category="Unlisted Ingredient",
+                        note="Evaluated using structural rules.",
+                        risk_indicator="neutral",
+                    )
+                )
+
+        return heuristics
 
     def _evaluate_considerations(
         self, rules: dict[str, Any], matched_categories: dict[str, list[str]]

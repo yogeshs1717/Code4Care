@@ -58,29 +58,29 @@ def _report_to_context(report: HealthReport) -> str:
 
 
 class GeminiLLMService(ILLMService):
-    """Google Generative AI (Gemini) implementation of the LLM service."""
+    """Google Generative AI (Gemma 4 / Gemini) implementation of the LLM service."""
 
-    def __init__(self, api_key: str | None = None, model_name: str = "gemini-2.0-flash") -> None:
+    def __init__(self, api_key: str | None = None, model_name: str = "gemma-4-31b-it") -> None:
         self._api_key = api_key
         self._model_name = model_name
-        self._client = None
+        self._genai = None
 
         if api_key:
             try:
                 import google.generativeai as genai
                 genai.configure(api_key=api_key)
-                self._client = genai.GenerativeModel(model_name)
-                logger.info("Gemini LLM service initialized with model: %s", model_name)
+                self._genai = genai
+                logger.info("Gemma/Gemini LLM service initialized with primary model: %s", model_name)
             except ImportError:
                 logger.warning(
                     "google-generativeai package not installed. LLM features will use fallback mode."
                 )
             except Exception as exc:
-                logger.warning("Failed to initialize Gemini client: %s", exc)
+                logger.warning("Failed to initialize Google AI client: %s", exc)
 
     @property
     def available(self) -> bool:
-        return self._client is not None
+        return self._genai is not None
 
     async def explain(self, report: HealthReport) -> str:
         if not self.available:
@@ -141,14 +141,31 @@ Gemma:"""
             return self._fallback_chat(report, new_message)
 
     async def _generate(self, prompt: str) -> str:
-        """Call the Gemini API."""
+        """Call the Gemma / Gemini API with automatic model fallback."""
         import asyncio
-        # google-generativeai uses sync API, run in executor
-        loop = asyncio.get_event_loop()
-        response = await loop.run_in_executor(
-            None, lambda: self._client.generate_content(prompt)
-        )
-        return response.text.strip()
+
+        models_to_try = [self._model_name]
+        for fallback in ["gemma-4-31b-it", "gemma-4-26b-a4b-it", "gemini-2.5-flash", "gemini-2.0-flash"]:
+            if fallback not in models_to_try:
+                models_to_try.append(fallback)
+
+        last_error = None
+        for model_name in models_to_try:
+            try:
+                model = self._genai.GenerativeModel(model_name)
+                loop = asyncio.get_event_loop()
+                response = await loop.run_in_executor(
+                    None, lambda: model.generate_content(prompt)
+                )
+                if response and response.text:
+                    return response.text.strip()
+            except Exception as exc:
+                last_error = exc
+                logger.warning("Model %s failed or not available, trying next fallback... (%s)", model_name, exc)
+
+        if last_error:
+            raise last_error
+        raise RuntimeError("No model succeeded")
 
     # ── Fallback responses when Gemini is not available ──────────────────────
 

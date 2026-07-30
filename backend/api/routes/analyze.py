@@ -9,7 +9,7 @@ from backend.models.health import HealthReport
 from backend.services.health_engine.base import IHealthEngine
 from backend.services.resolver.base import IIngredientResolver
 
-router = APIRouter(prefix="/api/v1", tags=["analyze"])
+router = APIRouter(tags=["analyze"])
 
 
 class AnalyzeRequest(BaseModel):
@@ -27,9 +27,14 @@ class AnalyzeResponse(BaseModel):
 
 
 @router.post(
-    "/analyze",
+    "/api/v1/analyze",
     response_model=AnalyzeResponse,
     summary="Analyze ingredient text and produce a health report",
+)
+@router.post(
+    "/analyze",
+    response_model=AnalyzeResponse,
+    include_in_schema=False,
 )
 async def analyze_ingredients(
     request: AnalyzeRequest,

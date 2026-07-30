@@ -1,5 +1,15 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import {
+  ShieldAlert,
+  CheckCircle,
+  Sparkles,
+  Zap,
+  Wheat,
+  Milk,
+  Nut,
+  Egg,
+} from 'lucide-react';
 import type { DeterministicReport } from '../types/health';
 
 interface HealthReportViewProps {
@@ -7,248 +17,290 @@ interface HealthReportViewProps {
   aiSummary?: string | null;
 }
 
-export function HealthReportView({ report, aiSummary }: HealthReportViewProps) {
+export function HealthReportView({
+  report,
+  aiSummary,
+}: HealthReportViewProps) {
+  const [activeFilter, setActiveFilter] = useState<'all' | 'concerns' | 'positives' | 'heuristics'>('all');
+
   if (!report) {
     return (
-      <div className="flex flex-col gap-6 px-4 pt-6 pb-8">
-        <motion.h2
-          className="text-2xl font-bold text-[#202124]"
-          style={{ fontFamily: 'var(--font-heading)' }}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Health Analysis
-        </motion.h2>
-        <p className="text-sm text-[#5f6368]">Preparing your report...</p>
+      <div className="flex flex-col items-center justify-center gap-3 px-4 py-20 text-center font-sans">
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl bg-emerald-100 text-emerald-600 animate-pulse">
+          <Zap className="h-10 w-10" />
+        </div>
+        <h2 className="text-xl font-black text-slate-900">Loading Graphic Infographics...</h2>
+        <p className="text-xs font-semibold text-slate-500">Preparing visual food graphics</p>
       </div>
     );
   }
 
-  const { health_score, processing_level, positive_ingredients, ingredients_of_concern, allergens, health_considerations, unresolved_ingredients } = report;
-  const circumference = 2 * Math.PI * 42;
-  const scoreOffset = circumference * (1 - health_score.score / 100);
+  const {
+    health_score,
+    processing_level,
+    positive_ingredients,
+    ingredients_of_concern,
+    allergens,
+    unresolved_ingredients,
+    unresolved_heuristics,
+    ingredient_count,
+    resolved_count,
+  } = report;
+
+  const totalEvaluated = resolved_count || ingredient_count || 1;
+  const positiveCount = positive_ingredients.length;
+  const concernCount = ingredients_of_concern.length;
+  const allergenCount = allergens.length;
+
+  // Percentages for visual stacked bar
+  const posPct = Math.round((positiveCount / totalEvaluated) * 100);
+  const conPct = Math.round((concernCount / totalEvaluated) * 100);
+  const neuPct = Math.max(0, 100 - posPct - conPct);
+
+  const isGood = health_score.score >= 60;
+  const badgeImg = isGood ? '/images/badge_good.png' : '/images/badge_warning.png';
+
+  const getAllergenIcon = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('milk') || n.includes('dairy') || n.includes('lactose')) return <Milk className="h-4 w-4 text-amber-600" />;
+    if (n.includes('wheat') || n.includes('gluten')) return <Wheat className="h-4 w-4 text-amber-600" />;
+    if (n.includes('nut') || n.includes('peanut')) return <Nut className="h-4 w-4 text-amber-600" />;
+    if (n.includes('egg')) return <Egg className="h-4 w-4 text-amber-600" />;
+    return <ShieldAlert className="h-4 w-4 text-amber-600" />;
+  };
 
   return (
-    <div className="flex flex-col gap-6 px-4 pt-6 pb-8">
-      <motion.h2
-        className="text-2xl font-bold text-[#202124]"
-        style={{ fontFamily: 'var(--font-heading)' }}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+    <div className="flex flex-col gap-4 px-4 py-3 sm:px-6 max-w-lg mx-auto w-full font-sans text-slate-900">
+      {/* ── 1. Visual 3D Hero Badge Stamp Card ── */}
+      <motion.div
+        className="relative overflow-hidden rounded-3xl border-3 border-slate-900 bg-white p-5 shadow-[5px_5px_0px_0px_rgba(15,23,42,1)]"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
       >
-        Your Health Report
-      </motion.h2>
-
-      {/* ── AI Summary ── */}
-      {aiSummary && (
-        <SectionReveal title="AI Summary" delay={0.05}>
-          <motion.div
-            className="rounded-xl border border-[#c8e6ff] bg-[#f0f7ff] p-4 text-sm leading-relaxed text-[#1a3a5c]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            ✨ {aiSummary}
-          </motion.div>
-        </SectionReveal>
-      )}
-
-      {/* ── Health Score ── */}
-      <SectionReveal title="Health Score" delay={0.1}>
-        <div className="flex items-center gap-4">
-          <div className="relative flex h-24 w-24 shrink-0 items-center justify-center">
-            <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100">
-              <circle
-                cx="50" cy="50" r="42"
-                fill="none" stroke="#e8eaed" strokeWidth="8"
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            {/* 3D Generated Rating Badge */}
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-2 border-slate-900 bg-amber-50 p-1 shadow-sm">
+              <img
+                src={badgeImg}
+                alt="Health Rating Badge"
+                className="h-full w-full object-contain"
               />
-              <motion.circle
-                cx="50" cy="50" r="42"
-                fill="none" stroke={health_score.color} strokeWidth="8"
-                strokeLinecap="round"
-                strokeDasharray={`${circumference}`}
-                initial={{ strokeDashoffset: circumference }}
-                animate={{ strokeDashoffset: scoreOffset }}
-                transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </svg>
-            <motion.span
-              className="absolute text-2xl font-bold"
-              style={{ color: health_score.color }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-            >
-              {health_score.score}
-            </motion.span>
-          </div>
-          <div>
-            <p className="text-lg font-semibold" style={{ color: health_score.color }}>
-              {health_score.label}
-            </p>
-            <p className="mt-1 text-xs text-[#5f6368]">
-              Score based on ingredient analysis
-            </p>
-          </div>
-        </div>
-      </SectionReveal>
+            </div>
 
-      {/* ── Processing Level ── */}
-      <SectionReveal title="Processing Level" delay={0.2}>
-        <div className="rounded-xl border border-[#e8eaed] bg-white p-4">
-          <p className="font-semibold" style={{ color: processing_level.color }}>
-            {processing_level.label}
-          </p>
-          <p className="mt-1 text-xs text-[#5f6368]">{processing_level.description}</p>
-        </div>
-      </SectionReveal>
-
-      {/* ── Positive Ingredients ── */}
-      {positive_ingredients.length > 0 && (
-        <SectionReveal title="Positive Ingredients" delay={0.3}>
-          {positive_ingredients.map((item, i) => (
-            <motion.div
-              key={item.name}
-              className="flex items-center gap-3 rounded-xl border border-[#e8eaed] bg-white p-3"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 + i * 0.08 }}
-            >
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#34A853]/10">
-                <span className="text-sm text-[#34A853]">✓</span>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-[#202124]">{item.name}</p>
-                <p className="text-xs text-[#5f6368]">{item.benefit}</p>
-              </div>
-            </motion.div>
-          ))}
-        </SectionReveal>
-      )}
-
-      {/* ── Ingredients of Concern ── */}
-      {ingredients_of_concern.length > 0 && (
-        <SectionReveal title="Ingredients of Concern" delay={0.4}>
-          {ingredients_of_concern.map((item, i) => (
-            <motion.div
-              key={item.name}
-              className="flex items-start gap-3 rounded-xl border border-[#fee2e2] bg-[#fef2f2] p-3"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + i * 0.08 }}
-            >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EA4335]/10">
-                <span className="text-sm text-[#EA4335]">!</span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <p className="text-sm font-medium text-[#202124]">{item.name}</p>
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                    item.severity === 'high'
-                      ? 'bg-[#EA4335]/10 text-[#EA4335]'
-                      : 'bg-[#FBBC04]/10 text-[#92400e]'
-                  }`}>
-                    {item.severity}
-                  </span>
-                </div>
-                <p className="mt-0.5 text-xs text-[#5f6368]">{item.concern}</p>
-              </div>
-            </motion.div>
-          ))}
-        </SectionReveal>
-      )}
-
-      {/* ── Allergens ── */}
-      {allergens.length > 0 && (
-        <SectionReveal title="⚠️ Allergens Detected" delay={0.5}>
-          <div className="flex flex-wrap gap-2">
-            {allergens.map((allergen, i) => (
-              <motion.div
-                key={allergen.name}
-                className="rounded-lg border border-[#fbbc04]/30 bg-[#fefce8] px-3 py-2 text-xs"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 + i * 0.1 }}
-              >
-                <p className="font-medium text-[#92400e]">{allergen.name}</p>
-                <p className="mt-0.5 text-[10px] text-[#a16207]">
-                  from: {allergen.triggered_by.join(', ')}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </SectionReveal>
-      )}
-
-      {/* ── Health Considerations ── */}
-      {health_considerations.length > 0 && (
-        <SectionReveal title="Health Considerations" delay={0.6}>
-          {health_considerations.map((item, i) => (
-            <motion.div
-              key={item.title}
-              className={`rounded-xl border p-3 ${
-                item.type === 'warning'
-                  ? 'border-[#fbbc04]/30 bg-[#fffbeb]'
-                  : 'border-[#c8e6ff] bg-[#f0f7ff]'
-              }`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + i * 0.08 }}
-            >
-              <p className="text-sm font-medium text-[#202124]">
-                {item.type === 'warning' ? '⚠️' : 'ℹ️'} {item.title}
-              </p>
-              <p className="mt-1 text-xs text-[#5f6368]">{item.description}</p>
-            </motion.div>
-          ))}
-        </SectionReveal>
-      )}
-
-      {/* ── Unresolved Ingredients ── */}
-      {unresolved_ingredients.length > 0 && (
-        <SectionReveal title="Unresolved Ingredients" delay={0.7}>
-          <div className="rounded-xl border border-[#e8eaed] bg-white p-3">
-            <p className="text-xs text-[#5f6368] mb-2">
-              These ingredients could not be identified in our database:
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {unresolved_ingredients.map((name) => (
-                <span key={name} className="rounded-md bg-[#f1f3f4] px-2 py-1 text-xs text-[#5f6368]">
-                  {name}
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="text-4xl font-black tracking-tight"
+                  style={{ color: health_score.color }}
+                >
+                  {health_score.score}
                 </span>
+                <span className="text-xs font-black uppercase text-slate-400">/100</span>
+              </div>
+              <h2 className="text-lg font-black text-slate-900 leading-tight">
+                {health_score.label} Choice
+              </h2>
+              <span className="inline-block mt-0.5 rounded-full bg-slate-100 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-slate-700 border border-slate-300">
+                {processing_level.label}
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-end">
+            <span
+              className="rounded-2xl px-3 py-1.5 text-xs font-black uppercase tracking-wider text-white shadow-md"
+              style={{ backgroundColor: health_score.color }}
+            >
+              {health_score.score >= 80 ? '🟢 Excellent' : health_score.score >= 60 ? '🔵 Good' : health_score.score >= 40 ? '🟡 Moderate' : '🔴 High Risk'}
+            </span>
+          </div>
+        </div>
+
+        {/* ── 2. Visual Safety Breakdown Bar ── */}
+        <div className="mt-4 pt-4 border-t-2 border-slate-100">
+          <div className="flex justify-between text-[11px] font-black uppercase text-slate-500 mb-1.5">
+            <span>Safety Composition</span>
+            <span>{totalEvaluated} Items Evaluated</span>
+          </div>
+          <div className="flex h-4 w-full overflow-hidden rounded-full border-2 border-slate-900 bg-slate-100 p-0.5 gap-0.5">
+            {posPct > 0 && (
+              <div
+                className="h-full rounded-full bg-emerald-500 transition-all"
+                style={{ width: `${posPct}%` }}
+              />
+            )}
+            {neuPct > 0 && (
+              <div
+                className="h-full rounded-full bg-slate-300 transition-all"
+                style={{ width: `${neuPct}%` }}
+              />
+            )}
+            {conPct > 0 && (
+              <div
+                className="h-full rounded-full bg-rose-500 transition-all"
+                style={{ width: `${conPct}%` }}
+              />
+            )}
+          </div>
+          <div className="flex items-center justify-between text-[10px] font-black text-slate-600 mt-2 px-1">
+            <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full bg-emerald-500" /> {posPct}% Clean</span>
+            <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full bg-slate-300" /> {neuPct}% Neutral</span>
+            <span className="flex items-center gap-1"><span className="h-2.5 w-2.5 rounded-full bg-rose-500" /> {conPct}% Risk</span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* ── 3. Visual 3D Healthy vs Junk Comparison Banner ── */}
+      <div className="grid grid-cols-2 gap-2.5">
+        {/* Healthy Graphic Box */}
+        <div className="flex items-center gap-2.5 rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-3 shadow-xs">
+          <img src="/images/food_healthy.png" alt="Healthy Food" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
+          <div className="min-w-0">
+            <span className="text-[10px] font-black uppercase text-emerald-700">Clean Food</span>
+            <p className="text-sm font-black text-emerald-950">{positiveCount} Goods</p>
+          </div>
+        </div>
+
+        {/* Processed Junk Graphic Box */}
+        <div className="flex items-center gap-2.5 rounded-2xl border-2 border-rose-300 bg-rose-50 p-3 shadow-xs">
+          <img src="/images/food_processed.png" alt="Processed Food" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
+          <div className="min-w-0">
+            <span className="text-[10px] font-black uppercase text-rose-700">Additives</span>
+            <p className="text-sm font-black text-rose-950">{concernCount} Flags</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 4. Visual 3D Allergen Shield Card ── */}
+      {allergenCount > 0 && (
+        <div className="flex items-center gap-3.5 rounded-2xl border-2 border-amber-400 bg-amber-50 p-3.5 shadow-sm">
+          <img src="/images/allergen_shield.png" alt="Allergen Shield" className="h-14 w-14 object-contain shrink-0 rounded-xl" />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1 font-black text-amber-950 text-xs mb-1">
+              <ShieldAlert className="h-4 w-4 text-amber-600 shrink-0" />
+              <span>ALLERGEN SHIELD ({allergenCount})</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {allergens.map((a) => (
+                <div
+                  key={a.name}
+                  className="flex items-center gap-1.5 rounded-xl bg-white border border-amber-300 px-2.5 py-1 text-xs font-black text-amber-950"
+                >
+                  {getAllergenIcon(a.name)}
+                  <span>{a.name}</span>
+                </div>
               ))}
             </div>
           </div>
-        </SectionReveal>
+        </div>
       )}
+
+      {/* ── 5. Visual 3D Health Swap Suggestion Feature ── */}
+      <div className="flex items-center gap-3.5 rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-3.5 text-emerald-950 shadow-sm">
+        <img src="/images/swap_fruit.png" alt="Fruit Swap" className="h-14 w-14 object-contain shrink-0 rounded-xl" />
+        <div className="flex-1 min-w-0">
+          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700">
+            Smart Health Swap Idea
+          </span>
+          <p className="text-xs font-extrabold text-emerald-950 truncate">
+            {health_score.score >= 70
+              ? '🍏 Excellent choice! Pair with fresh organic fruits.'
+              : '🍇 Swap for fresh berries, nuts, or organic fruits!'}
+          </p>
+        </div>
+      </div>
+
+      {/* ── 6. Gemma AI Quick Badge ── */}
+      {aiSummary && (
+        <div className="flex items-center gap-2.5 rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-3 text-xs font-black text-indigo-950">
+          <Sparkles className="h-4 w-4 text-indigo-600 shrink-0" />
+          <p className="line-clamp-2 leading-snug">
+            {aiSummary}
+          </p>
+        </div>
+      )}
+
+      {/* ── 7. Visual Filter Chips ── */}
+      <div className="flex gap-1.5 rounded-2xl bg-slate-200 p-1 font-extrabold text-xs">
+        {[
+          { id: 'all', label: `All (${totalEvaluated})` },
+          { id: 'concerns', label: `🔴 Risk (${concernCount})` },
+          { id: 'positives', label: `🟢 Clean (${positiveCount})` },
+          { id: 'heuristics', label: `🔍 Unlisted (${unresolved_heuristics?.length || unresolved_ingredients.length})` },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveFilter(tab.id as any)}
+            className={`flex-1 rounded-xl py-2 px-1 text-[11px] font-black transition-all ${
+              activeFilter === tab.id
+                ? 'bg-white text-slate-900 shadow-sm border-2 border-slate-900'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* ── 8. Visual Micro-Badges Grid ── */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {/* Risk Items */}
+        {(activeFilter === 'all' || activeFilter === 'concerns') &&
+          ingredients_of_concern.map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center justify-between rounded-xl border-2 border-rose-200 bg-rose-50 p-3 text-xs"
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-rose-500 text-white font-black text-[10px]">
+                  🚨
+                </div>
+                <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
+              </div>
+              <span className="shrink-0 rounded bg-rose-200 px-1.5 py-0.5 text-[9px] font-black uppercase text-rose-900">
+                {item.severity}
+              </span>
+            </div>
+          ))}
+
+        {/* Clean / Positive Items */}
+        {(activeFilter === 'all' || activeFilter === 'positives') &&
+          positive_ingredients.map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center gap-2 rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 text-xs min-w-0"
+            >
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white font-black text-[10px]">
+                <CheckCircle className="h-3.5 w-3.5" />
+              </div>
+              <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
+            </div>
+          ))}
+
+        {/* Unlisted Fallback Chips */}
+        {(activeFilter === 'all' || activeFilter === 'heuristics') &&
+          unresolved_heuristics &&
+          unresolved_heuristics.map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center justify-between rounded-xl border-2 border-indigo-200 bg-indigo-50 p-3 text-xs"
+            >
+              <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
+              <span
+                className={`rounded px-1.5 py-0.5 text-[9px] font-black uppercase ${
+                  item.risk_indicator === 'positive'
+                    ? 'bg-emerald-200 text-emerald-900'
+                    : item.risk_indicator === 'concern'
+                    ? 'bg-amber-200 text-amber-900'
+                    : 'bg-slate-200 text-slate-800'
+                }`}
+              >
+                {item.inferred_category}
+              </span>
+            </div>
+          ))}
+      </div>
     </div>
-  );
-}
-
-function SectionReveal({
-  title,
-  delay,
-  children,
-}: {
-  title: string;
-  delay: number;
-  children: React.ReactNode;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-40px' });
-
-  return (
-    <motion.div
-      ref={ref}
-      className="flex flex-col gap-2"
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <h3 className="text-sm font-semibold uppercase tracking-wider text-[#5f6368]">
-        {title}
-      </h3>
-      {children}
-    </motion.div>
   );
 }

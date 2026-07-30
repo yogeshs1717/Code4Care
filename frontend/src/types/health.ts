@@ -41,6 +41,13 @@ export interface HealthConsideration {
   type: string;
 }
 
+export interface UnresolvedFallbackItem {
+  name: string;
+  inferred_category: string;
+  note: string;
+  risk_indicator: 'neutral' | 'positive' | 'concern';
+}
+
 export interface DeterministicReport {
   product_name?: string;
   health_score: HealthScore;
@@ -50,6 +57,9 @@ export interface DeterministicReport {
   health_considerations: HealthConsideration[];
   allergens: AllergenInfo[];
   unresolved_ingredients: string[];
+  unresolved_heuristics?: UnresolvedFallbackItem[];
+  ingredient_count?: number;
+  resolved_count?: number;
 }
 
 export interface GemmaMessage {

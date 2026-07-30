@@ -43,6 +43,11 @@ async def _read_limited(upload: UploadFile, max_bytes: int) -> bytes:
     },
     summary="Extract text from an ingredient-label image",
 )
+@router.post(
+    "/api/v1/ocr",
+    response_model=OCRResult,
+    include_in_schema=False,
+)
 async def run_ocr(
     image: UploadFile = File(...),
     ocr_service: IOCRService = Depends(get_ocr_service),
