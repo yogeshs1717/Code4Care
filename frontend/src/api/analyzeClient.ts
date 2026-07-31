@@ -5,12 +5,16 @@ import type {
 import { getApiBaseUrl } from './ocrClient';
 
 async function fetchWithFallback(path: string, options: RequestInit): Promise<Response> {
-  const urlsToTry: string[] = [];
   const primaryBase = getApiBaseUrl();
-  if (primaryBase) urlsToTry.push(primaryBase);
-  if (!urlsToTry.includes('https://code4care-fqhr.onrender.com')) urlsToTry.push('https://code4care-fqhr.onrender.com');
+  const urlsToTry: string[] = [primaryBase];
+
+  if (typeof window !== 'undefined' && window.location?.hostname) {
+    const localNetworkUrl = `http://${window.location.hostname}:8000`;
+    if (!urlsToTry.includes(localNetworkUrl)) urlsToTry.push(localNetworkUrl);
+  }
   if (!urlsToTry.includes('http://localhost:8000')) urlsToTry.push('http://localhost:8000');
   if (!urlsToTry.includes('http://127.0.0.1:8000')) urlsToTry.push('http://127.0.0.1:8000');
+  if (!urlsToTry.includes('https://code4care-fqhr.onrender.com')) urlsToTry.push('https://code4care-fqhr.onrender.com');
   if (!urlsToTry.includes('')) urlsToTry.push('');
 
   let lastError: unknown = null;
@@ -18,12 +22,14 @@ async function fetchWithFallback(path: string, options: RequestInit): Promise<Re
     try {
       const url = base ? `${base}${path}` : path;
       const res = await fetch(url, options);
-      return res;
+      if (res.ok || res.status < 500) {
+        return res;
+      }
     } catch (err) {
       lastError = err;
     }
   }
-  throw lastError || new Error('Could not reach backend server.');
+  throw lastError || new Error(`Could not reach backend server at ${primaryBase}.`);
 }
 
 export async function analyzeIngredients(
