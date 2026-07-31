@@ -48,36 +48,30 @@ export async function requestOcr(image: File, signal?: AbortSignal): Promise<Ocr
   const body = new FormData();
   body.append('image', image);
 
-  const urlsToTry: string[] = [];
-  const primaryBase = getApiBaseUrl();
-  if (primaryBase) urlsToTry.push(primaryBase);
-  if (!urlsToTry.includes('https://code4care-fqhr.onrender.com')) urlsToTry.push('https://code4care-fqhr.onrender.com');
-  if (!urlsToTry.includes('http://localhost:8000')) urlsToTry.push('http://localhost:8000');
-  if (!urlsToTry.includes('http://127.0.0.1:8000')) urlsToTry.push('http://127.0.0.1:8000');
-  if (!urlsToTry.includes('')) urlsToTry.push('');
+  // Strictly use the Render URL, no fallbacks
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}/ocr`;
 
-  for (const base of urlsToTry) {
-    try {
-      const url = base ? `${base}/ocr` : '/ocr';
-      const response = await fetch(url, { method: 'POST', body, signal });
-      const payload: unknown = await response.json().catch(() => null);
+  try {
+    const response = await fetch(url, { method: 'POST', body, signal });
+    const payload: unknown = await response.json().catch(() => null);
 
-      if (!response.ok) {
-        if (isApiErrorPayload(payload)) {
-          throw new OcrRequestError(payload.error.code, payload.error.message);
-        }
-        throw new OcrRequestError('UNEXPECTED_ERROR', `Request failed (${response.status}).`);
+    if (!response.ok) {
+      if (isApiErrorPayload(payload)) {
+        throw new OcrRequestError(payload.error.code, payload.error.message);
       }
-
-      return payload as OcrResult;
-    } catch (cause) {
-      if (cause instanceof OcrRequestError) throw cause;
-      if (cause instanceof DOMException && cause.name === 'AbortError') throw cause;
+      throw new OcrRequestError('UNEXPECTED_ERROR', `Request failed (${response.status}).`);
     }
-  }
 
-  throw new OcrRequestError(
-    'NETWORK_ERROR',
-    `Could not reach server. Check your connection and ensure the backend is running.`
-  );
+    return payload as OcrResult;
+  } catch (cause) {
+    if (cause instanceof OcrRequestError) throw cause;
+    if (cause instanceof DOMException && cause.name === 'AbortError') throw cause;
+    
+    // If Render is sleeping, it will throw a network error here. 
+    throw new OcrRequestError(
+      'NETWORK_ERROR',
+      `Could not reach server at ${url}. If the backend just woke up, please try again in 30 seconds.`
+    );
+  }
 }
