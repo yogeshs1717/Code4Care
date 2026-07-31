@@ -29,7 +29,7 @@ try:
         # --- Gemini / LLM -------------------------------------------------------
         # API key for Google Generative AI (Google AI Studio / Gemini / Gemma).
         gemini_api_key: str | None = None
-        gemma_model_name: str = "gemma-4-31b-it"
+        gemma_model_name: str = "models/gemma-4-31b-it"
 
         @property
         def language_hints(self) -> list[str]:

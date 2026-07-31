@@ -48,6 +48,13 @@ export interface UnresolvedFallbackItem {
   risk_indicator: 'neutral' | 'positive' | 'concern';
 }
 
+export interface RecommendedAlternative {
+  name: string;
+  category: string;
+  reason: string;
+  estimated_score?: number;
+}
+
 export interface DeterministicReport {
   product_name?: string;
   health_score: HealthScore;
@@ -56,6 +63,7 @@ export interface DeterministicReport {
   ingredients_of_concern: ConcernItem[];
   health_considerations: HealthConsideration[];
   allergens: AllergenInfo[];
+  recommended_alternatives?: RecommendedAlternative[];
   unresolved_ingredients: string[];
   unresolved_heuristics?: UnresolvedFallbackItem[];
   ingredient_count?: number;

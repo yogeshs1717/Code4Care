@@ -244,11 +244,19 @@
   ],
 
   "ingredient_category_mapping": {
+    "whole_grains": ["whole wheat", "whole wheat flour", "whole grain", "whole oats", "oats", "oat flour", "quinoa", "millet", "ragi", "barley", "brown rice", "buckwheat", "sorghum", "jowar", "bajra"],
+    "vegetables_and_legumes": ["tomato", "spinach", "carrot", "onion", "garlic", "ginger", "potato", "pea", "peas", "lentils", "chickpeas", "chana", "dal", "beans", "soybean", "tofu", "edamame"],
+    "fruits": ["apple", "banana", "berry", "strawberry", "blueberry", "mango", "orange", "lemon", "lime", "raisins", "dates", "fig", "grape", "fruit", "pineapple"],
+    "nuts_and_seeds": ["almond", "almonds", "cashew", "cashews", "walnut", "walnuts", "pistachio", "hazelnut", "peanuts", "chia", "flaxseed", "sunflower seed", "pumpkin seed", "sesame"],
+    "herbs_and_spices": ["turmeric", "cinnamon", "cardamom", "black pepper", "pepper", "cloves", "cumin", "coriander", "basil", "oregano", "mint"],
+    "proteins": ["whey protein", "pea protein", "soy protein", "egg white", "collagen"],
+    "natural_oils": ["olive oil", "sunflower oil", "mustard oil", "coconut oil", "sesame oil", "groundnut oil", "rice bran oil"],
+    "dairy": ["milk", "curd", "yogurt", "cheese", "paneer", "butter", "ghee", "whey"],
     "refined_sugars": ["sugar", "cane sugar", "brown sugar", "icing sugar", "invert sugar", "dextrose", "fructose", "glucose", "glucose syrup", "corn syrup", "maltodextrin", "sucrose", "treacle", "molasses", "jaggery", "honey", "agave", "maple syrup", "high fructose corn syrup", "caramel"],
     "artificial_sweeteners": ["aspartame", "sucralose", "saccharin", "acesulfame potassium", "acesulfame k", "neotame", "advantame", "cyclamate"],
     "artificial_colours": ["tartrazine", "sunset yellow", "allura red", "erythrosine", "brilliant blue", "indigotine", "azorubine", "carmoisine", "titanium dioxide", "FD&C"],
-    "artificial_preservatives": ["sodium benzoate", "potassium sorbate", "sodium nitrite", "sodium nitrate", "BHA", "BHT", "TBHQ", "sulphur dioxide", "sodium metabisulphite"],
-    "hydrogenated_fats": ["partially hydrogenated", "hydrogenated vegetable oil", "hydrogenated oil", "trans fat", "vanaspati", "dalda", "margarine", "shortening"],
+    "artificial_preservatives": ["sodium benzoate", "potassium sorbate", "sodium nitrite", "sodium nitrate", "BHA", "BHT", "TBHQ", "sulphur dioxide", "sodium metabisulphite", "calcium propionate"],
+    "hydrogenated_fats": ["partially hydrogenated", "hydrogenated vegetable oil", "hydrogenated oil", "trans fat", "vanaspati", "dalda", "margarine", "shortening", "palm oil", "palmolein"],
     "flavour_enhancers": ["monosodium glutamate", "MSG", "disodium guanylate", "disodium inosinate", "disodium ribonucleotides", "yeast extract", "hydrolysed vegetable protein", "HVP", "autolysed yeast"],
     "refined_flours": ["refined wheat flour", "maida", "all-purpose flour", "white flour", "bleached flour", "enriched flour", "refined flour"],
     "excessive_sodium": ["sodium chloride", "table salt", "rock salt", "sea salt", "MSG", "sodium bicarbonate", "baking soda", "sodium citrate"]

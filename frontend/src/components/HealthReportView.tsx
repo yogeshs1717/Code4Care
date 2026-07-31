@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import {
   ShieldAlert,
   CheckCircle,
-  Sparkles,
   Zap,
   Wheat,
   Milk,
   Nut,
   Egg,
+  Sparkles,
 } from 'lucide-react';
 import type { DeterministicReport } from '../types/health';
 
@@ -19,7 +19,7 @@ interface HealthReportViewProps {
 
 export function HealthReportView({
   report,
-  aiSummary,
+  aiSummary: _aiSummary,
 }: HealthReportViewProps) {
   const [activeFilter, setActiveFilter] = useState<'all' | 'concerns' | 'positives' | 'heuristics'>('all');
 
@@ -41,6 +41,7 @@ export function HealthReportView({
     positive_ingredients,
     ingredients_of_concern,
     allergens,
+    recommended_alternatives,
     unresolved_ingredients,
     unresolved_heuristics,
     ingredient_count,
@@ -151,28 +152,29 @@ export function HealthReportView({
         </div>
       </motion.div>
 
-      {/* ── 3. Visual 3D Healthy vs Junk Comparison Banner ── */}
+      {/* ── 3. Visual Good Foods vs Bad Foods Comparison Banner ── */}
       <div className="grid grid-cols-2 gap-2.5">
-        {/* Healthy Graphic Box */}
+        {/* Healthy / Good Foods Box */}
         <div className="flex items-center gap-2.5 rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-3 shadow-xs">
-          <img src="/images/food_healthy.png" alt="Healthy Food" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
+          <img src="/images/food_healthy.png" alt="Good Foods" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
           <div className="min-w-0">
-            <span className="text-[10px] font-black uppercase text-emerald-700">Clean Food</span>
-            <p className="text-sm font-black text-emerald-950">{positiveCount} Goods</p>
+            <span className="text-[10px] font-black uppercase text-emerald-700">Good Foods</span>
+            <p className="text-sm font-black text-emerald-950">{positiveCount} Healthy</p>
           </div>
         </div>
 
-        {/* Processed Junk Graphic Box */}
+        {/* Processed / Bad Foods Box */}
         <div className="flex items-center gap-2.5 rounded-2xl border-2 border-rose-300 bg-rose-50 p-3 shadow-xs">
-          <img src="/images/food_processed.png" alt="Processed Food" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
+          <img src="/images/food_processed.png" alt="Bad Foods" className="h-12 w-12 object-contain shrink-0 rounded-xl" />
           <div className="min-w-0">
-            <span className="text-[10px] font-black uppercase text-rose-700">Additives</span>
-            <p className="text-sm font-black text-rose-950">{concernCount} Flags</p>
+            <span className="text-[10px] font-black uppercase text-rose-700">Bad Foods</span>
+            <p className="text-sm font-black text-rose-950">{concernCount} Concerns</p>
           </div>
         </div>
       </div>
 
-      {/* ── 4. Visual 3D Allergen Shield Card ── */}
+
+      {/* ── 5. Visual 3D Allergen Shield Card ── */}
       {allergenCount > 0 && (
         <div className="flex items-center gap-3.5 rounded-2xl border-2 border-amber-400 bg-amber-50 p-3.5 shadow-sm">
           <img src="/images/allergen_shield.png" alt="Allergen Shield" className="h-14 w-14 object-contain shrink-0 rounded-xl" />
@@ -196,37 +198,60 @@ export function HealthReportView({
         </div>
       )}
 
-      {/* ── 5. Visual 3D Health Swap Suggestion Feature ── */}
-      <div className="flex items-center gap-3.5 rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-3.5 text-emerald-950 shadow-sm">
-        <img src="/images/swap_fruit.png" alt="Fruit Swap" className="h-14 w-14 object-contain shrink-0 rounded-xl" />
-        <div className="flex-1 min-w-0">
-          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700">
-            Smart Health Swap Idea
-          </span>
-          <p className="text-xs font-extrabold text-emerald-950 truncate">
-            {health_score.score >= 70
-              ? '🍏 Excellent choice! Pair with fresh organic fruits.'
-              : '🍇 Swap for fresh berries, nuts, or organic fruits!'}
-          </p>
-        </div>
-      </div>
+      {/* ── Recommended Healthy Alternatives ── */}
+      {recommended_alternatives && recommended_alternatives.length > 0 && (
+        <div className="flex flex-col gap-2.5 rounded-2xl border-2 border-emerald-400 bg-gradient-to-br from-emerald-50 via-teal-50 to-white p-4 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-black shrink-0">
+                <Sparkles className="h-4 w-4" />
+              </div>
+              <div>
+                <h3 className="text-xs font-black uppercase text-emerald-950 tracking-wider">
+                  Recommended Healthy Swaps ({recommended_alternatives.length})
+                </h3>
+                <p className="text-[10px] font-bold text-emerald-700">
+                  Better alternatives with clean natural ingredients
+                </p>
+              </div>
+            </div>
+          </div>
 
-      {/* ── 6. Gemma AI Quick Badge ── */}
-      {aiSummary && (
-        <div className="flex items-center gap-2.5 rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-3 text-xs font-black text-indigo-950">
-          <Sparkles className="h-4 w-4 text-indigo-600 shrink-0" />
-          <p className="line-clamp-2 leading-snug">
-            {aiSummary}
-          </p>
+          <div className="flex flex-col gap-2 mt-1">
+            {recommended_alternatives.map((alt) => (
+              <div
+                key={alt.name}
+                className="flex items-start justify-between rounded-xl border border-emerald-200 bg-white p-3 shadow-xs gap-3"
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="rounded bg-emerald-100 px-2 py-0.5 text-[9px] font-black uppercase text-emerald-800 shrink-0">
+                      {alt.category}
+                    </span>
+                    <span className="font-extrabold text-slate-900 text-xs truncate">{alt.name}</span>
+                  </div>
+                  <p className="text-[11px] font-medium text-slate-600 leading-tight">
+                    {alt.reason}
+                  </p>
+                </div>
+                {alt.estimated_score && (
+                  <div className="flex shrink-0 flex-col items-center justify-center rounded-lg bg-emerald-50 border border-emerald-200 px-2.5 py-1">
+                    <span className="text-xs font-black text-emerald-700">{alt.estimated_score}</span>
+                    <span className="text-[8px] font-black uppercase text-emerald-600">Score</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
-      {/* ── 7. Visual Filter Chips ── */}
+      {/* ── 6. Visual Filter Chips ── */}
       <div className="flex gap-1.5 rounded-2xl bg-slate-200 p-1 font-extrabold text-xs">
         {[
           { id: 'all', label: `All (${totalEvaluated})` },
-          { id: 'concerns', label: `🔴 Risk (${concernCount})` },
-          { id: 'positives', label: `🟢 Clean (${positiveCount})` },
+          { id: 'positives', label: `🟢 Good Foods (${positiveCount})` },
+          { id: 'concerns', label: `🔴 Bad Foods (${concernCount})` },
           { id: 'heuristics', label: `🔍 Unlisted (${unresolved_heuristics?.length || unresolved_ingredients.length})` },
         ].map((tab) => (
           <button
@@ -243,63 +268,93 @@ export function HealthReportView({
         ))}
       </div>
 
-      {/* ── 8. Visual Micro-Badges Grid ── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {/* Risk Items */}
-        {(activeFilter === 'all' || activeFilter === 'concerns') &&
-          ingredients_of_concern.map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center justify-between rounded-xl border-2 border-rose-200 bg-rose-50 p-3 text-xs"
-            >
-              <div className="flex items-center gap-2 min-w-0">
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-rose-500 text-white font-black text-[10px]">
-                  🚨
+      {/* ── 7. Detailed Good & Bad Foods Grid ── */}
+      <div className="flex flex-col gap-2.5">
+        {/* Good Foods Section */}
+        {(activeFilter === 'all' || activeFilter === 'positives') && positive_ingredients.length > 0 && (
+          <div className="flex flex-col gap-2">
+            <h3 className="text-xs font-black uppercase text-emerald-800 flex items-center gap-1.5">
+              <CheckCircle className="h-4 w-4 text-emerald-600" />
+              <span>Good Foods ({positive_ingredients.length})</span>
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {positive_ingredients.map((item) => (
+                <div
+                  key={item.name}
+                  className="rounded-xl border-2 border-emerald-200 bg-emerald-50/90 p-3 text-xs"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-extrabold text-emerald-950">{item.name}</span>
+                  </div>
+                  {item.benefit && (
+                    <p className="text-[11px] font-medium text-emerald-800/90 leading-tight">
+                      {item.benefit}
+                    </p>
+                  )}
                 </div>
-                <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
-              </div>
-              <span className="shrink-0 rounded bg-rose-200 px-1.5 py-0.5 text-[9px] font-black uppercase text-rose-900">
-                {item.severity}
-              </span>
+              ))}
             </div>
-          ))}
+          </div>
+        )}
 
-        {/* Clean / Positive Items */}
-        {(activeFilter === 'all' || activeFilter === 'positives') &&
-          positive_ingredients.map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center gap-2 rounded-xl border-2 border-emerald-200 bg-emerald-50 p-3 text-xs min-w-0"
-            >
-              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white font-black text-[10px]">
-                <CheckCircle className="h-3.5 w-3.5" />
-              </div>
-              <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
+        {/* Bad Foods / Concerns Section */}
+        {(activeFilter === 'all' || activeFilter === 'concerns') && ingredients_of_concern.length > 0 && (
+          <div className="flex flex-col gap-2 mt-1">
+            <h3 className="text-xs font-black uppercase text-rose-800 flex items-center gap-1.5">
+              <ShieldAlert className="h-4 w-4 text-rose-600" />
+              <span>Bad Foods / Concerns ({ingredients_of_concern.length})</span>
+            </h3>
+            <div className="grid grid-cols-1 gap-2">
+              {ingredients_of_concern.map((item) => (
+                <div
+                  key={item.name}
+                  className="rounded-xl border-2 border-rose-200 bg-rose-50/90 p-3 text-xs"
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-extrabold text-rose-950">{item.name}</span>
+                    <span className={`rounded px-2 py-0.5 text-[9px] font-black uppercase ${
+                      item.severity === 'high' ? 'bg-rose-600 text-white' : item.severity === 'moderate' ? 'bg-rose-200 text-rose-950' : 'bg-amber-200 text-amber-950'
+                    }`}>
+                      {item.severity} Risk
+                    </span>
+                  </div>
+                  {item.concern && (
+                    <p className="text-[11px] font-medium text-rose-900/90 leading-tight">
+                      {item.concern}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        )}
 
-        {/* Unlisted Fallback Chips */}
+        {/* Unlisted / Heuristics Items */}
         {(activeFilter === 'all' || activeFilter === 'heuristics') &&
           unresolved_heuristics &&
-          unresolved_heuristics.map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center justify-between rounded-xl border-2 border-indigo-200 bg-indigo-50 p-3 text-xs"
-            >
-              <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
-              <span
-                className={`rounded px-1.5 py-0.5 text-[9px] font-black uppercase ${
-                  item.risk_indicator === 'positive'
-                    ? 'bg-emerald-200 text-emerald-900'
-                    : item.risk_indicator === 'concern'
-                    ? 'bg-amber-200 text-amber-900'
-                    : 'bg-slate-200 text-slate-800'
-                }`}
-              >
-                {item.inferred_category}
-              </span>
+          unresolved_heuristics.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+              {unresolved_heuristics.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-center justify-between rounded-xl border-2 border-indigo-200 bg-indigo-50 p-3 text-xs"
+                >
+                  <span className="font-extrabold text-slate-900 truncate">{item.name}</span>
+                  <span
+                    className={`rounded px-1.5 py-0.5 text-[9px] font-black uppercase ${
+                      item.risk_indicator === 'positive'
+                        ? 'bg-emerald-200 text-emerald-900'
+                        : item.risk_indicator === 'concern'
+                        ? 'bg-amber-200 text-amber-900'
+                        : 'bg-slate-200 text-slate-800'
+                    }`}
+                  >
+                    {item.inferred_category}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
       </div>
     </div>
   );

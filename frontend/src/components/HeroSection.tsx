@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Camera, Sparkles, ArrowDown } from 'lucide-react';
 
 export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,13 +13,13 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
   const raw = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
   const progress = useSpring(raw, { stiffness: 60, damping: 25, mass: 0.8 });
 
-  // Responsive offsets for jar & phone
-  const jarX = useTransform(progress, [0, 0.6], ['-35vw', '0vw']);
-  const jarScale = useTransform(progress, [0, 0.6], [0.65, 1]);
-  const jarRotate = useTransform(progress, [0, 0.6], [12, 0]);
+  // Jar: left→center. Phone: right→center.
+  const jarX = useTransform(progress, [0, 0.6], ['-30vw', '0vw']);
+  const jarScale = useTransform(progress, [0, 0.6], [0.6, 1]);
+  const jarRotate = useTransform(progress, [0, 0.6], [15, 0]);
 
-  const phoneX = useTransform(progress, [0.1, 0.6], ['35vw', '0vw']);
-  const phoneScale = useTransform(progress, [0.1, 0.6], [0.55, 1]);
+  const phoneX = useTransform(progress, [0.1, 0.6], ['40vw', '0vw']);
+  const phoneScale = useTransform(progress, [0.1, 0.6], [0.5, 1]);
 
   // Scanline: fires after convergence
   const scanlineTop = useTransform(
@@ -37,78 +36,43 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
   // Jar fade / phone scale-up for reveal
   const jarOpacity = useTransform(progress, [0.7, 0.85], [1, 0]);
   const jarBlur = useTransform(progress, [0.7, 0.85], ['0px', '8px']);
-  const phoneReveal = useTransform(progress, [0.75, 1], [1, 1.12]);
+  const phoneReveal = useTransform(progress, [0.75, 1], [1, 1.15]);
 
-  // Scroll indicator & top bar fade
-  const scrollHintOpacity = useTransform(progress, [0, 0.2, 0.45], [1, 1, 0]);
-  const topBarOpacity = useTransform(progress, [0, 0.4], [1, 0.2]);
+  // Scroll indicator
+  const scrollHintOpacity = useTransform(progress, [0, 0.2, 0.5], [1, 1, 0]);
 
   return (
     <div
       ref={containerRef}
-      className="relative h-[250vh] sm:h-[300vh] w-full select-none"
+      className="relative h-[300vh] w-full"
       style={{ fontFamily: 'var(--font-heading)' }}
     >
       {/* ── Sticky viewport ── */}
-      <div className="sticky top-0 flex h-dvh w-full items-center justify-center overflow-hidden bg-slate-950 text-white">
-        {/* Ambient neon radial gradients */}
-        <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-indigo-600/20 blur-[100px]" />
-        <div className="pointer-events-none absolute -right-20 -bottom-20 h-72 w-72 rounded-full bg-emerald-600/15 blur-[100px]" />
+      <div className="sticky top-0 flex h-dvh w-full items-center justify-center overflow-hidden bg-[#f8f5f0]">
+        {/* Ambient background gradient */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-amber-50/40 via-transparent to-amber-100/30" />
 
-        {/* ── Direct Header Action Bar for Phones ── */}
-        <motion.div
-          className="absolute top-4 left-0 right-0 z-30 flex items-center justify-between px-5 sm:px-8"
-          style={{ opacity: topBarOpacity }}
-        >
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-500/20 border border-indigo-500/30 text-indigo-400">
-              <Sparkles className="h-4 w-4" />
-            </div>
-            <span className="text-xs font-black tracking-wider uppercase text-slate-300">
-              Code4Care
-            </span>
-          </div>
-
-          <button
-            onClick={onEnterApp}
-            className="flex items-center gap-1.5 rounded-full bg-indigo-600 px-3.5 py-1.5 text-xs font-extrabold text-white shadow-lg shadow-indigo-600/30 hover:bg-indigo-500 active:scale-95 transition-all"
-          >
-            <Camera className="h-3.5 w-3.5" />
-            <span>Scan Now</span>
-          </button>
-        </motion.div>
-
-        {/* ── Hero Typography ── */}
+        {/* ── Typography — fades out on scroll ── */}
         <motion.div
           className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10"
-          style={{ opacity: useTransform(progress, [0, 0.28], [1, 0]) }}
+          style={{ opacity: useTransform(progress, [0, 0.3], [1, 0]) }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 rounded-full bg-indigo-950/60 border border-indigo-500/30 px-3.5 py-1 text-[11px] font-bold text-indigo-300 mb-4 backdrop-blur-sm"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Sparkles className="h-3 w-3 text-indigo-400 animate-pulse" />
-            <span>Powered by Gemma 4 AI & Health Rule Engine</span>
-          </motion.div>
-
           <motion.h1
-            className="bg-gradient-to-r from-white via-slate-100 to-indigo-300 bg-clip-text text-[clamp(2.4rem,8vw,5.5rem)] font-black leading-none tracking-tight text-transparent max-w-2xl"
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-gradient-to-br from-stone-900 via-stone-800 to-amber-600 bg-clip-text text-[clamp(3rem,8vw,6rem)] font-extrabold leading-none tracking-tight text-transparent max-w-4xl"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            Ingredient Intelligence
+            Code4Care
           </motion.h1>
-
           <motion.p
-            className="mt-3.5 text-sm sm:text-base text-slate-400 max-w-md font-normal leading-relaxed"
+            className="mt-4 text-lg text-stone-600 sm:text-xl font-medium max-w-md"
+            style={{ fontFamily: 'var(--font-body)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            Scan food labels instantly. Uncover additives, allergens, and health scores in seconds.
+            Ingredient Intelligence & Health Analysis
           </motion.p>
         </motion.div>
 
@@ -118,17 +82,19 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
           style={{ opacity: scrollHintOpacity }}
         >
           <motion.div
-            className="flex flex-col items-center gap-1.5 text-xs font-bold text-slate-400"
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            className="flex flex-col items-center gap-2 text-sm font-medium text-stone-500"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ArrowDown className="h-4 w-4 text-indigo-400" />
-            <span>Scroll or tap Scan Now</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+            <span>Scroll to explore</span>
           </motion.div>
         </motion.div>
 
         {/* ── 3D Intersection Scene ── */}
-        <div className="relative flex h-[55vh] w-full max-w-md sm:max-w-xl items-center justify-center">
+        <div className="relative flex h-[60vh] w-full max-w-2xl items-center justify-center">
           {/* ── Food Jar (Left) ── */}
           <motion.div
             className="absolute flex items-center justify-center"
@@ -140,21 +106,23 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
               filter: `blur(${jarBlur})`,
             }}
           >
-            <div className="relative flex h-44 w-32 flex-col items-center sm:h-56 sm:w-44">
+            <div className="relative flex h-48 w-36 flex-col items-center sm:h-56 sm:w-44">
               {/* Jar body */}
-              <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl">
+              <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border-2 border-stone-200 bg-white shadow-xl">
                 {/* Lid */}
-                <div className="h-5 w-full bg-indigo-600 rounded-t-xl" />
+                <div className="h-5 w-full rounded-t-xl bg-gradient-to-r from-amber-600 to-amber-500" />
                 {/* Label area */}
-                <div className="flex flex-1 flex-col items-center justify-center gap-2 px-3">
-                  <div className="h-2 w-3/4 rounded-full bg-slate-700" />
-                  <div className="h-2 w-1/2 rounded-full bg-slate-800" />
-                  <div className="mt-2 flex items-center gap-1.5">
-                    <div className="h-3.5 w-3.5 rounded-full bg-emerald-400" />
-                    <div className="h-2 w-16 rounded-full bg-slate-700" />
+                <div className="flex flex-1 flex-col items-center justify-center gap-1.5 px-3">
+                  <div className="h-2 w-3/4 rounded-full bg-stone-200" />
+                  <div className="h-2 w-1/2 rounded-full bg-stone-200" />
+                  <div className="mt-2 flex items-center gap-1">
+                    <div className="h-3 w-3 rounded-full bg-emerald-500" />
+                    <div className="h-2 w-16 rounded-full bg-stone-200" />
                   </div>
                 </div>
               </div>
+              {/* Glossy reflection */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-white/30 via-transparent to-transparent" />
             </div>
           </motion.div>
 
@@ -167,46 +135,48 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
               scaleX: phoneReveal,
             }}
           >
-            <div className="relative flex h-52 w-28 flex-col overflow-hidden rounded-[1.8rem] border-[3px] border-slate-700 bg-slate-900 shadow-2xl sm:h-64 sm:w-34">
+            <div className="relative flex h-52 w-28 flex-col overflow-hidden rounded-[1.5rem] border-[3px] border-stone-800 bg-white shadow-2xl sm:h-64 sm:w-32">
               {/* Notch */}
-              <div className="absolute left-1/2 top-0 z-10 h-3.5 w-14 -translate-x-1/2 rounded-b-xl bg-slate-950" />
+              <div className="absolute left-1/2 top-0 z-10 h-4 w-16 -translate-x-1/2 rounded-b-xl bg-stone-800" />
               {/* Screen content */}
               <div className="flex flex-1 flex-col items-center justify-center gap-2 px-3 pt-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-indigo-500 bg-indigo-500/10">
-                  <Camera className="h-5 w-5 text-indigo-400" />
+                {/* Camera reticle */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-amber-500 bg-amber-50">
+                  <div className="h-2.5 w-2.5 rounded-full bg-amber-600" />
                 </div>
-                <div className="h-1.5 w-3/4 rounded-full bg-slate-700" />
-                <div className="h-1.5 w-1/2 rounded-full bg-slate-800" />
-                <div className="mt-2 h-3.5 w-3/4 rounded-full bg-indigo-600" />
+                <div className="h-1.5 w-3/4 rounded-full bg-stone-200" />
+                <div className="h-1.5 w-1/2 rounded-full bg-stone-200" />
+                {/* "Scan" button */}
+                <div className="mt-1 h-3 w-3/4 rounded-full bg-amber-500" />
               </div>
             </div>
           </motion.div>
 
           {/* ── Scanline ── */}
           <motion.div
-            className="pointer-events-none absolute left-1/2 h-1 w-44 -translate-x-1/2"
+            className="pointer-events-none absolute left-1/2 h-0.5 w-48 -translate-x-1/2"
             style={{
               top: scanlineTop,
               opacity: scanlineOpacity,
-              background: 'linear-gradient(90deg, transparent, #818CF8, #818CF8, transparent)',
-              boxShadow: '0 0 16px #818CF8, 0 0 28px #818CF890',
+              background:
+                'linear-gradient(90deg, transparent, #f59e0b, #f59e0b, transparent)',
+              boxShadow: '0 0 12px #f59e0b, 0 0 24px #f59e0b80',
             }}
           />
 
-          {/* ── Final Action Button ── */}
+          {/* ── Enter App Button ── */}
           <motion.button
-            className="absolute bottom-2 z-20 flex items-center gap-2 rounded-full bg-indigo-600 px-8 py-3.5 text-sm font-black tracking-wide text-white shadow-xl shadow-indigo-600/40 hover:bg-indigo-500 active:scale-95 transition-all"
+            className="absolute bottom-0 z-20 rounded-full bg-gradient-to-r from-amber-600 to-amber-500 px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-amber-500/30 hover:from-amber-500 hover:to-amber-400 active:scale-95 transition-all"
             style={{
-              opacity: useTransform(progress, [0.8, 1], [0, 1]),
-              y: useTransform(progress, [0.8, 1], [20, 0]),
+              opacity: useTransform(progress, [0.85, 1], [0, 1]),
+              y: useTransform(progress, [0.85, 1], [20, 0]),
               pointerEvents: 'auto' as const,
             }}
             onClick={onEnterApp}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Camera className="h-4 w-4" />
-            <span>Scan Food Label</span>
+            Scan Your Food
           </motion.button>
         </div>
       </div>

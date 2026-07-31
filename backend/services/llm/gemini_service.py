@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 
 from backend.models.health import HealthReport
 from backend.services.llm.base import ILLMService
@@ -39,16 +40,43 @@ Respond with a brief, friendly summary paragraph. Do not use markdown headers or
 _SYSTEM_PROMPT_CHAT = """You are a friendly nutrition assistant called Gemma. You answer questions about 
 a specific food product based on its health report data.
 
-You have the STRUCTURED HEALTH REPORT below. Answer the user's question based ONLY on this data.
+You have the STRUCTURED HEALTH REPORT below. Answer the user's question directly and concisely.
 
 Rules you MUST follow:
-1. ONLY use information from the provided report to answer.
-2. NEVER invent facts about ingredients that are not in the report.
-3. NEVER change or override the health score or any report findings.
-4. If asked something not covered by the report, say you don't have that information.
-5. Use simple, friendly language.
-6. Keep answers concise (2-4 sentences typically).
-7. If asked about nutrition facts (calories, protein, etc.), explain that this tool analyzes ingredients, not nutrition labels."""
+1. Provide ONLY a direct, short answer (1-2 sentences maximum).
+2. NEVER output scratchpad, reasoning steps, bullet lists, intent analysis, or draft options.
+3. ONLY use facts from the provided report.
+4. Keep answers simple, clear, and direct."""
+
+
+def _clean_llm_text(text: str) -> str:
+    """Extract clean concise answer, stripping scratchpad thoughts, drafts, and bullet lists."""
+    if not text:
+        return ""
+    text = text.strip()
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    filtered = [
+        line for line in lines
+        if not line.startswith("*")
+        and not line.startswith("-")
+        and not line.startswith("Draft")
+        and not line.startswith("Question:")
+        and not line.startswith("Constraint:")
+        and not line.startswith("User:")
+        and not line.startswith("Intent:")
+        and not line.startswith("Rules")
+        and not line.startswith("Direct Answer")
+        and not re.match(r"^\d+\.\s+", line)
+    ]
+    if filtered:
+        res = " ".join(filtered).strip()
+        if res.startswith('"') and res.endswith('"'):
+            res = res[1:-1].strip()
+        return res
+    last_line = lines[-1].strip()
+    if last_line.startswith('"') and last_line.endswith('"'):
+        last_line = last_line[1:-1].strip()
+    return last_line
 
 
 def _report_to_context(report: HealthReport) -> str:
@@ -60,7 +88,7 @@ def _report_to_context(report: HealthReport) -> str:
 class GeminiLLMService(ILLMService):
     """Google Generative AI (Gemma 4 / Gemini) implementation of the LLM service."""
 
-    def __init__(self, api_key: str | None = None, model_name: str = "gemma-4-31b-it") -> None:
+    def __init__(self, api_key: str | None = None, model_name: str = "models/gemma-4-31b-it") -> None:
         self._api_key = api_key
         self._model_name = model_name
         self._genai = None
@@ -131,7 +159,7 @@ Please provide a brief, friendly summary of this health report."""
 
 User: {new_message}
 
-Gemma:"""
+Direct Answer:"""
 
         try:
             response = await self._generate(prompt)
@@ -145,7 +173,7 @@ Gemma:"""
         import asyncio
 
         models_to_try = [self._model_name]
-        for fallback in ["gemma-4-31b-it", "gemma-4-26b-a4b-it", "gemini-2.5-flash", "gemini-2.0-flash"]:
+        for fallback in ["models/gemma-4-31b-it", "gemma-4-31b-it", "models/gemma-4-26b-a4b-it", "models/gemini-3.6-flash", "models/gemini-2.0-flash"]:
             if fallback not in models_to_try:
                 models_to_try.append(fallback)
 
@@ -155,10 +183,10 @@ Gemma:"""
                 model = self._genai.GenerativeModel(model_name)
                 loop = asyncio.get_event_loop()
                 response = await loop.run_in_executor(
-                    None, lambda: model.generate_content(prompt)
+                    None, lambda m=model: m.generate_content(prompt)
                 )
                 if response and response.text:
-                    return response.text.strip()
+                    return _clean_llm_text(response.text)
             except Exception as exc:
                 last_error = exc
                 logger.warning("Model %s failed or not available, trying next fallback... (%s)", model_name, exc)

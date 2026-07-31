@@ -45,8 +45,8 @@ class IngredientResolver(IIngredientResolver):
         self,
         repository: IngredientRepository,
         *,
-        fuzzy_threshold: float = 0.85,
-        min_partial_coverage: float = 0.5,
+        fuzzy_threshold: float = 0.65,
+        min_partial_coverage: float = 0.3,
     ) -> None:
         """
         Args:

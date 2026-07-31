@@ -64,6 +64,15 @@ class UnresolvedFallbackItem(BaseModel):
     risk_indicator: str  # "neutral" | "positive" | "concern"
 
 
+class RecommendedAlternative(BaseModel):
+    """A healthier product swap recommendation."""
+
+    name: str
+    category: str
+    reason: str
+    estimated_score: int = Field(ge=0, le=100, default=90)
+
+
 class HealthReport(BaseModel):
     """Complete deterministic health report — the only shape this stage exposes."""
 
@@ -73,6 +82,7 @@ class HealthReport(BaseModel):
     ingredients_of_concern: list[ConcernItem] = Field(default_factory=list)
     health_considerations: list[HealthConsideration] = Field(default_factory=list)
     allergens: list[AllergenInfo] = Field(default_factory=list)
+    recommended_alternatives: list[RecommendedAlternative] = Field(default_factory=list)
     unresolved_ingredients: list[str] = Field(default_factory=list)
     unresolved_heuristics: list[UnresolvedFallbackItem] = Field(default_factory=list)
     ingredient_count: int = 0

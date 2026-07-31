@@ -20,6 +20,7 @@ from backend.models.health import (
     HealthScore,
     PositiveIngredient,
     ProcessingLevel,
+    RecommendedAlternative,
     UnresolvedFallbackItem,
 )
 from backend.models.ingredients import IngredientResolution, ResolvedIngredient
@@ -45,26 +46,26 @@ class HealthRuleEngine(IHealthEngine):
         rules = self._rules_repo.get_rules()
         additive_index = self._get_additive_index()
 
-        # Classify each resolved ingredient into categories
         category_map = rules.get("ingredient_category_mapping", {})
         matched_categories: dict[str, list[str]] = {}
         matched_additives: list[FoodAdditive] = []
 
-        for item in resolution.resolved:
-            name_lower = item.ingredient.canonical_name.lower()
+        # Classify all ingredients (both resolved and unresolved) into categories
+        all_item_names = [item.ingredient.canonical_name for item in resolution.resolved] + [u.raw_text for u in resolution.unresolved]
+
+        for name in all_item_names:
+            name_lower = name.lower()
 
             # Check if it matches any concern/positive category
             for category, keywords in category_map.items():
                 for keyword in keywords:
                     if keyword.lower() in name_lower or name_lower in keyword.lower():
-                        matched_categories.setdefault(category, []).append(
-                            item.ingredient.canonical_name
-                        )
+                        matched_categories.setdefault(category, []).append(name)
                         break
 
             # Check if it matches a known additive
             additive = self._find_additive(name_lower, additive_index)
-            if additive:
+            if additive and additive not in matched_additives:
                 matched_additives.append(additive)
 
         # ── Scoring ─────────────────────────────────────────────────────────
@@ -126,6 +127,11 @@ class HealthRuleEngine(IHealthEngine):
         # ── Health considerations ───────────────────────────────────────────
         considerations = self._evaluate_considerations(rules, matched_categories)
 
+        # ── Recommended Alternatives ───────────────────────────────────────
+        alternatives = self._generate_recommended_alternatives(
+            matched_categories, matched_additives, score
+        )
+
         # ── Unresolved & Heuristics Fallback ────────────────────────────────
         unresolved_names = [u.raw_text for u in resolution.unresolved]
         unresolved_heuristics = self._analyze_unresolved_heuristics(resolution.unresolved)
@@ -137,6 +143,7 @@ class HealthRuleEngine(IHealthEngine):
             ingredients_of_concern=concerns,
             health_considerations=considerations,
             allergens=allergens,
+            recommended_alternatives=alternatives,
             unresolved_ingredients=unresolved_names,
             unresolved_heuristics=unresolved_heuristics,
             ingredient_count=resolution.stats.total_items,
@@ -415,3 +422,63 @@ class HealthRuleEngine(IHealthEngine):
                 )
 
         return considerations
+
+    def _generate_recommended_alternatives(
+        self,
+        matched_categories: dict[str, list[str]],
+        matched_additives: list[FoodAdditive],
+        score: int,
+    ) -> list[RecommendedAlternative]:
+        alternatives: list[RecommendedAlternative] = []
+
+        if "refined_sugars" in matched_categories or "artificial_sweeteners" in matched_categories:
+            alternatives.append(
+                RecommendedAlternative(
+                    name="Fresh Fruit Bowl / Date-Sweetened Whole Oats",
+                    category="Natural Sweet Swap",
+                    reason="0% refined sugar, rich in dietary fiber, vitamins, and antioxidants.",
+                    estimated_score=94,
+                )
+            )
+
+        if "hydrogenated_fats" in matched_categories or any(a.name.lower() in ["palm oil", "palmolein"] for a in matched_additives):
+            alternatives.append(
+                RecommendedAlternative(
+                    name="Dry-Roasted Whole Almonds, Walnuts & Chia Seeds",
+                    category="Healthy Fats Swap",
+                    reason="Rich in Omega-3 fatty acids, zero palm oil, and zero trans fats.",
+                    estimated_score=92,
+                )
+            )
+
+        if "refined_flours" in matched_categories:
+            alternatives.append(
+                RecommendedAlternative(
+                    name="100% Whole Wheat & Sprouted Ragi / Oats Bread",
+                    category="Whole Grain Swap",
+                    reason="Slow-digesting complex carbs with 3x higher fiber and zero refined maida.",
+                    estimated_score=88,
+                )
+            )
+
+        if "artificial_preservatives" in matched_categories or "excessive_sodium" in matched_categories:
+            alternatives.append(
+                RecommendedAlternative(
+                    name="Homemade Clean Seasoned Roasted Chana / Makhana",
+                    category="Low Sodium & Clean Swap",
+                    reason="Zero artificial preservatives (INS 282/211) and low sodium content.",
+                    estimated_score=95,
+                )
+            )
+
+        if len(alternatives) < 2:
+            alternatives.append(
+                RecommendedAlternative(
+                    name="Fresh Organic Greek Yogurt with Berries & Honey",
+                    category="Probiotic Clean Swap",
+                    reason="Rich in natural protein, gut probiotics, and vitamins.",
+                    estimated_score=96,
+                )
+            )
+
+        return alternatives[:3]
