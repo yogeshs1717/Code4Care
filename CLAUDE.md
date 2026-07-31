@@ -45,7 +45,7 @@
 
 - **Rule Engine is the PRIMARY scorer.** Deterministic, reproducible, ~1ms execution.
   - Base score 80, deductions for real additive concerns (preservatives, trans fats, artificial additives).
-  - Fuzzy matching against 846-item `common_ingredients.json` dataset for unknown ingredients (positive/neutral only — never concerning).
+  - Fuzzy matching against 2500-item `common_ingredients_expanded.json` dataset for unknown ingredients (positive/neutral only — never concerning).
   - Sugar density penalty, wholesome bonus tapering.
   - Same input always → same output. No external API needed for scoring.
 - **Gemma is the EXPLAINER + UNKNOWN CLASSIFIER.**
@@ -91,7 +91,7 @@ Image → OCR → Editable Text → Ingredient Resolver → Health Rule Engine (
 ```
 
 - **Rule engine runs FIRST** (deterministic, ~1ms, no API calls).
-- **Fuzzy matcher** resolves unknowns against `common_ingredients.json` (positive/neutral classification).
+- **Fuzzy matcher** resolves unknowns against `common_ingredients_expanded.json` (positive/neutral classification).
 - **Gemma** receives the deterministic report for:
   a) AI summary / explanation (consumer-friendly).
   b) Classifying any remaining unresolved ingredients.
@@ -114,12 +114,12 @@ Image → OCR → Editable Text → Ingredient Resolver → Health Rule Engine (
     health_engine/      # Deterministic rule evaluation + fuzzy matching
       engine.py         # Primary scoring pipeline
       rules.py          # Keyword-based concern/positive/processing rules
-      ingredient_matcher.py  # Fuzzy matching against common_ingredients.json
+      ingredient_matcher.py  # Fuzzy matching against common_ingredients_expanded.json
     llm/                # Gemma client + prompt/context builders
     alternatives/       # Healthier alternatives + marketplace links
   /repositories         # IngredientRepository, AdditiveRepository, RuleRepository
   /models               # Pydantic schemas (contracts between components)
-  /data                 # common_ingredients.json, food_additives.json, health_rules.json
+  /data                 # common_ingredients_expanded.json, food_additives.json, health_rules.json
 /scripts
   build_ingredient_dataset.py   # offline dataset generation (Open Food Facts)
 ```
@@ -163,7 +163,7 @@ Image → OCR → Editable Text → Ingredient Resolver → Health Rule Engine (
 
 ## 14. Fuzzy Matching
 
-- Uses `difflib.get_close_matches` against 846-item `common_ingredients.json`.
+- Uses `difflib.get_close_matches` against 2500-item `common_ingredients_expanded.json`.
 - Multi-stage matching: exact → fuzzy (word-boundary aware) → containment.
 - Category-based impact: Vegetables/Fruits/Nuts/Legumes/Spices → positive only.
 - Everything else → neutral. NEVER assigns "concerning" — real concerns come from keyword rules.

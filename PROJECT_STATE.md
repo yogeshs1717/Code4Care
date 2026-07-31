@@ -14,7 +14,7 @@
 ## Completed Milestones
 
 - [x] Project scope, philosophy, and architecture defined (`CLAUDE.md`).
-- [x] `common_ingredients.json` generated offline (846 canonical ingredients, ~94.5% coverage) via `build_ingredient_dataset.py`.
+- [x] `common_ingredients_expanded.json` generated offline (2500 canonical ingredients, expanded coverage) via `build_ingredient_dataset.py`.
 
 ## Pending Milestones
 
@@ -47,7 +47,7 @@
 
 | Dataset                   | Status  | Notes                                   |
 |---------------------------|---------|-----------------------------------------|
-| `common_ingredients.json` | ✅ Built | 846 ingredients, ~94.5% coverage        |
+| `common_ingredients_expanded.json` | ✅ Built | 2500 ingredients, expanded coverage |
 | `food_additives.json`     | Planned | Additives, INS numbers, classifications |
 | `health_rules.json`       | Planned | Deterministic scoring rules             |
 

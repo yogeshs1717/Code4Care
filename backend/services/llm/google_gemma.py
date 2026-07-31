@@ -150,24 +150,35 @@ class GoogleGemmaService(ILLMService):
             )
         return text
 
+    _SYSTEM_CHAT = (
+        "You are Gemma, Code4Care's nutrition assistant. "
+        "You are answering questions about a food product that has been analyzed. "
+        "The product name and full ingredient list are provided in the report below. "
+        "Always reference the ACTUAL product by name when answering — "
+        "do not speak in generic terms. "
+        "Rules: only reference facts already in the report, never invent data, "
+        "do not recalculate scores, be concise, use simple language."
+        "\n\nHealth report (the full JSON analysis of this product):\n"
+    )
+
     async def chat(
         self,
         report_context: str,
         messages: list[dict],
         new_message: str,
     ) -> str:
-        system_header = f"{_SYSTEM_CHAT}\n\nHealth report:\n{report_context}\n\n---"
+        """Multi-turn chat — uses system_instruction to keep the full report
+        context active across ALL turns."""
+        system_instruction = f"{self._SYSTEM_CHAT}{report_context}"
 
         contents: list = []
         for i, msg in enumerate(messages):
-            role = "user" if msg["role"] == "user" else "model"
-            text = msg["content"]
-            if i == 0 and role == "user":
-                text = f"{system_header}\n\n{text}"
+            role = "user" if msg.get("role") == "user" else "model"
+            text = msg.get("content", "")
             contents.append({"role": role, "parts": [{"text": text}]})
 
-        if not contents:
-            new_message = f"{system_header}\n\n{new_message}"
+        if not contents and not new_message:
+            return "No question provided."
 
         contents.append({"role": "user", "parts": [{"text": new_message}]})
 
@@ -176,6 +187,7 @@ class GoogleGemmaService(ILLMService):
                 model=self._model,
                 contents=contents,
                 config=types.GenerateContentConfig(
+                    system_instruction=[{"text": system_instruction}],
                     temperature=0.7,
                     max_output_tokens=_TOKENS_CHAT,
                 ),

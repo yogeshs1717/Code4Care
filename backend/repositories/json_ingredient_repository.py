@@ -16,7 +16,7 @@ from backend.models.ingredients import CanonicalIngredient
 from backend.repositories.base import DatasetUnavailableError, IngredientRepository
 
 # Repository root: backend/repositories/<this file> -> Care/
-_DEFAULT_DATASET = Path(__file__).resolve().parents[2] / "common_ingredients.json"
+_DEFAULT_DATASET = Path(__file__).resolve().parents[2] / "common_ingredients_expanded.json"
 
 
 class JsonIngredientRepository(IngredientRepository):

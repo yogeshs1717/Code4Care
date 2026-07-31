@@ -15,7 +15,7 @@ CALIBRATION (targets for real-world foods):
   - Highly processed oil (trans fats, preservatives):      25-35
 
 FUZZY MATCHING: Unknown ingredients are fuzzy-matched against the 846-item
-common_ingredients.json dataset. Only "positive" (vegetables, fruits, nuts,
+common_ingredients_expanded.json dataset. Only "positive" (vegetables, fruits, nuts,
 legumes, spices) or "neutral" impacts are assigned — never "concerning".
 The real additive concerns come from keyword matches in rules.py.
 """
@@ -122,7 +122,7 @@ def _find_positives(items: list[str]) -> list[PositiveIngredient]:
 
 
 def _fuzzy_classify_unknowns(items: list[str]) -> tuple[list[PositiveIngredient], list[str], set[str]]:
-    """Fuzzy-match unknown items against common_ingredients.json.
+    """Fuzzy-match unknown items against common_ingredients_expanded.json.
 
     Returns (new_positives, still_unresolved, fuzzy_positive_originals).
     The third element is the set of ORIGINAL ingredient strings that were
@@ -381,7 +381,7 @@ def analyze_ingredients(ingredient_text: str) -> DeterministicReport:
 
     processing = _classify_processing(items)
 
-    # ── Step 2: Fuzzy-match unknown items against common_ingredients.json ─────
+    # ── Step 2: Fuzzy-match unknown items against common_ingredients_expanded.json ─────
     fuzzy_positives, unresolved, fuzzy_positive_originals = _fuzzy_classify_unknowns(items)
 
     # Strip fuzzy positives from processed/ultra-processed foods — base whole

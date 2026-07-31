@@ -1,4 +1,4 @@
-"""Fuzzy ingredient matcher — resolves unknown ingredients against common_ingredients.json.
+"""Fuzzy ingredient matcher — resolves unknown ingredients against common_ingredients_expanded.json.
 
 Cache-loaded at module level on first call. Uses difflib for fuzzy name matching,
 then maps the matched category to a score impact (positive / neutral only).
@@ -28,17 +28,18 @@ POSITIVE_CATEGORIES: set[str] = {
     "Nuts & seeds",
     "Legumes & pulses",
     "Spices & herbs",
+    "Flavorings & Spices",
 }
 
 # Categories that register as sugar (for sugar-overload penalty in engine.py)
-SUGAR_CATEGORIES: set[str] = {"Sugars & syrups"}
+SUGAR_CATEGORIES: set[str] = {"Sugars & syrups", "Sweeteners"}
 
 # Categories that register as oil/fat (for fat-density heuristics)
-OIL_CATEGORIES: set[str] = {"Oils & fats"}
+OIL_CATEGORIES: set[str] = {"Oils & fats", "Fats & Oils"}
 
 # ── Dataset cache ───────────────────────────────────────────────────────────────
 
-_DATASET_PATH = Path(__file__).resolve().parents[3] / "common_ingredients.json"
+_DATASET_PATH = Path(__file__).resolve().parents[3] / "common_ingredients_expanded.json"
 
 _cache: list[dict[str, Any]] | None = None
 _name_index: list[str] | None = None
@@ -53,7 +54,7 @@ def _ensure_loaded() -> None:
     try:
         _cache = json.loads(_DATASET_PATH.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError) as exc:
-        logger.warning("Could not load common_ingredients.json: %s", exc)
+        logger.warning("Could not load common_ingredients_expanded.json: %s", exc)
         _cache = []
         _name_index = []
         _entry_index = []

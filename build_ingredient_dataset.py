@@ -2,7 +2,7 @@
 """
 build_ingredient_dataset.py
 ===========================
-One-time / repeatable OFFLINE pipeline that generates `common_ingredients.json`
+One-time / repeatable OFFLINE pipeline that generates `common_ingredients_expanded.json`
 from Open Food Facts (OFF) official data artifacts. No OFF API calls at runtime
 of your app; this script is the only thing that ever touches OFF, and it can be
 re-run whenever OFF publishes newer data.
@@ -27,7 +27,7 @@ Pipeline stages:
 
 Usage:
   pip install duckdb requests
-  python build_ingredient_dataset.py --out common_ingredients.json
+  python build_ingredient_dataset.py --out common_ingredients_expanded.json
   python build_ingredient_dataset.py --fixture   # offline self-test, sample out
 
 Determinism: given the same cached inputs (--cache-dir), output is stable.
@@ -575,7 +575,7 @@ FIXTURE_INDIA = Counter({
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--out", default="common_ingredients.json")
+    ap.add_argument("--out", default="common_ingredients_expanded.json")
     ap.add_argument("--report", default="build_report.json")
     ap.add_argument("--cache-dir", default=".off_cache", type=Path)
     ap.add_argument("--top-global", type=int, default=800)
@@ -597,7 +597,7 @@ def main() -> int:
         print("[mode] fixture: offline pipeline validation on verified counts")
         tax = Taxonomy(FIXTURE_TAXONOMY)
         world, india = FIXTURE_WORLD, FIXTURE_INDIA
-        if args.out == "common_ingredients.json":
+        if args.out == "common_ingredients_expanded.json":
             args.out = "common_ingredients.sample.json"
     else:
         raw = fetch_json(TAXONOMY_URLS["ingredients"], args.cache_dir)
