@@ -4,11 +4,31 @@ import type {
 } from '../types/health';
 import { getApiBaseUrl } from './ocrClient';
 
+async function fetchWithFallback(path: string, options: RequestInit): Promise<Response> {
+  const urlsToTry: string[] = [];
+  const primaryBase = getApiBaseUrl();
+  if (primaryBase) urlsToTry.push(primaryBase);
+  if (!urlsToTry.includes('')) urlsToTry.push('');
+  if (!urlsToTry.includes('http://localhost:8000')) urlsToTry.push('http://localhost:8000');
+  if (!urlsToTry.includes('http://127.0.0.1:8000')) urlsToTry.push('http://127.0.0.1:8000');
+
+  let lastError: unknown = null;
+  for (const base of urlsToTry) {
+    try {
+      const url = base ? `${base}${path}` : path;
+      const res = await fetch(url, options);
+      return res;
+    } catch (err) {
+      lastError = err;
+    }
+  }
+  throw lastError || new Error('Could not reach backend server.');
+}
+
 export async function analyzeIngredients(
   ingredientText: string
 ): Promise<{ report: DeterministicReport }> {
-  const baseUrl = getApiBaseUrl();
-  const response = await fetch(`${baseUrl}/api/v1/analyze`, {
+  const response = await fetchWithFallback('/api/v1/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ingredient_text: ingredientText }),
@@ -25,8 +45,7 @@ export async function analyzeIngredients(
 }
 
 export async function explainReport(ingredientText: string): Promise<string> {
-  const baseUrl = getApiBaseUrl();
-  const response = await fetch(`${baseUrl}/api/v1/gemma/explain`, {
+  const response = await fetchWithFallback('/api/v1/gemma/explain', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ingredient_text: ingredientText }),
@@ -45,8 +64,7 @@ export async function chatWithGemma(
   messages: GemmaMessage[],
   newMessage: string
 ): Promise<string> {
-  const baseUrl = getApiBaseUrl();
-  const response = await fetch(`${baseUrl}/api/v1/gemma/chat`, {
+  const response = await fetchWithFallback('/api/v1/gemma/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

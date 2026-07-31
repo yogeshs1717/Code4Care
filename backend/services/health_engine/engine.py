@@ -438,6 +438,7 @@ class HealthRuleEngine(IHealthEngine):
                     category="Natural Sweet Swap",
                     reason="0% refined sugar, rich in dietary fiber, vitamins, and antioxidants.",
                     estimated_score=94,
+                    url="https://www.firstclub.site/",
                 )
             )
 
@@ -448,6 +449,7 @@ class HealthRuleEngine(IHealthEngine):
                     category="Healthy Fats Swap",
                     reason="Rich in Omega-3 fatty acids, zero palm oil, and zero trans fats.",
                     estimated_score=92,
+                    url="https://www.firstclub.site/",
                 )
             )
 
@@ -458,6 +460,7 @@ class HealthRuleEngine(IHealthEngine):
                     category="Whole Grain Swap",
                     reason="Slow-digesting complex carbs with 3x higher fiber and zero refined maida.",
                     estimated_score=88,
+                    url="https://www.firstclub.site/",
                 )
             )
 
@@ -468,6 +471,7 @@ class HealthRuleEngine(IHealthEngine):
                     category="Low Sodium & Clean Swap",
                     reason="Zero artificial preservatives (INS 282/211) and low sodium content.",
                     estimated_score=95,
+                    url="https://www.firstclub.site/",
                 )
             )
 
@@ -478,6 +482,7 @@ class HealthRuleEngine(IHealthEngine):
                     category="Probiotic Clean Swap",
                     reason="Rich in natural protein, gut probiotics, and vitamins.",
                     estimated_score=96,
+                    url="https://www.firstclub.site/",
                 )
             )
 

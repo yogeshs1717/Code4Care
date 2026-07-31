@@ -53,6 +53,7 @@ export interface RecommendedAlternative {
   category: string;
   reason: string;
   estimated_score?: number;
+  url?: string;
 }
 
 export interface DeterministicReport {

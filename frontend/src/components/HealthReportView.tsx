@@ -9,6 +9,7 @@ import {
   Nut,
   Egg,
   Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 import type { DeterministicReport } from '../types/health';
 
@@ -201,7 +202,7 @@ export function HealthReportView({
       {/* ── Recommended Healthy Alternatives ── */}
       {recommended_alternatives && recommended_alternatives.length > 0 && (
         <div className="flex flex-col gap-2.5 rounded-2xl border-2 border-emerald-400 bg-gradient-to-br from-emerald-50 via-teal-50 to-white p-4 shadow-sm">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600 text-white font-black shrink-0">
                 <Sparkles className="h-4 w-4" />
@@ -215,32 +216,50 @@ export function HealthReportView({
                 </p>
               </div>
             </div>
+            <a
+              href="https://www.firstclub.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-black uppercase text-white shadow-xs hover:bg-emerald-700 transition-all shrink-0"
+            >
+              <span>FirstClub</span>
+              <ExternalLink className="h-3 w-3" />
+            </a>
           </div>
 
           <div className="flex flex-col gap-2 mt-1">
             {recommended_alternatives.map((alt) => (
-              <div
+              <a
                 key={alt.name}
-                className="flex items-start justify-between rounded-xl border border-emerald-200 bg-white p-3 shadow-xs gap-3"
+                href={alt.url || 'https://www.firstclub.site/'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start justify-between rounded-xl border border-emerald-200 bg-white p-3 shadow-xs gap-3 hover:border-emerald-500 hover:shadow-md transition-all"
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 mb-1">
                     <span className="rounded bg-emerald-100 px-2 py-0.5 text-[9px] font-black uppercase text-emerald-800 shrink-0">
                       {alt.category}
                     </span>
-                    <span className="font-extrabold text-slate-900 text-xs truncate">{alt.name}</span>
+                    <span className="font-extrabold text-slate-900 text-xs truncate group-hover:text-emerald-700 transition-colors">
+                      {alt.name}
+                    </span>
                   </div>
                   <p className="text-[11px] font-medium text-slate-600 leading-tight">
                     {alt.reason}
                   </p>
+                  <div className="mt-1.5 inline-flex items-center gap-1 text-[10px] font-black text-emerald-700 group-hover:text-emerald-900">
+                    <span>Explore on FirstClub</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </div>
                 </div>
                 {alt.estimated_score && (
-                  <div className="flex shrink-0 flex-col items-center justify-center rounded-lg bg-emerald-50 border border-emerald-200 px-2.5 py-1">
+                  <div className="flex shrink-0 flex-col items-center justify-center rounded-lg bg-emerald-50 border border-emerald-200 px-2.5 py-1 group-hover:bg-emerald-100 transition-colors">
                     <span className="text-xs font-black text-emerald-700">{alt.estimated_score}</span>
                     <span className="text-[8px] font-black uppercase text-emerald-600">Score</span>
                   </div>
                 )}
-              </div>
+              </a>
             ))}
           </div>
         </div>

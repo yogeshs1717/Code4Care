@@ -71,6 +71,7 @@ class RecommendedAlternative(BaseModel):
     category: str
     reason: str
     estimated_score: int = Field(ge=0, le=100, default=90)
+    url: str = "https://www.firstclub.site/"
 
 
 class HealthReport(BaseModel):
