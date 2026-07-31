@@ -8,6 +8,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 from backend.models.errors import ErrorDetail, ErrorResponse
+from backend.services.auth.errors import AuthError
 from backend.services.llm.exceptions import LLMError
 from backend.services.ocr.exceptions import OCRError
 
@@ -34,6 +35,10 @@ def register_exception_handlers(app: FastAPI) -> None:
 
     @app.exception_handler(LLMError)
     async def _handle_llm_error(_: Request, exc: LLMError) -> JSONResponse:
+        return error_response(exc.code, exc.message, exc.http_status)
+
+    @app.exception_handler(AuthError)
+    async def _handle_auth_error(_: Request, exc: AuthError) -> JSONResponse:
         return error_response(exc.code, exc.message, exc.http_status)
 
     @app.exception_handler(Exception)

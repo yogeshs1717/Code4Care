@@ -16,9 +16,12 @@ import json
 import logging
 import traceback
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.api.dependencies import get_llm_service
+from backend.api.dependencies import get_current_user, get_llm_service
+from backend.db.base import get_db
+from backend.db.models import ScanHistory, User
 from backend.models.errors import ErrorResponse
 from backend.models.health_report import (
     AllergenInfo,
@@ -31,6 +34,7 @@ from backend.models.health_report import (
     ProcessingLevel,
 )
 from backend.services.health_engine.engine import analyze_ingredients
+from backend.services.personalization.engine import PersonalizationResult, evaluate_personalization
 from backend.services.health_engine.rules import (
     ALLERGEN_KEYWORDS,
     CONCERN_INGREDIENTS,
@@ -81,6 +85,7 @@ class AnalyzeRequest(BaseModel):
 class AnalyzeResponse(BaseModel):
     report: DeterministicReport
     ai_summary: str | None = None
+    personalization: PersonalizationResult | None = None
 
 
 @router.post(
@@ -91,7 +96,9 @@ class AnalyzeResponse(BaseModel):
 )
 async def analyze_ingredients_endpoint(
     body: AnalyzeRequest,
+    request: Request,
     llm_service: ILLMService | None = Depends(get_llm_service),
+    session: AsyncSession = Depends(get_db),
 ) -> AnalyzeResponse:
     # ── Step 1: Deterministic rule engine (instant, no API calls) ─────────────
     try:
@@ -102,6 +109,44 @@ async def analyze_ingredients_endpoint(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Ingredient analysis failed. Please try again.",
         )
+
+    # ── Step 1b: Personalization (the user's health priorities) ───────────────
+    # Only evaluated for authenticated users. Anonymous scans get no personal
+    # verdict — the neutral report is still shown.
+    personalization: PersonalizationResult | None = None
+    auth_header = request.headers.get("Authorization", "")
+    current_user: User | None = None
+    if auth_header.startswith("Bearer "):
+        try:
+            current_user = await get_current_user(
+                authorization=auth_header, session=session
+            )
+        except Exception:
+            logger.debug("Personalization skipped: invalid token", exc_info=True)
+
+    if current_user is not None:
+        profile = await _load_profile(session, current_user.id)
+        if profile is not None:
+            personalization = evaluate_personalization(
+                items=report.original_ingredients,
+                priorities=profile.priorities,
+                personal_allergies=profile.allergies,
+            )
+
+    # ── Step 1c: Remember the scan (app memory) ───────────────────────────────
+    if current_user is not None:
+        try:
+            session.add(
+                ScanHistory(
+                    user_id=current_user.id,
+                    ingredient_text=body.ingredient_text,
+                    report_json=report.model_dump_json(),
+                )
+            )
+            await session.commit()
+        except Exception:
+            logger.debug("Scan memory write failed", exc_info=True)
+            await session.rollback()
 
     ai_summary: str | None = None
 
@@ -144,4 +189,12 @@ async def analyze_ingredients_endpoint(
         await resolve_task  # await both, but summary is the one we need
         ai_summary = await summary_task
 
-    return AnalyzeResponse(report=report, ai_summary=ai_summary)
+    return AnalyzeResponse(
+        report=report, ai_summary=ai_summary, personalization=personalization
+    )
+
+
+async def _load_profile(session: AsyncSession, user_id: str):
+    from backend.services.auth.user_store import get_profile
+
+    return await get_profile(session, user_id)

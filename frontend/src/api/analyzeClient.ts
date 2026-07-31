@@ -1,23 +1,31 @@
 /**
- * Analyze API client — for future use when the backend adds
- * POST /api/v1/analyze and POST /api/v1/gemma/* endpoints.
+ * Analyze API client — POST /api/v1/analyze and POST /api/v1/gemma/* endpoints.
  *
- * Currently the backend only exposes POST /ocr.
- * Ready to wire up when endpoints are available.
+ * Attaches the Bearer token when the caller provides one so authenticated
+ * scans get personalization + are remembered in history.
  */
 import type {
   DeterministicReport,
   GemmaMessage,
 } from '../types/health';
+import type { PersonalizationResult } from '../types/auth';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000';
 
 export async function analyzeIngredients(
-  ingredientText: string
-): Promise<{ report: DeterministicReport; ai_summary?: string }> {
+  ingredientText: string,
+  token?: string | null
+): Promise<{
+  report: DeterministicReport;
+  ai_summary?: string;
+  personalization?: PersonalizationResult;
+}> {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+
   const response = await fetch(`${API_BASE_URL}/api/v1/analyze`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ ingredient_text: ingredientText }),
   });
 

@@ -6,6 +6,11 @@ services:
     plan: free
     buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    # Render-managed Postgres → set DATABASE_URL=postgresql+asyncpg://<user>:<pass>@<host>:5432/<db>
+    databases:
+      - name: code4care-db
+        databaseName: care
+        user: care
     envVars:
       - key: GOOGLE_VISION_API_KEY
         sync: false
@@ -13,3 +18,12 @@ services:
         value: https://code4care.vercel.app
       - key: GEMINI_API_KEY
         sync: false
+      # Personalization / auth — set these in the Render dashboard
+      - key: JWT_SECRET_KEYS
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: code4care-db
+          property: connectionString

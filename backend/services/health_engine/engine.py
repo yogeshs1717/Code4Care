@@ -92,6 +92,10 @@ _STOP_PATTERNS: list[re.Pattern] = [
     re.compile(r"\bserving\s*(suggestion|size|per)", re.IGNORECASE),
     re.compile(r"\benergy\b.*\b(kcal|kj)", re.IGNORECASE),
     re.compile(r"\bcarbohy,"),  # OCR fragment of "carbohydrate"
+    # Storage / handling instructions
+    re.compile(r"\bstorage\s*(condition|instruction)?\b", re.IGNORECASE),
+    re.compile(r"\bstore\s*(in|at|under|below|away)", re.IGNORECASE),
+    re.compile(r"\brefrigerat(e|ion|ed)\b", re.IGNORECASE),
     # Indian state names (appear when address/license is mixed in)
     re.compile(r"\bmadhya pradesh\b", re.IGNORECASE),
     re.compile(r"\buttar pradesh\b", re.IGNORECASE),

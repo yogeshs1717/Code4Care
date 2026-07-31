@@ -6,14 +6,17 @@ import {
   ChevronDown, ChevronUp, Scan,
 } from 'lucide-react';
 import type { DeterministicReport, GemmaMessage } from '../types/health';
+import type { PersonalizationResult, PriorityResult } from '../types/auth';
 import { chatWithGemma } from '../api/analyzeClient';
 import { ResponsiveScoreGlobe } from './ScoreGlobe';
 
 interface Props {
   report: DeterministicReport | null;
   aiSummary?: string | null;
+  personalization?: PersonalizationResult | null;
   onHome?: () => void;
   onNewScan?: () => void;
+  onOpenProfile?: () => void;
 }
 
 function Reveal({ delay, children, className = '' }: {
@@ -212,9 +215,134 @@ function ConcernCard({ concern, index }: { concern: { name: string; severity: st
   );
 }
 
-function RealReport({ report, aiSummary, onHome, onNewScan }: {
-  report: DeterministicReport; aiSummary?: string | null; onHome?: () => void; onNewScan?: () => void;
+function PersonalizationWarnings({ personalization }: { personalization: PersonalizationResult }) {
+  const flags = personalization.warnings.filter((w) => w.matches.length > 0);
+  if (flags.length === 0) return null;
+  return (
+    <Reveal delay={0.06}>
+      <div className="rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/90 to-white p-4">
+        <SectionLabel icon={<AlertTriangle className="h-3.5 w-3.5" />}>
+          Personalized warnings
+        </SectionLabel>
+        <div className="flex flex-col gap-2">
+          {flags.map((f: PriorityResult) => (
+            <div key={f.key} className="flex items-start gap-2 rounded-xl bg-amber-50/70 px-3 py-2">
+              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-600" />
+              <div>
+                <p className="text-xs font-semibold text-amber-800">{f.label}</p>
+                <p className="text-xs text-amber-700/70">{f.message}</p>
+                <p className="mt-0.5 text-[11px] text-amber-600/80">
+                  Found: {f.matches.slice(0, 5).join(', ')}
+                  {f.matches.length > 5 ? '…' : ''}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function BlockedVerdict({ personalization, onNewScan, onOpenProfile }: {
+  personalization: PersonalizationResult;
+  onNewScan?: () => void;
+  onOpenProfile?: () => void;
 }) {
+  return (
+    <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 py-16 text-center">
+      <motion.div
+        className="relative flex h-28 w-28 items-center justify-center rounded-full border-2 border-rose-400/40 bg-rose-50"
+        initial={{ scale: 0.6, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 16 }}
+      >
+        <motion.div
+          className="absolute inset-0 rounded-full bg-rose-400/20"
+          animate={{ scale: [1, 1.35, 1], opacity: [0.6, 0, 0.6] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <span className="text-5xl">🚫</span>
+      </motion.div>
+
+      <motion.h2
+        className="mt-6 text-2xl font-extrabold text-stone-800"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+      >
+        Not for you
+      </motion.h2>
+
+      <motion.p
+        className="mt-2 max-w-sm text-sm leading-relaxed text-stone-500"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.22 }}
+      >
+        {personalization.block_message}
+      </motion.p>
+
+      <motion.div
+        className="mt-4 flex max-w-md flex-col gap-2 text-left"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        {personalization.priorities
+          .filter((p) => p.level === 'block')
+          .map((p) => (
+            <div key={p.key} className="flex items-start gap-2 rounded-xl border border-rose-200/60 bg-rose-50/70 px-3 py-2">
+              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />
+              <div>
+                <p className="text-xs font-semibold text-rose-800">{p.label}</p>
+                <p className="text-xs text-rose-700/70">
+                  Found: {p.matches.slice(0, 5).join(', ')}
+                  {p.matches.length > 5 ? '…' : ''}
+                </p>
+              </div>
+            </div>
+          ))}
+      </motion.div>
+
+      <div className="mt-8 flex flex-col gap-2 sm:flex-row">
+        <motion.button
+          className="rounded-xl border border-stone-200/70 bg-white/80 px-5 py-2.5 text-sm font-semibold text-stone-600 hover:bg-white"
+          onClick={onNewScan}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Scan another food
+        </motion.button>
+        {onOpenProfile && (
+          <motion.button
+            className="rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-amber-500/20"
+            onClick={onOpenProfile}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Adjust my priorities
+          </motion.button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function RealReport({ report, aiSummary, personalization, onHome, onNewScan, onOpenProfile }: {
+  report: DeterministicReport;
+  aiSummary?: string | null;
+  personalization?: PersonalizationResult | null;
+  onHome?: () => void;
+  onNewScan?: () => void;
+  onOpenProfile?: () => void;
+}) {
+  // Hard block: the user's priorities are non-negotiably violated. Render only
+  // the block screen — the full report stays hidden.
+  if (personalization?.blocked) {
+    return <BlockedVerdict personalization={personalization} onNewScan={onNewScan} onOpenProfile={onOpenProfile} />;
+  }
+
   const score = report.health_score.score;
   const color = report.health_score.color;
   const label = report.health_score.label;
@@ -319,6 +447,9 @@ function RealReport({ report, aiSummary, onHome, onNewScan }: {
 
           {/* RIGHT */}
           <div className="lg:col-span-2 flex flex-col gap-4">
+            {personalization?.enabled && !personalization.blocked && (
+              <PersonalizationWarnings personalization={personalization} />
+            )}
             {(highCount > 0 || modCount > 0 || lowCount > 0 || posCount > 0) && (
               <Reveal delay={0.07}>
                 <Card className="p-4">
@@ -460,7 +591,16 @@ function DemoReport({ onHome }: { onHome?: () => void; onNewScan?: () => void })
   );
 }
 
-export function ReportDashboard({ report, aiSummary, onHome, onNewScan }: Props) {
+export function ReportDashboard({ report, aiSummary, personalization, onHome, onNewScan, onOpenProfile }: Props) {
   if (report === null) return <DemoReport onHome={onHome} onNewScan={onNewScan} />;
-  return <RealReport report={report} aiSummary={aiSummary} onHome={onHome} onNewScan={onNewScan} />;
+  return (
+    <RealReport
+      report={report}
+      aiSummary={aiSummary}
+      personalization={personalization}
+      onHome={onHome}
+      onNewScan={onNewScan}
+      onOpenProfile={onOpenProfile}
+    />
+  );
 }

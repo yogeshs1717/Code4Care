@@ -80,7 +80,8 @@
 | LLM        | Gemma 4 (gemma-4-31b-it via Google AI Studio) |
 | Datasets   | Static JSON (offline-generated)     |
 | Deployment | Vercel (frontend); backend separate |
-| Database   | None (MVP) → PostgreSQL (future)    |
+| Database   | Async SQLAlchemy 2.0 — SQLite (dev) / PostgreSQL (prod) |
+| Auth       | Email OTP (Resend); JWT (PyJWT, HS256, key rotation) |
 
 ## 9. Architecture
 
@@ -106,8 +107,18 @@ Image → OCR → Editable Text → Ingredient Resolver → Health Rule Engine (
   src/components/
     ScoreGlobe.tsx       # Three.js 3D score visualization
     ReportDashboard.tsx  # Main report UI (glassmorphism, responsive grid)
+    AuthModal.tsx        # Email OTP sign-in
+    HealthProfileModal.tsx  # Health priorities + allergies + recent scans
+  src/auth/AuthContext.tsx  # Auth state, token persistence (localStorage)
+  src/api/authClient.ts     # Auth / profile / history API client
+  src/types/auth.ts         # Auth + personalization types
 /backend
   /api                  # FastAPI routes (thin controllers)
+    routes/
+      auth.py           # OTP request/verify, Google sign-in, /me
+      profile.py        # GET/PUT health profile
+      history.py        # GET recent scans
+  /db                   # Async SQLAlchemy: base.py (engine/session), models.py
   /services
     ocr/                # OCR provider abstraction + GCV implementation
     resolver/           # Ingredient resolution
@@ -115,14 +126,35 @@ Image → OCR → Editable Text → Ingredient Resolver → Health Rule Engine (
       engine.py         # Primary scoring pipeline
       rules.py          # Keyword-based concern/positive/processing rules
       ingredient_matcher.py  # Fuzzy matching against common_ingredients_expanded.json
+    auth/               # JWT, OTP (Resend/console), user store
+    personalization/    # Deterministic priority engine (rules.py + engine.py)
     llm/                # Gemma client + prompt/context builders
     alternatives/       # Healthier alternatives + marketplace links
   /repositories         # IngredientRepository, AdditiveRepository, RuleRepository
   /models               # Pydantic schemas (contracts between components)
-  /data                 # common_ingredients_expanded.json, food_additives.json, health_rules.json
+  /data                 # common_ingredients_expanded.json, food_additives.json, care.db (dev)
 /scripts
   build_ingredient_dataset.py   # offline dataset generation (Open Food Facts)
 ```
+
+## 10a. Personalization Engine
+
+- **Decisions are deterministic, never delegated to Gemma** — same guarantee as the base scorer.
+- User health profile: subset of `{diabetes, hypertension, heart, allergies}` + free-text personal allergens.
+- Per-priority keyword lists and thresholds in `services/personalization/rules.py`:
+  - `flag_when_any` → warning shown on the report.
+  - `block_when_any` → hard block (specific high-risk ingredients like HFCS, MSG, trans fats).
+  - `block_when_many` → hard block when N+ distinct matches appear (e.g. 3+ sweeteners = very high sugar).
+  - `block_when_dominant` → diabetes special case: sugar as the FIRST label ingredient (by weight) is a block.
+- `evaluate_personalization` runs after the base report for authenticated users; anonymous scans get no personalization.
+- Verdicts: `safe` / `flag` (warnings) / `block` (report hidden behind a red rejection screen).
+- Block thresholds are heuristics; tune against real labels as data comes in.
+
+## 10b. Auth & Session Model
+
+- **Email sign-in**: `POST /otp/request` → 6-digit code (Resend email; console in dev) → `POST /otp/verify` → JWT. Codes are SHA-256 hashed, expire in 5 min, max 5 attempts, rate-limited (1/30s, ≤5 live per email).
+- **JWT**: HS256. `JWT_SECRET_KEYS` comma-separated for rotation — first key signs, all verify. `Authorization: Bearer <token>`.
+- **Scan memory**: every authenticated analysis stores a `ScanHistory` row (ingredient text + report JSON), surfaced as "recent scans" in the profile modal.
 
 ## 11. System Components
 

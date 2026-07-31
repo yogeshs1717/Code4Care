@@ -10,8 +10,12 @@ import { OcrEditView } from './components/OcrEditView';
 import { ReportDashboard } from './components/ReportDashboard';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { AuthModal } from './components/AuthModal';
+import { HealthProfileModal } from './components/HealthProfileModal';
+import { useAuth } from './auth';
 import type { OcrResult } from './types/ocr';
 import type { DeterministicReport } from './types/health';
+import type { PersonalizationResult } from './types/auth';
 
 type Stage =
   | 'hero'
@@ -31,6 +35,7 @@ const scanStatuses = [
 ];
 
 export default function App() {
+  const { token, user, initializing } = useAuth();
   const [stage, setStage] = useState<Stage>('hero');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [result, setResult] = useState<OcrResult | null>(null);
@@ -41,6 +46,9 @@ export default function App() {
   const [scanStatus, setScanStatus] = useState(scanStatuses[0]);
   const [report, setReport] = useState<DeterministicReport | null>(null);
   const [aiSummary, setAiSummary] = useState<string | null>(null);
+  const [personalization, setPersonalization] = useState<PersonalizationResult | null>(null);
+  const [authOpen, setAuthOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
 
   const revokePreview = useCallback(() => {
@@ -63,6 +71,7 @@ export default function App() {
     setScanStatus(scanStatuses[0]);
     setReport(null);
     setAiSummary(null);
+    setPersonalization(null);
     setStage('capture');
   }, [revokePreview]);
 
@@ -77,6 +86,7 @@ export default function App() {
     setScanStatus(scanStatuses[0]);
     setReport(null);
     setAiSummary(null);
+    setPersonalization(null);
     setStage('hero');
   }, [revokePreview]);
 
@@ -148,10 +158,11 @@ export default function App() {
     }, 400);
 
     try {
-      const data = await analyzeIngredients(text);
+      const data = await analyzeIngredients(text, token);
       clearInterval(timer);
       setReport(data.report);
       setAiSummary(data.ai_summary ?? null);
+      setPersonalization(data.personalization ?? null);
       setScanProgress(1);
       setScanStatus('Analysis complete!');
       setTimeout(() => setStage('report'), 400);
@@ -160,7 +171,7 @@ export default function App() {
       setError('Analysis failed. Please check your connection and try again.');
       setStage('edit');
     }
-  }, [text]);
+  }, [text, token]);
 
   // ── Skeleton UI helpers for hero/app mode ──
   const isHero = stage === 'hero';
@@ -173,6 +184,8 @@ export default function App() {
           variant="app"
           onHome={goHome}
           onNewScan={reset}
+          onSignIn={() => setAuthOpen(true)}
+          onOpenProfile={() => setProfileOpen(true)}
         />
       )}
 
@@ -199,7 +212,12 @@ export default function App() {
       <AnimatePresence mode="wait">
         {/* HERO — full page with its own header/footer */}
         {stage === 'hero' && (
-          <HeroSection key="hero" onEnterApp={() => setStage('capture')} />
+          <HeroSection
+            key="hero"
+            onEnterApp={() => setStage('capture')}
+            onSignIn={() => setAuthOpen(true)}
+            onOpenProfile={() => setProfileOpen(true)}
+          />
         )}
 
         {/* CAPTURE */}
@@ -298,8 +316,10 @@ export default function App() {
             <ReportDashboard
               report={report}
               aiSummary={aiSummary}
+              personalization={personalization}
               onHome={goHome}
               onNewScan={reset}
+              onOpenProfile={() => setProfileOpen(true)}
             />
           </motion.main>
         )}
@@ -309,6 +329,26 @@ export default function App() {
       {!isHero && stage !== 'report' && (
         <Footer onHome={goHome} onNewScan={reset} />
       )}
+
+      {/* ── Auth + profile modals ── */}
+      {!initializing && (
+        <AnimatePresence>
+          {authOpen && (
+            <AuthModal
+              open={authOpen}
+              onClose={() => setAuthOpen(false)}
+              contextLabel={
+                user
+                  ? `Signed in as ${user.email}`
+                  : 'Set your health priorities and get personal verdicts'
+              }
+            />
+          )}
+        </AnimatePresence>
+      )}
+      <AnimatePresence>
+        {profileOpen && <HealthProfileModal open={profileOpen} onClose={() => setProfileOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
