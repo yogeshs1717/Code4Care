@@ -55,16 +55,17 @@
   - NEVER decides the score — that's the rule engine's job.
 
 ### Scoring Calibration (verified in test suite):
-| Product | Target Score |
-|---------|-------------|
-| Healthy salad (spinach, kale, olive oil, nuts) | 95-100 |
-| Plain yogurt (milk, cultures) | 80-85 |
-| White bread (flour, water, yeast, salt, sugar) | 75-82 |
-| Biscuit (flour, sugar, palm oil, salt, emulsifier) | 65-72 |
-| Potato chips (potatoes, oil, salt, additives) | 58-65 |
-| Chocolate bar (sugar, cocoa butter, emulsifiers) | 55-65 |
-| Sugary soda (HFCS, phosphoric acid, caffeine) | 35-45 |
-| Highly processed oil (trans fats, preservatives) | 25-35 |
+| Product | Target Score | Current |
+|---------|-------------|---------|
+| Healthy salad (spinach, kale, olive oil, nuts) | 95-100 | 100 |
+| Plain yogurt (milk, cultures) | 80-85 | 87 |
+| White bread (flour, water, yeast, salt, sugar) | 75-82 | 79 |
+| Biscuit (flour, sugar, palm oil, salt, emulsifier) | 62-72 | 65 |
+| Potato chips (potatoes, oil, salt, additives) | 58-65 | 64 |
+| Chocolate bar (sugar, cocoa butter, emulsifiers) | 55-65 | 64 |
+| Kurkure-style snack (flours, MSG, colours, flavour) | 30-42 | 31 |
+| Sugary soda (HFCS, phosphoric acid, caffeine) | 35-45 | 38 |
+| Highly processed oil (trans fats, preservatives) | 5-20 | 9 |
 
 ## 8. Tech Stack
 

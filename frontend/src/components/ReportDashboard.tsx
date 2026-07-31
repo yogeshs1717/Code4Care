@@ -341,10 +341,6 @@ function RealReport({ report, aiSummary, onHome, onNewScan }: {
                       <span>{v.text}</span>
                     </div>
                     <p className="text-lg font-bold" style={{ color }}>{label}</p>
-                    <div className="flex items-center gap-1 text-[11px] text-slate-400">
-                      <ShieldCheck className="h-3 w-3 text-emerald-500" />
-                      <span>Deterministic · Rule engine</span>
-                    </div>
                   </div>
                 </div>
               </Card>
@@ -434,31 +430,34 @@ function RealReport({ report, aiSummary, onHome, onNewScan }: {
               </Reveal>
             )}
 
-            {/* Ingredients */}
-            {(report.positive_ingredients.length > 0 || report.ingredients_of_concern.length > 0 ||
-              (report.gemma_resolved_ingredients ?? []).length > 0) && (
+            {/* Ingredients — full list */}
+            {report.original_ingredients && report.original_ingredients.length > 0 && (
               <Reveal delay={0.14}>
                 <Card className="p-4">
-                  <SectionLabel>Ingredients</SectionLabel>
+                  <SectionLabel>All Ingredients</SectionLabel>
                   <div className="flex flex-wrap gap-1.5">
-                    {report.positive_ingredients.map(p => (
-                      <Pill key={p.name} variant="positive">{p.name}</Pill>
-                    ))}
-                    {report.ingredients_of_concern.map(c => (
-                      <Pill key={c.name} variant={`concern-${c.severity}` as any}>{c.name}</Pill>
-                    ))}
-                    {(report.gemma_resolved_ingredients ?? []).map(g => (
-                      <Pill key={g.name} variant={g.category === 'positive' ? 'positive' : g.category === 'concerning' ? 'concern-moderate' : 'gemma'}>
-                        {g.name}
-                      </Pill>
-                    ))}
+                    {report.original_ingredients.map((ing, i) => {
+                      // Check if this ingredient is flagged as a concern or positive
+                      const isConcern = report.ingredients_of_concern.some(
+                        c => ing.toLowerCase().includes(c.name.toLowerCase())
+                      );
+                      const isPositive = report.positive_ingredients.some(
+                        p => ing.toLowerCase().includes(p.name.toLowerCase())
+                      );
+                      const isGemmaResolved = (report.gemma_resolved_ingredients ?? []).some(
+                        g => ing.toLowerCase().includes(g.name.toLowerCase())
+                      );
+                      return (
+                        <Pill key={`${ing}-${i}`} variant={
+                          isConcern ? 'concern-moderate' :
+                          isPositive ? 'positive' :
+                          isGemmaResolved ? 'gemma' : 'neutral'
+                        }>
+                          {ing}
+                        </Pill>
+                      );
+                    })}
                   </div>
-                  {(report.gemma_resolved_ingredients ?? []).length > 0 && (
-                    <p className="mt-2 flex items-center gap-1 text-[11px] text-slate-400">
-                      <Sparkles className="h-3 w-3 text-violet-500" />
-                      Blue pills classified by Gemma AI
-                    </p>
-                  )}
                 </Card>
               </Reveal>
             )}

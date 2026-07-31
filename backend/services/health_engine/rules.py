@@ -32,8 +32,13 @@ CONCERN_INGREDIENTS: dict[str, dict] = {
     "blue 1": {"concern": "Generally safe; some studies raise questions.", "severity": "low"},
     "blue 2": {"concern": "Linked to hyperactivity in some studies.", "severity": "low"},
     "titanium dioxide": {"concern": "Genotoxicity concerns; banned in EU.", "severity": "high"},
+    "tartrazine": {"concern": "Synthetic azo dye; linked to hyperactivity and allergic reactions.", "severity": "moderate"},
+    "sunset yellow": {"concern": "Synthetic azo dye; may cause allergic reactions; linked to hyperactivity.", "severity": "moderate"},
+    "ponceau 4r": {"concern": "Synthetic red azo dye; linked to hyperactivity in children.", "severity": "moderate"},
+    "brilliant blue": {"concern": "Synthetic blue dye; may cause allergic reactions in sensitive individuals.", "severity": "low"},
+
     # Artificial flavours
-    "monosodium glutamate": {"concern": "May cause headaches/sensitivity in some people.", "severity": "low"},
+    "monosodium glutamate": {"concern": "Excitotoxin; may cause headaches, sensitivity, and metabolic issues in some people.", "severity": "moderate"},
     "disodium inosinate": {"concern": "Flavour enhancer; often paired with MSG.", "severity": "low"},
     "disodium guanylate": {"concern": "Flavour enhancer; often paired with MSG.", "severity": "low"},
     # Trans fats / oils

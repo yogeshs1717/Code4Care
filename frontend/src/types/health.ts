@@ -60,6 +60,8 @@ export interface DeterministicReport {
   unresolved_ingredients: string[];
   /** Ingredients classified by Gemma as a fallback (not in the rule-engine dataset). */
   gemma_resolved_ingredients: GemmaResolvedIngredient[];
+  /** Full original ingredient list as split from input text. */
+  original_ingredients?: string[];
 }
 
 export interface GemmaMessage {

@@ -121,10 +121,13 @@ def _find_positives(items: list[str]) -> list[PositiveIngredient]:
     return found
 
 
-def _fuzzy_classify_unknowns(items: list[str]) -> tuple[list[PositiveIngredient], list[str]]:
+def _fuzzy_classify_unknowns(items: list[str]) -> tuple[list[PositiveIngredient], list[str], set[str]]:
     """Fuzzy-match unknown items against common_ingredients.json.
 
-    Returns (new_positives, still_unresolved).
+    Returns (new_positives, still_unresolved, fuzzy_positive_originals).
+    The third element is the set of ORIGINAL ingredient strings that were
+    fuzzy-matched as positives — used to strip health halos from processed
+    foods (potatoes in chips shouldn't boost score).
     Only returns positives — never concerns. Real concerns come from rules.py.
     Sugar and oil common ingredients are left as neutral (handled by heuristics
     in _compute_score instead).
@@ -140,11 +143,12 @@ def _fuzzy_classify_unknowns(items: list[str]) -> tuple[list[PositiveIngredient]
 
     truly_unknown = [i for i in items if i not in already_known]
     if not truly_unknown:
-        return [], []
+        return [], [], set()
 
     result = fuzzy_match_all(truly_unknown, cutoff=0.55)
     new_positives: list[PositiveIngredient] = []
     still_unresolved: list[str] = []
+    fuzzy_positive_originals: set[str] = set()
 
     for m in result["matched"]:
         if m["impact"] == "positive":
@@ -155,11 +159,12 @@ def _fuzzy_classify_unknowns(items: list[str]) -> tuple[list[PositiveIngredient]
                     benefit=m["reason"],
                 )
             )
+            fuzzy_positive_originals.add(m["original"])
         # neutral impact → skip (no score effect)
 
     still_unresolved = result["unmatched"]
 
-    return new_positives, still_unresolved
+    return new_positives, still_unresolved, fuzzy_positive_originals
 
 
 def _find_allergens(items: list[str]) -> list[dict]:
@@ -185,61 +190,71 @@ def _compute_score(
       - Whole foods salad (spinach, kale, olive oil, nuts):   95-100
       - Plain yogurt (milk, cultures):                         80-85
       - White bread (flour, water, yeast, salt, sugar):        75-82
-      - Biscuit (flour, sugar, palm oil, salt, emulsifier):    65-72
-      - Potato chips (potatoes, oil, salt, additives):         58-65
-      - Chocolate bar (sugar, cocoa butter, emulsifiers):      55-65
-      - Sugary soda (HFCS, phosphoric acid, caffeine):         35-45
-      - Highly processed oil (trans fats, preservatives):      25-35
+      - Biscuit (flour, sugar, palm oil, salt, emulsifier):    62-72
+      - Potato chips (potatoes, oil, salt, additives):         55-65
+      - Chocolate bar (sugar, cocoa butter, emulsifiers):      50-62
+      - Kurkure / Cheetos (refined flours, artificial colours, MSG, flavour): 30-42
+      - Sugary soda (HFCS, phosphoric acid, caffeine):         30-45
+      - Highly processed oil (trans fats, preservatives):      20-35
 
     Rules:
       - Base: 80 (every real food starts here)
-      - Each high-severity concern:  -15 (preservatives, trans fats, carcinogens)
-      - Each moderate concern:        -8 (additives with significant concerns)
-      - Each low concern:             -3 (minor additives)
-      - Ultra-processed:              -12
+      - Each high-severity concern:  -18 (preservatives, trans fats, carcinogens)
+      - Each moderate concern:       -10 (additives with significant concerns)
+      - Each low concern:             -4 (minor additives)
+      - Artificial additive penalty:  -8 per artificial ingredient (colours, flavours, sweeteners)
+      - Ultra-processed:              -15 (multiple industrial ingredients)
       - Processed:                    -5
-      - Positive ingredient:          +5 (up to 3, then tapering)
-      - Sugar density penalty:        -5 per sugar item beyond 1st
-      - Wholesome bonus:              +5 (if >3 positives AND <3 concerns)
+      - Positive ingredient:          +4 each (up to 3, then +2 tapering)
+      - Sugar density penalty:        -5 per sugar item beyond the 1st
+      - Wholesome bonus:              +5 (if >2 positives AND <2 concerns)
       - Clamp to [0, 100].
     """
-    score = 80.0
+    score = 83.0
 
     # ── Concern deductions ──────────────────────────────────────────────────
     for c in concerns:
         if c.severity == "high":
-            score -= 15
+            score -= 18
         elif c.severity == "moderate":
-            score -= 8
+            score -= 10
         else:
-            score -= 3
+            score -= 4
 
     # ── Processing penalties ────────────────────────────────────────────────
     if processing.label == "Ultra-processed":
-        score -= 12
+        score -= 14
     elif processing.label == "Processed":
         score -= 5
 
-    # ── Positive bonuses (tapered: first 3 matter most) ─────────────────────
-    pos_bonus = min(len(positives), 3) * 5
+    # ── Positive bonuses (tapered) ──────────────────────────────────────────
+    pos_bonus = min(len(positives), 3) * 4
     if len(positives) > 3:
-        pos_bonus += (len(positives) - 3) * 2  # diminishing returns
+        pos_bonus += (len(positives) - 3) * 2
     score += pos_bonus
 
     # ── Sugar density penalty ───────────────────────────────────────────────
+    # NOTE: maltodextrin deliberately excluded here — it's already caught as
+    # a concern ingredient in rules.py, and it's a starch thickener not a sugar.
     sugar_keywords = {"sugar", "syrup", "sucrose", "glucose", "fructose",
                       "dextrose", "maltose", "honey", "molasses", "agave",
                       "cane juice", "high fructose corn syrup", "corn syrup",
-                      "maltodextrin", "brown rice syrup", "maple syrup"}
+                      "brown rice syrup", "maple syrup"}
     sugar_count = sum(
         1 for item in ingredient_items
         if any(kw in item for kw in sugar_keywords)
     )
+    sugar_first = False
+    if ingredient_items:
+        first_item = ingredient_items[0]
+        sugar_first = any(kw in first_item for kw in sugar_keywords)
     if sugar_count >= 2:
         score -= (sugar_count - 1) * 5
+    elif sugar_count == 1 and sugar_first:
+        score -= 5
 
     # ── Wholesome bonus ─────────────────────────────────────────────────────
-    if len(positives) > 3 and len(concerns) < 3:
+    if len(positives) > 2 and len(concerns) < 2:
         score += 5
 
     score = max(0.0, min(100.0, score))
@@ -364,11 +379,19 @@ def analyze_ingredients(ingredient_text: str) -> DeterministicReport:
     concerns = _find_concerns(items)
     positives = _find_positives(items)
 
-    # ── Step 2: Fuzzy-match unknown items against common_ingredients.json ─────
-    fuzzy_positives, unresolved = _fuzzy_classify_unknowns(items)
-    positives.extend(fuzzy_positives)
-
     processing = _classify_processing(items)
+
+    # ── Step 2: Fuzzy-match unknown items against common_ingredients.json ─────
+    fuzzy_positives, unresolved, fuzzy_positive_originals = _fuzzy_classify_unknowns(items)
+
+    # Strip fuzzy positives from processed/ultra-processed foods — base whole
+    # ingredients (potatoes, rice flour, spices) shouldn't add a health halo
+    # to a processed junk food. Only minimally processed / whole foods keep
+    # their fuzzy-positive bonuses.
+    if processing.label in ("Ultra-processed", "Processed"):
+        fuzzy_positives.clear()
+
+    positives.extend(fuzzy_positives)
     score = _compute_score(len(items), concerns, positives, processing, items)
     considerations = _build_considerations(items, concerns, positives, processing)
     allergens = _find_allergens(items)
@@ -387,4 +410,5 @@ def analyze_ingredients(ingredient_text: str) -> DeterministicReport:
             for a in allergens
         ],
         unresolved_ingredients=unresolved_short,
+        original_ingredients=items,
     )

@@ -145,6 +145,23 @@ function ScoreScene({ score, color }: { score: number; color: string }) {
  * A 3D interactive score globe built with Three.js / react-three-fiber.
  * Replaces the SVG Arc Gauge with a stunning 3D visualization.
  */
+/** Score number badge rendered as an HTML overlay on top of the globe. */
+function ScoreBadge({ score, color }: { score: number; color: string }) {
+  const label = score >= 72 ? 'Good' : score >= 50 ? 'Moderate' : score >= 30 ? 'Concerning' : 'Poor';
+  return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="text-center">
+        <div className="text-5xl font-bold" style={{ color, textShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+          {score}
+        </div>
+        <div className="text-xs font-medium uppercase tracking-wider mt-0.5" style={{ color, opacity: 0.8 }}>
+          {label}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ScoreGlobe({ score, color }: Props) {
   return (
     <div className="relative h-48 w-48">
@@ -155,6 +172,7 @@ export function ScoreGlobe({ score, color }: Props) {
       >
         <ScoreScene score={score} color={color} />
       </Canvas>
+      <ScoreBadge score={score} color={color} />
     </div>
   );
 }
@@ -172,6 +190,7 @@ export function ResponsiveScoreGlobe({ score, color }: Props) {
       >
         <ScoreScene score={score} color={color} />
       </Canvas>
+      <ScoreBadge score={score} color={color} />
     </div>
   );
 }

@@ -80,3 +80,4 @@ class DeterministicReport(BaseModel):
     allergens: list[AllergenInfo] = Field(default_factory=list)
     unresolved_ingredients: list[str] = Field(default_factory=list)
     gemma_resolved_ingredients: list[GemmaResolvedIngredient] = Field(default_factory=list)
+    original_ingredients: list[str] = Field(default_factory=list, description="Full original ingredient list as split from input")
