@@ -8,18 +8,19 @@ import { HomographyCropper } from './components/HomographyCropper';
 import { ScanAnimation } from './components/ScanAnimation';
 import { OcrEditView } from './components/OcrEditView';
 import { ReportDashboard } from './components/ReportDashboard';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import type { OcrResult } from './types/ocr';
 import type { DeterministicReport } from './types/health';
 
 type Stage =
-  | 'hero'       // Cinematic 3D hero scroll
-  | 'capture'    // Upload / camera
-  | 'crop'       // Crop the label image
-  | 'scanning'   // Animated OCR progress
-  | 'edit'       // Edit OCR text + analyze
-  | 'analyzing'  // Scanning animation for analysis
-  | 'report'     // Health report
-  | 'chat';      // Gemma chat
+  | 'hero'
+  | 'capture'
+  | 'crop'
+  | 'scanning'
+  | 'edit'
+  | 'analyzing'
+  | 'report';
 
 const scanStatuses = [
   'Connecting to OCR service...',
@@ -79,7 +80,7 @@ export default function App() {
     setStage('hero');
   }, [revokePreview]);
 
-  // ── File selection from CaptureView ──
+  // ── File selection ──
   const handleSelect = useCallback(
     (file: File) => {
       revokePreview();
@@ -103,10 +104,7 @@ export default function App() {
       const scanTimer = setInterval(() => {
         setScanProgress((prev) => {
           const next = Math.min(prev + 0.08, 0.9);
-          const idx = Math.min(
-            Math.floor(next / 0.25),
-            scanStatuses.length - 2
-          );
+          const idx = Math.min(Math.floor(next / 0.25), scanStatuses.length - 2);
           setScanStatus(scanStatuses[idx]);
           return next;
         });
@@ -119,7 +117,6 @@ export default function App() {
         setScanStatus(scanStatuses[4]);
         setResult(ocr);
         setText(ocr.text);
-
         setTimeout(() => setStage('edit'), 400);
       } catch (cause) {
         clearInterval(scanTimer);
@@ -137,7 +134,7 @@ export default function App() {
     []
   );
 
-  // ── Analyze (POST /api/v1/analyze) ──
+  // ── Analyze ──
   const handleAnalyze = useCallback(async () => {
     setStage('analyzing');
     setScanProgress(0);
@@ -165,19 +162,31 @@ export default function App() {
     }
   }, [text]);
 
+  // ── Skeleton UI helpers for hero/app mode ──
+  const isHero = stage === 'hero';
+
   return (
-    <div className="relative min-h-dvh bg-[#FAFAFA]">
+    <div className="relative min-h-dvh bg-[#f8f5f0]">
+      {/* ── Header (shown on non-hero, non-report stages — hero and report have their own) ── */}
+      {!isHero && stage !== 'report' && (
+        <Header
+          variant="app"
+          onHome={goHome}
+          onNewScan={reset}
+        />
+      )}
+
       {/* ── Error banner ── */}
       <AnimatePresence>
         {error && (
           <motion.div
-            className="fixed left-0 right-0 top-0 z-50 px-4 pt-2"
+            className="fixed left-0 right-0 top-0 z-50 px-4 pt-16"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
             <div
-              className="rounded-xl bg-[#fef2f2] px-4 py-3 text-sm text-[#991b1b] shadow-lg"
+              className="rounded-xl border border-rose-500/20 bg-rose-500/10 px-4 py-3 text-sm text-rose-300 shadow-lg backdrop-blur-sm"
               role="alert"
             >
               {error}
@@ -188,7 +197,7 @@ export default function App() {
 
       {/* ── Stage switcher ── */}
       <AnimatePresence mode="wait">
-        {/* HERO */}
+        {/* HERO — full page with its own header/footer */}
         {stage === 'hero' && (
           <HeroSection key="hero" onEnterApp={() => setStage('capture')} />
         )}
@@ -197,22 +206,13 @@ export default function App() {
         {stage === 'capture' && (
           <motion.main
             key="capture"
-            className="mx-auto max-w-md"
+            className="mx-auto max-w-md pt-20 min-h-dvh"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-4 pt-6 pb-2">
-              <motion.button
-                className="text-sm text-[#5f6368] transition-colors hover:text-[#202124]"
-                onClick={goHome}
-                whileHover={{ x: -2 }}
-              >
-                ← Back
-              </motion.button>
-            </div>
-            <CaptureView onSelect={handleSelect} onInvalid={setError} />
+            <CaptureView onSelect={handleSelect} onInvalid={setError} onBack={goHome} />
           </motion.main>
         )}
 
@@ -220,21 +220,12 @@ export default function App() {
         {stage === 'crop' && previewUrl && (
           <motion.main
             key="crop"
-            className="mx-auto max-w-md"
+            className="mx-auto max-w-md pt-20 min-h-dvh"
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="px-4 pt-6 pb-2">
-              <motion.button
-                className="text-sm text-[#5f6368] transition-colors hover:text-[#202124]"
-                onClick={reset}
-                whileHover={{ x: -2 }}
-              >
-                ← Choose another
-              </motion.button>
-            </div>
             <div className="px-4">
               <HomographyCropper
                 src={previewUrl}
@@ -251,7 +242,7 @@ export default function App() {
         {stage === 'scanning' && (
           <motion.main
             key="scanning"
-            className="mx-auto max-w-md"
+            className="mx-auto max-w-md pt-24 min-h-dvh flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -265,21 +256,12 @@ export default function App() {
         {stage === 'edit' && result && (
           <motion.main
             key="edit"
-            className="mx-auto max-w-md"
+            className="mx-auto max-w-md pt-20 min-h-dvh flex flex-col justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="px-4 pt-6 pb-2">
-              <motion.button
-                className="text-sm text-[#5f6368] transition-colors hover:text-[#202124]"
-                onClick={reset}
-                whileHover={{ x: -2 }}
-              >
-                ← Back
-              </motion.button>
-            </div>
             <OcrEditView
               value={text}
               confidence={result.metadata.confidence}
@@ -294,7 +276,7 @@ export default function App() {
         {stage === 'analyzing' && (
           <motion.main
             key="analyzing"
-            className="mx-auto max-w-md"
+            className="mx-auto max-w-md pt-24 min-h-dvh flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -308,7 +290,6 @@ export default function App() {
         {stage === 'report' && (
           <motion.main
             key="report"
-            className=""
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -323,6 +304,11 @@ export default function App() {
           </motion.main>
         )}
       </AnimatePresence>
+
+      {/* ── Footer (shown on non-hero stages) ── */}
+      {!isHero && stage !== 'report' && (
+        <Footer onHome={goHome} onNewScan={reset} />
+      )}
     </div>
   );
 }

@@ -37,7 +37,11 @@ CONCERN_INGREDIENTS: dict[str, dict] = {
     "ponceau 4r": {"concern": "Synthetic red azo dye; linked to hyperactivity in children.", "severity": "moderate"},
     "brilliant blue": {"concern": "Synthetic blue dye; may cause allergic reactions in sensitive individuals.", "severity": "low"},
 
-    # Artificial flavours
+    # Artificial flavours — NOTE: "artificial flavour" and "artificial colour" are
+    # NOT listed here. They are caught by ULTRA_PROCESSED_KEYWORDS in the processing
+    # level detection and penalised through that deduction. Listing them here would
+    # double-penalise alongside the specific chemicals (tartrazine, MSG, etc.) they
+    # are already grouped under.
     "monosodium glutamate": {"concern": "Excitotoxin; may cause headaches, sensitivity, and metabolic issues in some people.", "severity": "moderate"},
     "disodium inosinate": {"concern": "Flavour enhancer; often paired with MSG.", "severity": "low"},
     "disodium guanylate": {"concern": "Flavour enhancer; often paired with MSG.", "severity": "low"},

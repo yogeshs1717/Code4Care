@@ -27,7 +27,8 @@
 - [ ] Health Rule Engine.
 - [ ] Gemma integration (summary, explanations, chat).
 - [ ] Alternatives service + FirstClub purchase links.
-- [ ] Frontend (capture → crop → OCR edit → report → chat).
+- [x] Frontend UI redesign — dark amber theme, Three.js particles, header/footer, restyled flows.
+- [ ] Personalization: auth, user profiles, allergen detection.
 - [ ] Deployment (Vercel frontend; backend host TBD).
 
 ## Current Architecture Status

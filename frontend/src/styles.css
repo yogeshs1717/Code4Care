@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
-/* ── Design Tokens ──────────────────────────────────────────────────── */
+/* ── Design Tokens: Warm Light Theme ────────────────────────────────── */
 @theme {
-  --color-bg: #fafafa;
+  --color-bg: #f8f5f0;
+  --color-bg-alt: #f0ebe3;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #faf8f5;
   --color-surface: #ffffff;
-  --color-primary: #4285f4;
-  --color-primary-dark: #3367d6;
-  --color-accent: #34a853;
-  --color-warning: #fbbc04;
-  --color-danger: #ea4335;
-  --color-text: #202124;
-  --color-muted: #5f6368;
-  --color-border: #e8eaed;
+  --color-primary: #d97706;
+  --color-primary-light: #f59e0b;
+  --color-primary-dark: #b45309;
+  --color-accent: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --color-text: #1c1917;
+  --color-text-secondary: #78716c;
+  --color-text-muted: #a8a29e;
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-glow: rgba(245, 158, 11, 0.15);
 
   --font-heading: "Poppins", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -35,32 +42,45 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ── Glassmorphism Utility ──────────────────────────────────────────── */
+/* ── Glassmorphism ──────────────────────────────────────────────────── */
 .glass {
   background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* ── Amber glow ──────────────────────────────────────────────────────── */
+.glow-amber {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.12), 0 0 60px rgba(245, 158, 11, 0.04);
+}
+
+.glow-amber-text {
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.gradient-amber {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 2px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 2px; }
 
 /* ── Animations ─────────────────────────────────────────────────────── */
 @keyframes scanline {
@@ -80,156 +100,37 @@ body {
   100% { background-position: 200% 0; }
 }
 
-.animate-scanline {
-  animation: scanline 2s ease-in-out infinite;
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
-.animate-pulse-soft {
-  animation: pulse-soft 2s ease-in-out infinite;
-}
+.animate-scanline { animation: scanline 2s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
 
-/* ── Intersection Observer fade-in ──────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Retain old class names for existing components ─────────────────── */
-.app {
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 1rem 1rem 3rem;
-}
-
-.app-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.app-header p {
-  margin: 0.25rem 0 1.25rem;
-  color: var(--color-muted);
-  font-size: 0.9rem;
-}
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.hint {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: 0.875rem;
-}
-
-.btn {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-}
-
-.status {
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
-}
-
-.status-error {
-  background: #fef2f2;
-  color: #991b1b;
-}
-
-.status-success {
-  background: #ecfdf5;
-  color: #065f46;
-  margin-bottom: 0;
-}
-
-.confidence {
-  display: block;
-  margin-top: 0.25rem;
-  opacity: 0.8;
-}
-
-.cropper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  background: #000;
-  line-height: 0;
-  touch-action: none;
-  user-select: none;
-}
-
-.cropper img {
-  width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-  display: block;
-  pointer-events: none;
-}
-
-.crop-window {
+/* ── Decorative gradient orbs ── */
+.orb {
   position: absolute;
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
-  cursor: move;
-  touch-action: none;
-}
-
-.crop-handle {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  background: #fff;
   border-radius: 50%;
-  touch-action: none;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.12;
 }
+.orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,0.3), transparent); }
+.orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,158,11,0.15), transparent); }
+.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(217,119,6,0.15), transparent); }
 
+/* ── Legacy classnames ──────────────────────────────────────────────── */
+.app { margin: 0 auto; padding: 1rem; }
+.stack { display: flex; flex-direction: column; gap: 0.75rem; }
+.hint { color: var(--color-text-muted); font-size: 0.875rem; }
+
+.cropper { position: relative; overflow: hidden; border-radius: 0.75rem; background: #000; line-height: 0; touch-action: none; user-select: none; }
+.cropper img { width: 100%; max-height: 60vh; object-fit: contain; display: block; pointer-events: none; }
+.crop-window { position: absolute; border: 2px solid #fff; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5); cursor: move; touch-action: none; }
+.crop-handle { position: absolute; width: 28px; height: 28px; background: #fff; border-radius: 50%; touch-action: none; }
 .crop-handle-tl { left: -14px; top: -14px; }
 .crop-handle-tr { right: -14px; top: -14px; }
 .crop-handle-bl { left: -14px; bottom: -14px; }
 .crop-handle-br { right: -14px; bottom: -14px; }
-
-.field-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.ocr-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  resize: vertical;
-}

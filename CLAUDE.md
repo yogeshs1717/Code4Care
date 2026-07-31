@@ -58,12 +58,12 @@
 | Product | Target Score | Current |
 |---------|-------------|---------|
 | Healthy salad (spinach, kale, olive oil, nuts) | 95-100 | 100 |
-| Plain yogurt (milk, cultures) | 80-85 | 87 |
-| White bread (flour, water, yeast, salt, sugar) | 75-82 | 79 |
-| Biscuit (flour, sugar, palm oil, salt, emulsifier) | 62-72 | 65 |
+| Plain yogurt (milk, cultures) | 80-87 | 87 |
+| White bread (flour, water, yeast, salt, sugar) | 75-82 | 80 |
+| Biscuit (flour, sugar, palm oil, salt, emulsifier) | 62-72 | 66 |
 | Potato chips (potatoes, oil, salt, additives) | 58-65 | 64 |
-| Chocolate bar (sugar, cocoa butter, emulsifiers) | 55-65 | 64 |
-| Kurkure-style snack (flours, MSG, colours, flavour) | 30-42 | 31 |
+| Chocolate bar (sugar, cocoa butter, emulsifiers) | 55-66 | 66 |
+| Kurkure-style snack (flours, MSG, colours, flavour) | 28-42 | 31 |
 | Sugary soda (HFCS, phosphoric acid, caffeine) | 35-45 | 38 |
 | Highly processed oil (trans fats, preservatives) | 5-20 | 9 |
 
@@ -210,12 +210,14 @@ Ordered sections of every analysis:
 
 ## 18. UI Design System
 
-- **Color palette**: Score colors: Good (#34A853), Moderate (#FBBC04), Concerning (#EA4335), Poor (#DC2626)
-- **Components**: Glassmorphism (bg-white/80 backdrop-blur), rounded-2xl, border-slate-100/80, soft shadows.
+- **Color palette**: Dark theme: bg (#0f0f1a), bg-alt (#1a1a2e), bg-card (#1e1e32), bg-elevated (#252540). Primary amber (#f59e0b) with warm gradients. Score colors: Good (#34d399), Moderate (#fbbf24), Concerning (#fb923c), Poor (#f87171). NO neon colors. NO Google Blue/Green.
+- **Components**: Glassmorphism on dark (bg-white/[0.03-0.06] backdrop-blur), rounded-2xl, border-white/5-10, subtle amber glow effects.
 - **Layout**: Responsive 1-col mobile → 3-col desktop (max-w-6xl) with sticky header + floating modals.
-- **3D viz**: Three.js ScoreGlobe with pulsing core + rotating arc + orbiting particles.
+- **3D viz**: Three.js ScoreGlobe (pulsing core + rotating arc + orbiting particles) + ParticleBackground (120-particle ambient field on hero).
+- **Header/Footer**: Fixed top header (Code4Care logo + nav + sign-in button), full footer with links/copyright on content pages.
 - **Animations**: framer-motion scroll-reveal (useInView) + spring transitions.
 - **Icons**: lucide-react only.
+- **Typography**: Poppins (headings), Inter (body). White text with 40-80% opacity hierarchy.
 - **NO Recharts, NO Chart.js, NO D3**.
 
 ## 19. External APIs
