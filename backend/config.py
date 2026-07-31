@@ -24,7 +24,7 @@ try:
         max_image_bytes: int = 10 * 1024 * 1024
 
         # --- HTTP ---------------------------------------------------------------
-        cors_allow_origins: str = "http://localhost:5173"
+        cors_allow_origins: str = "https://code4-care-8zc2.vercel.app,http://localhost:5173"
 
         # --- Gemini / LLM -------------------------------------------------------
         # API key for Google Generative AI (Google AI Studio / Gemini / Gemma).
@@ -50,7 +50,7 @@ except (ImportError, ModuleNotFoundError):
         ocr_timeout_seconds: float = 30.0
         ocr_language_hints: str = ""
         max_image_bytes: int = 10 * 1024 * 1024
-        cors_allow_origins: str = "http://localhost:5173"
+        cors_allow_origins: str = "https://code4-care-8zc2.vercel.app,http://localhost:5173"
         gemini_api_key: str | None = None
         gemma_model_name: str = "gemma-2-27b-it"
 

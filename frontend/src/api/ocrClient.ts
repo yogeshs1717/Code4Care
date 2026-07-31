@@ -2,21 +2,9 @@ import type { ApiErrorPayload, OcrResult } from '../types/ocr';
 
 /**
  * Dynamically resolves the API base URL.
- * If VITE_API_BASE_URL is set, it cleans it up (takes first URL if comma-separated, strips trailing slashes).
- * If unset or localhost when accessed over local network, it dynamically uses the current browser hostname on port 8000.
+ * Checks VITE_API_BASE_URL first, then handles localhost/LAN IPs, and defaults to Render production backend.
  */
 export function getApiBaseUrl(): string {
-  // If running in browser and accessed via a network IP (not localhost),
-  // dynamically target port 8000 on that same hostname/IP.
-  if (
-    typeof window !== 'undefined' &&
-    window.location?.hostname &&
-    window.location.hostname !== 'localhost' &&
-    window.location.hostname !== '127.0.0.1'
-  ) {
-    return `http://${window.location.hostname}:8000`;
-  }
-
   const envUrl = import.meta.env.VITE_API_BASE_URL;
   if (envUrl && typeof envUrl === 'string') {
     const firstUrl = envUrl.split(',')[0].trim();
@@ -25,7 +13,19 @@ export function getApiBaseUrl(): string {
     }
   }
 
-  return 'http://localhost:8000';
+  // Handle local development environments
+  if (typeof window !== 'undefined' && window.location?.hostname) {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+      return 'http://localhost:8000';
+    }
+    // Match local LAN IPs (e.g. 192.168.x.x, 10.x.x.x, 172.16-31.x.x)
+    if (/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/.test(host)) {
+      return `http://${host}:8000`;
+    }
+  }
+
+  return 'https://code4care-fqhr.onrender.com';
 }
 
 export class OcrRequestError extends Error {
@@ -51,9 +51,10 @@ export async function requestOcr(image: File, signal?: AbortSignal): Promise<Ocr
   const urlsToTry: string[] = [];
   const primaryBase = getApiBaseUrl();
   if (primaryBase) urlsToTry.push(primaryBase);
-  if (!urlsToTry.includes('')) urlsToTry.push('');
+  if (!urlsToTry.includes('https://code4care-fqhr.onrender.com')) urlsToTry.push('https://code4care-fqhr.onrender.com');
   if (!urlsToTry.includes('http://localhost:8000')) urlsToTry.push('http://localhost:8000');
   if (!urlsToTry.includes('http://127.0.0.1:8000')) urlsToTry.push('http://127.0.0.1:8000');
+  if (!urlsToTry.includes('')) urlsToTry.push('');
 
   for (const base of urlsToTry) {
     try {

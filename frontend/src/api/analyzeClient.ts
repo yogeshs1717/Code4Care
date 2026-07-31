@@ -8,9 +8,10 @@ async function fetchWithFallback(path: string, options: RequestInit): Promise<Re
   const urlsToTry: string[] = [];
   const primaryBase = getApiBaseUrl();
   if (primaryBase) urlsToTry.push(primaryBase);
-  if (!urlsToTry.includes('')) urlsToTry.push('');
+  if (!urlsToTry.includes('https://code4care-fqhr.onrender.com')) urlsToTry.push('https://code4care-fqhr.onrender.com');
   if (!urlsToTry.includes('http://localhost:8000')) urlsToTry.push('http://localhost:8000');
   if (!urlsToTry.includes('http://127.0.0.1:8000')) urlsToTry.push('http://127.0.0.1:8000');
+  if (!urlsToTry.includes('')) urlsToTry.push('');
 
   let lastError: unknown = null;
   for (const base of urlsToTry) {
