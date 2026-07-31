@@ -63,7 +63,7 @@ export function HeroSection({ onEnterApp }: { onEnterApp: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            Code4Care
+            LabelWise
           </motion.h1>
           <motion.p
             className="mt-4 text-lg text-stone-600 sm:text-xl font-medium max-w-md"
